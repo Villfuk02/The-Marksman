@@ -1,0 +1,10 @@
+{
+  "modid": "themarksman",
+  "name": "The Marksman",
+  "author_list": ["Villfuk02"],
+  "description": "This mod add new character called The Marksman and everything what the character needs. Also changes Burns to light you on fire and adds a new shared relic: Scales Of Injustice.",
+  "version": "0.1.0",
+  "sts_version": "27-07-2018",
+  "mts_version": "2.9.1",
+  "dependencies": ["basemod"]
+}

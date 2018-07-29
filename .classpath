@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src/main/java"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/Users/Villfuk/Documents/my_mods/lib/BaseMod.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Villfuk/Documents/my_mods/lib/desktop-1.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Villfuk/Documents/my_mods/lib/ModTheSpire.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
