@@ -28,7 +28,7 @@ public class CounterStrike extends CustomCard{
 	public CounterStrike() {
 		super(ID, NAME, "img/cards/"+ID+".png", COST, DESCRIPTION,
         		AbstractCard.CardType.POWER, AbstractCardEnum.BLACK,
-        		AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF);
+        		AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.SELF);
 		this.baseMagicNumber = this.magicNumber = MAGIC;
 	}
 

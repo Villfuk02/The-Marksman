@@ -363,7 +363,7 @@
 	},
 	"LayDown": {
 		"NAME": "Lay Down",
-		"DESCRIPTION": "Gain !B! Block. NL Gain !M! Precision."
+		"DESCRIPTION": "Gain !B! Block. NL Gain !M! Precision. NL Lose 2 Strength for this turn."
 	},
 	"TrustyPistol": {
 		"NAME": "Trusty Handgun",

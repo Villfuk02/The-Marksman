@@ -9,6 +9,8 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.LoseStrengthPower;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 
 import basemod.abstracts.CustomCard;
 import the_marksman.AbstractCardEnum;
@@ -20,10 +22,10 @@ public class LayDown extends CustomCard{
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 	private static final int COST = 1;
-	private static final int BLOCK = 5;
+	private static final int BLOCK = 6;
 	private static final int BLOCK_UP = 2;
-	private static final int MAGIC = 5;
-	private static final int MAGIC_UP = 5;
+	private static final int MAGIC = 15;
+	private static final int MAGIC_UP = 10;
 
 	public LayDown() {
 		super(ID, NAME, "img/cards/"+ID+".png", COST, DESCRIPTION,
@@ -52,7 +54,8 @@ public class LayDown extends CustomCard{
 	@Override
 	public void use(AbstractPlayer p, AbstractMonster m) {				
 		AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
-		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new PrecisionPower(p, this.magicNumber), this.magicNumber));  
-		
+		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new PrecisionPower(p, this.magicNumber), this.magicNumber)); 
+		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, -1), -1)); 
+		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new LoseStrengthPower(p, 1), 1)); 
 	}
 }

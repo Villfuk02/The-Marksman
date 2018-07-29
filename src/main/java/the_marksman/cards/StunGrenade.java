@@ -51,8 +51,7 @@ public class StunGrenade extends CustomCard{
 		if (!this.upgraded) {
 			upgradeName();
 			this.upgradeDamage(DMG_UP);
-			this.upgradeMagicNumber(MAGIC_UP);
-			
+			this.upgradeMagicNumber(MAGIC_UP);			
 			this.rawDescription = UP_DESCRIPTION;
 			this.initializeDescription();
 			this.isInnate = true;

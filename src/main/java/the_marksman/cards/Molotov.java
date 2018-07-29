@@ -38,9 +38,7 @@ public class Molotov extends CustomCard{
 	public void upgrade() {
 		if(!this.upgraded) {
 			upgradeName();
-			this.upgradeMagicNumber(MAGIC_UP);
-			
-			
+			this.upgradeMagicNumber(MAGIC_UP);			
 		}
 	}
 
