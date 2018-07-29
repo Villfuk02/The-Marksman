@@ -48,14 +48,14 @@ public class RustyPistol extends CustomCard{
 	@Override
 	public void upgrade() {
 		if (!this.upgraded) {
-			this.name += "+";
+			upgradeName();
 			//this.upgradeDamage(DMG_UP);
 			this.upgradeMagicNumber(CRIT_UP);
 			this.magicNumber = CRIT + CRIT_UP;
 			this.exhaust = false;
 			this.rawDescription = UP_DESCRIPTION;
 			this.initializeDescription();
-			this.upgraded = true;
+			
 		} 
 	}
 

@@ -36,8 +36,8 @@ public class FirstAidKit extends CustomCard{
 	@Override
 	public void upgrade() {
 		if(!upgraded) {
-			this.name += "+";
-			this.upgraded = true;
+			upgradeName();
+			
 			this.retain = true;
 			this.rawDescription = UP_DESCRIPTION;
 			this.initializeDescription();

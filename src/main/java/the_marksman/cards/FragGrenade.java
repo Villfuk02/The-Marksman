@@ -46,11 +46,11 @@ public class FragGrenade extends CustomCard{
 	@Override
 	public void upgrade() {
 		if (!this.upgraded) {
-			this.name += "+";
+			upgradeName();
 			this.upgradeDamage(DMG_UP);
 			this.upgradeMagicNumber(AMOUNT_UP);
 			this.magicNumber = AMOUNT + AMOUNT_UP;
-			this.upgraded = true;
+			
 		} 
 	}
 

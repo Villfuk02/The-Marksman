@@ -37,8 +37,10 @@ public class AmmoBox extends CustomCard{
 	@Override
 	public void upgrade() {
 		this.timesUpgraded++;
-		this.name = NAME + "+" + timesUpgraded;
+		this.name = NAME + "+" + timesUpgraded;		
 		this.upgradeMagicNumber(UPGRADE);
+		this.upgraded = true;
+		this.initializeTitle();
 	}
 	
 	@Override

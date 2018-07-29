@@ -47,11 +47,11 @@ public class RocketLauncher extends CustomCard{
 	@Override
 	public void upgrade() {
 		if (!this.upgraded) {
-			this.name += "+";
+			upgradeName();
 			this.upgradeDamage(DMG_UP);
 			this.upgradeMagicNumber(BURNING_UP);
 			this.magicNumber = BURNING + BURNING_UP;
-			this.upgraded = true;
+			
 		} 
 	}
 

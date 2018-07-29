@@ -38,8 +38,8 @@ public class LockOn extends CustomCard{
 	@Override
 	public void upgrade() {
 		if(!upgraded) {
-			this.name += "+";
-			this.upgraded = true;
+			upgradeName();
+			
 			this.upgradeBaseCost(UP_COST);
 		}
 	}

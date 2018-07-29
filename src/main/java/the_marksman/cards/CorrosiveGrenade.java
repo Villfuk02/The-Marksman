@@ -48,11 +48,11 @@ public class CorrosiveGrenade extends CustomCard{
 	@Override
 	public void upgrade() {
 		if (!this.upgraded) {
-			this.name += "+";
+			upgradeName();
 			this.upgradeDamage(DMG_UP);
 			this.upgradeMagicNumber(CORROSION_UP);
 			this.magicNumber = CORROSION + CORROSION_UP;
-			this.upgraded = true;
+			
 		} 
 	}
 

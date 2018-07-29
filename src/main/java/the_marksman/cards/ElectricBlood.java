@@ -42,8 +42,8 @@ public class ElectricBlood extends CustomCard{
 	@Override
 	public void upgrade() {
 		if(!upgraded) {
-			this.name += "+";
-			this.upgraded = true;
+			upgradeName();
+			
 			this.upgradeDamage(DMG_UP);
 		}
 	}

@@ -42,11 +42,11 @@ public class SkinSkill extends CustomCard{
 	@Override
 	public void upgrade() {
 		if (!this.upgraded) {
-			this.name += "+";
+			upgradeName();
 			this.rawDescription = UP_DESCRIPTION;
 			this.initializeDescription();
 			this.upgradeBlock(BLOCK_UP);
-			this.upgraded = true;
+			
 		} 
 	}
 

@@ -38,9 +38,8 @@ public class BlackPowder extends CustomCard{
 	@Override
 	public void upgrade() {
 		if (!this.upgraded) {
-			this.name += "+";
+			upgradeName();
 			this.upgradeBaseCost(COST_UP);
-			this.upgraded = true;
 		} 
 	}
 

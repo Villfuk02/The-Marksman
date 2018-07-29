@@ -37,10 +37,10 @@ public class ExtendedMagazines extends CustomCard{
 	@Override
 	public void upgrade() {
 		if (!this.upgraded) {
-			this.name += "+";
+			upgradeName();
 			this.upgradeMagicNumber(UPGRADE);
 			this.magicNumber = DRAW + UPGRADE;
-			this.upgraded = true;
+			
 		}		
 	}
 

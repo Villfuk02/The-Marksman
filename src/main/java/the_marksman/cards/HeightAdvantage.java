@@ -42,11 +42,11 @@ public class HeightAdvantage extends CustomCard{
 	@Override
 	public void upgrade() {
 		if(!upgraded) {
-			this.name += "+";
-			this.upgraded = true;
+			upgradeName();
+			
 			this.upgradeBlock(BLOCK_UP);
 			this.upgradeMagicNumber(MAGIC_UP);
-			this.magicNumber = MAGIC + MAGIC_UP;
+			
 		}
 	}
 

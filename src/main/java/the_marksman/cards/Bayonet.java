@@ -42,12 +42,11 @@ public class Bayonet extends CustomCard{
 	@Override
 	public void upgrade() {
 		if(!this.upgraded) {
-			this.name += "+";
+			upgradeName();
 			this.upgradeDamage(DMG_UP);
 			this.rawDescription = UP_DESCRIPTION;
 			this.initializeDescription();
 			this.retain = true;
-			this.upgraded = true;
 		}
 	}	
 	

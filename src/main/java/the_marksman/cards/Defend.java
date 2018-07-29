@@ -36,9 +36,9 @@ public class Defend extends CustomCard{
 	@Override
 	public void upgrade() {
 		if (!this.upgraded) {
-			this.name += "+";
+			upgradeName();
 			this.upgradeBlock(UPGRADE);
-			this.upgraded = true;
+			
 		} 
 	}
 

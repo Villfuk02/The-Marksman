@@ -35,10 +35,9 @@ public class BackupPlan extends CustomCard{
 	@Override
 	public void upgrade() {
 		if(!this.upgraded) {
-			this.name += "+";
-			this.rawDescription = UP_DESCRIPTION;
+			upgradeName();
+			this.rawDescription = BackupPlan.UP_DESCRIPTION;
 			this.initializeDescription();
-			this.upgraded = true;
 			this.retain = true;
 		}
 	}

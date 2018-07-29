@@ -47,11 +47,11 @@ public class RunAndGun extends CustomCard{
 	@Override
 	public void upgrade() {
 		if (!this.upgraded) {
-			this.name += "+";
+			upgradeName();
 			this.upgradeDamage(DMG_UP);
 			//this.upgradeMagicNumber(DRAW_UP);
 			//this.magicNumber = DRAW + DRAW_UP;
-			this.upgraded = true;
+			
 		}
 	}
 

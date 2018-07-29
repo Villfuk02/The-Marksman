@@ -36,8 +36,7 @@ public class AntiAirMissile extends CustomCard{
 	@Override
 	public void upgrade() {
 		if(!upgraded) {
-			this.name += "+";
-			this.upgraded = true;
+			upgradeName();
 			this.isEthereal = false;
 			this.retain = true;
 			this.isInnate = true;

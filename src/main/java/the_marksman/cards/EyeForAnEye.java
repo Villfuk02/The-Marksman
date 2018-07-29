@@ -41,12 +41,12 @@ public class EyeForAnEye extends CustomCard{
 	@Override
 	public void upgrade() {
 		if (!this.upgraded) {
-			this.name += "+";
+			upgradeName();
 			this.upgradeMagicNumber(MAGIC_UP);
-			this.magicNumber = MAGIC + MAGIC_UP;
+			
 			this.rawDescription = UP_DESCRIPTION;
 			this.initializeDescription();
-			this.upgraded = true;
+			
 		} 
 	}
 

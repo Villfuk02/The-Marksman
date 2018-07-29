@@ -36,7 +36,7 @@ public class TrustyPistol extends CustomCard{
         		AbstractCard.CardRarity.BASIC, AbstractCard.CardTarget.ENEMY);
 		this.baseDamage = DMG;
 		this.baseMagicNumber = this.magicNumber = CRIT;
-		this.upgraded = true;
+		
 	}
 
 	@Override

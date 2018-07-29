@@ -48,11 +48,9 @@ public class Assasinate extends CustomCard{
 	@Override
 	public void upgrade() {
 		if (!this.upgraded) {
-			this.name += "+";
+			upgradeName();
 			this.upgradeDamage(DMG_UP);
 			this.upgradeMagicNumber(MAGIC_UP);
-			this.magicNumber = MAGIC + MAGIC_UP;
-			this.upgraded = true;
 		}
 	}
 

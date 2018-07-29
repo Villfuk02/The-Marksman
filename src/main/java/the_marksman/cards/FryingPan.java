@@ -46,10 +46,10 @@ public class FryingPan extends CustomCard{
 	@Override
 	public void upgrade() {
 		if (!this.upgraded) {
-			this.name += "+";
+			upgradeName();
 			this.upgradeDamage(DMG_UP);
 			this.upgradeBlock(BLOCK_UP);
-			this.upgraded = true;
+			
 		}
 	}	
 	

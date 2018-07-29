@@ -38,11 +38,11 @@ public class GrenadeLauncher extends CustomCard{
 	@Override
 	public void upgrade() {
 		if (!this.upgraded) {
-			this.name += "+";
+			upgradeName();
 			this.rawDescription = UP_DESCRIPTION;
 			this.initializeDescription();
 			this.retain = true;
-			this.upgraded = true;
+			
 		} 
 	}
 	

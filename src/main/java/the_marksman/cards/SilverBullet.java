@@ -48,9 +48,9 @@ public class SilverBullet extends CustomCard{
 	@Override
 	public void upgrade() {
 		if (!this.upgraded) {
-			this.name += "+";
+			upgradeName();
 			this.upgradeDamage(DMG_UP);
-			this.upgraded = true;
+			
 		} 
 	}
 

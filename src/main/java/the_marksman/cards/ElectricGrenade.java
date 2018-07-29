@@ -45,12 +45,12 @@ public class ElectricGrenade extends CustomCard{
 	@Override
 	public void upgrade() {
 		if (!this.upgraded) {
-			this.name += "+";
+			upgradeName();
 			this.upgradeDamage(DMG_UP);
 			this.baseDraw = 1;
 			this.rawDescription = UP_DESCRIPTION;
 			this.initializeDescription();
-			this.upgraded = true;
+			
 		} 
 	}
 

@@ -49,7 +49,8 @@ public class Minigun extends CustomCard{
 		this.timesUpgraded++;
 		this.name = NAME + "+" + timesUpgraded;
 		this.upgradeMagicNumber(AMT_UP);
-		
+		this.upgraded = true;
+		this.initializeTitle();
 	}
 
 	@Override

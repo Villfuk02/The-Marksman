@@ -37,9 +37,9 @@ public class Foresight extends CustomCard{
 	@Override
 	public void upgrade() {
 		if(!this.upgraded) {
-			this.name += "+";
+			upgradeName();
 			this.upgradeBlock(BLOCK_UP);
-			this.upgraded = true;
+			
 		}
 	}
 

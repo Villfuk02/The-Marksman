@@ -38,9 +38,9 @@ public class Strike extends CustomCard{
 	@Override
 	public void upgrade() {
 		if (!this.upgraded) {
-			this.name += "+";
+			upgradeName();
 			this.upgradeDamage(UPGRADE);
-			this.upgraded = true;
+			
 		} 
 	}
 

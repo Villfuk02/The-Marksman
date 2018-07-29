@@ -42,11 +42,9 @@ public class AntiFlame extends CustomCard{
 	@Override
 	public void upgrade() {
 		if(!this.upgraded) {
-			this.name += "+";
+			upgradeName();
 			this.upgradeBlock(BLOCK_UP);
 			//this.upgradeMagicNumber(MAGIC_UP);
-			//this.magicNumber = MAGIC + MAGIC_UP;
-			this.upgraded = true;	
 		}
 	}
 

@@ -38,8 +38,8 @@ public class Guilt extends CustomCard{
 	@Override
 	public void upgrade() {
 		if (!this.upgraded) {
-			this.name += "+";
-			this.upgraded = true;
+			upgradeName();
+			
 			this.isInnate = true;
 			this.rawDescription = UP_DESCRIPTION;
 			this.initializeDescription();

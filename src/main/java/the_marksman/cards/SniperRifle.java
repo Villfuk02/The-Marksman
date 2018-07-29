@@ -48,11 +48,11 @@ public class SniperRifle extends CustomCard{
 	@Override
 	public void upgrade() {
 		if (!this.upgraded) {
-			this.name += "+";
+			upgradeName();
 			this.upgradeDamage(DMG_UP);
 			this.upgradeMagicNumber(CRIT_UP);
 			this.magicNumber = CRIT + CRIT_UP;
-			this.upgraded = true;
+			
 		} 
 	}
 

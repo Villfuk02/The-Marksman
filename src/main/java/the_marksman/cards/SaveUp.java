@@ -36,10 +36,11 @@ public class SaveUp extends CustomCard{
 	@Override
 	public void upgrade() {
 		if(!this.upgraded) {
-			this.name += "+";
+			upgradeName();
 			this.rawDescription = UP_DESCRIPTION;
 			this.initializeDescription();
-			this.upgraded = true;
+			
+			this.retain = true;
 		}
 	}
 	

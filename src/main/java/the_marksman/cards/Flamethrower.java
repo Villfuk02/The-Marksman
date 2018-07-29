@@ -41,10 +41,10 @@ public class Flamethrower extends CustomCard{
 	@Override
 	public void upgrade() {
 		if (!this.upgraded) {
-			this.name += "+";
+			upgradeName();
 			this.upgradeMagicNumber(BURNING_UP);
 			this.magicNumber = BURNING + BURNING_UP;
-			this.upgraded = true;
+			
 		} 
 	}
 

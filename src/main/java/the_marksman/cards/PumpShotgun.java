@@ -49,11 +49,11 @@ public class PumpShotgun extends CustomCard{
 	@Override
 	public void upgrade() {
 		if (!this.upgraded) {
-			this.name += "+";
+			upgradeName();
 			//this.upgradeDamage(DMG_UP);
 			this.upgradeMagicNumber(AMT_UP);
 			this.magicNumber = AMT + AMT_UP;
-			this.upgraded = true;
+			
 		} 
 	}
 
