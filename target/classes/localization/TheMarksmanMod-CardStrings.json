@@ -372,5 +372,9 @@
 	"Insulation": {
 		"NAME": "Insulation",
 		"DESCRIPTION": "Retain. NL Gain !B! Block. NL Exhaust ALL Burns in your draw pile. For each, apply !M! Burning to ALL enemies."
+	},
+	"UVLaser": {
+		"NAME": "UV Laser",
+		"DESCRIPTION": "Deal !D! Silent Damage to ALL enemies. NL Gain 2 Weak."
 	}
 }

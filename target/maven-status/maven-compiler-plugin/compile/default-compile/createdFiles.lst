@@ -89,6 +89,7 @@ the_marksman\cards\SmokeBomb.class
 the_marksman\cards\BlastShields.class
 the_marksman\powers\CritsThisTurn.class
 the_marksman\cards\Camouflage.class
+the_marksman\cards\UVLaser.class
 the_marksman\cards\FirstAidKit.class
 the_marksman\cards\Chainsaw.class
 the_marksman\cards\Guilt.class
