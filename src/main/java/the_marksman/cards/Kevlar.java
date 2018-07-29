@@ -20,7 +20,7 @@ public class Kevlar extends CustomCard{
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 	private static final int COST = 2;
-	private static final int BLOCK = 4;
+	private static final int BLOCK = 5;
 	private static final int BLOCK_UP = 2;
 	private static final int MAGIC = 3;
 	private static final int MAGIC_UP = 1;
@@ -52,7 +52,7 @@ public class Kevlar extends CustomCard{
 	@Override
 	public void use(AbstractPlayer p, AbstractMonster m) {			
 		AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));  
-		if(!p.hasPower("PlatedArmor") || p.getPower("PlatedArmor").amount < this.block)
+		if(!p.hasPower("Plated Armor") || p.getPower("Plated Armor").amount < this.block)
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new PlatedArmorPower(p, this.magicNumber),  this.magicNumber));
 	}
 }
