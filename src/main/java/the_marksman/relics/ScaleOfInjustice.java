@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.DamageInfo.DamageType;
+import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
@@ -14,17 +15,29 @@ import basemod.abstracts.CustomRelic;
 
 public class ScaleOfInjustice extends CustomRelic {
 	public static final String ID = "ScaleOfInjustice";
-	public static final int DMG = 5;
+	public static final int DMG = 6;
 	
 	public ScaleOfInjustice() {
 		super(ID, new Texture("img/relics/"+ID+".png"), 
-				RelicTier.UNCOMMON, LandingSound.SOLID); 
+				RelicTier.BOSS, LandingSound.CLINK); 
 	}
 	
 	@Override
 	public String getUpdatedDescription() {
 		return DESCRIPTIONS[0];
-	}
+	}	
+	 
+    @Override
+    public void onEquip() {
+        final EnergyManager energy = AbstractDungeon.player.energy;
+        ++energy.energyMaster;
+    }
+    
+    @Override
+    public void onUnequip() {
+        final EnergyManager energy = AbstractDungeon.player.energy;
+        --energy.energyMaster;
+    }
 	
 	@Override
     public void onPlayerEndTurn() {

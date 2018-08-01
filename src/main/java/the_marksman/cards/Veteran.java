@@ -52,6 +52,6 @@ public class Veteran extends CustomCard{
 	@Override
 	public void use(AbstractPlayer p, AbstractMonster m) {		
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, -this.magicNumber), -this.magicNumber));
-		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new VeteranPower(p, 0), 0));
+		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new VeteranPower(p, 2), 2));
 	}
 }

@@ -46,6 +46,6 @@ public class Ignite extends CustomCard{
 
 	@Override
 	public void use(AbstractPlayer p, AbstractMonster m) {		
-		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new IgnitePower(p, 1), 1));
+		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new IgnitePower(p, 2), 2));
 	}
 }

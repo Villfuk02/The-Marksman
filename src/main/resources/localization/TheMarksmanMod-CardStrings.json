@@ -1,8 +1,7 @@
 {	
 	"RustyPistol": {
 		"NAME": "Rusty Handgun",
-		"DESCRIPTION": "Deal !D! Damage. NL Crit: !M! % NL Exhaust.",
-		"UPGRADE_DESCRIPTION": "Deal !D! Damage. NL Crit: !M! %"
+		"DESCRIPTION": "Deal !D! Damage. NL Crit: !M! % NL Exhaust."
 	},
 	"StrikeBlack": {
 		"NAME": "Strike",
@@ -376,5 +375,9 @@
 	"UVLaser": {
 		"NAME": "UV Laser",
 		"DESCRIPTION": "Deal !D! Silent Damage to ALL enemies. NL Gain 2 Weak."
+	},
+	"RocketJump": {
+		"NAME": "Rocket Jump",
+		"DESCRIPTION": "Deal !D! damage. NL Shuffle 3 Burns into your discard pile. NL Draw !M! cards."
 	}
 }

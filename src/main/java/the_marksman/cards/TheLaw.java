@@ -51,8 +51,8 @@ public class TheLaw extends CustomCard{
 	@Override
 	public void use(AbstractPlayer p, AbstractMonster m) {		
 		for (final AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
-			if(mo.hasPower("Weak")) {
-				AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(mo, p, "Weak"));
+			if(mo.hasPower("Weakened")) {
+				AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(mo, p, "Weakened"));
 			}
 			if(mo.hasPower("Vulnerable")) {
 				AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(mo, p, "Vulnerable"));
@@ -60,11 +60,11 @@ public class TheLaw extends CustomCard{
 			if(mo.hasPower("Strength")) {
 				AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(mo, p, "Strength"));
 			}
-			if(mo.hasPower("GainStrength")) {
-				AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(mo, p, "GainStrength"));
+			if(mo.hasPower("Gain Strength")) {
+				AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(mo, p, "Gain Strength"));
 			}
-			if(mo.hasPower("LoseStrength")) {
-				AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(mo, p, "LoseStrength"));
+			if(mo.hasPower("Lose Strength")) {
+				AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(mo, p, "Lose Strength"));
 			}
 			if(mo.hasPower("Slow")) {
 				AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(mo, p, "Slow"));
@@ -73,8 +73,8 @@ public class TheLaw extends CustomCard{
 				AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(mo, p, "Intangible"));
 			}
 		}
-		if(p.hasPower("Weak")) {
-			AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, "Weak"));
+		if(p.hasPower("Weakened")) {
+			AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, "Weakened"));
 		}
 		if(p.hasPower("Vulnerable")) {
 			AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, "Vulnerable"));
@@ -82,11 +82,11 @@ public class TheLaw extends CustomCard{
 		if(p.hasPower("Strength")) {
 			AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, "Strength"));
 		}
-		if(p.hasPower("GainStrength")) {
-			AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, "GainStrength"));
+		if(p.hasPower("Gain Strength")) {
+			AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, "Gain Strength"));
 		}
-		if(p.hasPower("LoseStrength")) {
-			AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, "LoseStrength"));
+		if(p.hasPower("Lose Strength")) {
+			AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, "Lose Strength"));
 		}
 		if(p.hasPower("Slow")) {
 			AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, "Slow"));

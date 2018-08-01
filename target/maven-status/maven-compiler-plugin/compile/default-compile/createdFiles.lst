@@ -73,6 +73,7 @@ the_marksman\cards\Perfection.class
 the_marksman\cards\Tracers.class
 the_marksman\cards\SniperRifle.class
 the_marksman\cards\GoldenBullet.class
+the_marksman\cards\RocketJump.class
 the_marksman\cards\LuckyMode.class
 the_marksman\powers\ExplosivesExpertPower.class
 the_marksman\AbstractCardEnum.class

@@ -10,14 +10,14 @@
     "NAME": "Rum Bottle",
     "FLAVOR": "Tasty alcoholic bevrage.",
     "DESCRIPTIONS": [
-      "At the start of each combat, gain #b1 #yStrength. At the start of each turn, lose #b10 #yPrecision."
+      "At the start of each turn, gain #b1 #yConcentrated and lose #b20 #yPrecision."
     ]
   },
   "ScaleOfInjustice": {
     "NAME": "Scales Of Injustice",
     "FLAVOR": "If world wasn't unfair enough.",
     "DESCRIPTIONS": [
-      "At the end of each turn, deal #b5 damage to the creature with lowest #yHP. (Including you)"
+      "At the start of each turn, gain 1 energy. At the end of each turn, deal #b6 damage to the creature with lowest #yHP. (Including you)"
     ]
   },
   "TrustyMagazine": {

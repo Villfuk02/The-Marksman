@@ -30,6 +30,7 @@ public class BurningPower extends AbstractPower
         this.amount = newAmount;
         this.updateDescription();
         this.img = new Texture("img/powers/"+name+".png");
+        this.type = PowerType.DEBUFF;
     }  
     
     @Override

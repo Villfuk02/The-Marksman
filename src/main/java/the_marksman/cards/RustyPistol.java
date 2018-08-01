@@ -21,12 +21,11 @@ public class RustyPistol extends CustomCard{
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-	public static final String UP_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 	private static final int COST = 1;	
 	private static final int DMG = 4;
 	//private static final int DMG_UP = 1;
-	private static final int CRIT = 15;
-	private static final int CRIT_UP = 25;
+	private static final int CRIT = 30;
+	private static final int CRIT_UP = 30;
 	
 	Random rand = new Random();
 	
@@ -52,9 +51,6 @@ public class RustyPistol extends CustomCard{
 			//this.upgradeDamage(DMG_UP);
 			this.upgradeMagicNumber(CRIT_UP);
 			this.magicNumber = CRIT + CRIT_UP;
-			this.exhaust = false;
-			this.rawDescription = UP_DESCRIPTION;
-			this.initializeDescription();
 			
 		} 
 	}

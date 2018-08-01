@@ -23,7 +23,7 @@ public class TrustyPistol extends CustomCard{
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 	private static final int COST = 1;	
 	private static final int DMG = 4;
-	//private static final int DMG_UP = 1;
+	private static final int DMG_UP = 1;
 	private static final int CRIT = 100;
 	//private static final int CRIT_UP = 25;
 	
@@ -45,7 +45,11 @@ public class TrustyPistol extends CustomCard{
 	}
 
 	@Override
-	public void upgrade() {		
+	public void upgrade() {	
+		if(!this.upgraded) {
+			this.upgradeName();
+			this.upgradeDamage(DMG_UP);
+		}
 	}
 
 	@Override

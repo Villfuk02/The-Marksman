@@ -106,6 +106,7 @@ import the_marksman.cards.VoidGrenade;
 import the_marksman.cards.PumpShotgun;
 import the_marksman.cards.Railgun;
 import the_marksman.cards.Revolver;
+import the_marksman.cards.RocketJump;
 import the_marksman.cards.RocketLauncher;
 import the_marksman.relics.RumBottle;
 import the_marksman.relics.RustyMagazine;
@@ -200,8 +201,8 @@ public class TheMarksmanMod implements PostExhaustSubscriber,
 		
 		BaseMod.addCard(new TrustyPistol());
 		
-		// COMMON (20)
-		//	Attacks (13)		
+		// COMMON (21)
+		//	Attacks (14)		
 		BaseMod.addCard(new Grenade());			//aoe
 		BaseMod.addCard(new NapalmGrenade());	//aoe, burning
 		BaseMod.addCard(new HandCannon()); 		//-precision
@@ -215,6 +216,7 @@ public class TheMarksmanMod implements PostExhaustSubscriber,
 		BaseMod.addCard(new SilverBullet());	//HP stuff
 		BaseMod.addCard(new GoldenBullet());	//GOLD stuff
 		BaseMod.addCard(new UVLaser());			//silent aoe, weak
+		BaseMod.addCard(new RocketJump());			//burn, draw
 		
 		//	Skills (8)
 		BaseMod.addCard(new HeightAdvantage());	//block, +precision

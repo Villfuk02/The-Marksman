@@ -67,7 +67,7 @@ public class VoidGrenade extends CustomCard{
 			AbstractDungeon.player.drawPile.removeCard(tmp.getTopCard().cardID);
 			AbstractDungeon.player.drawPile.addToTop(tmp.getTopCard());
 			tmp.removeTopCard();
-			AbstractDungeon.actionManager.addToBottom(new PlayTopCardAction(m, false));
+			AbstractDungeon.actionManager.addToTop(new PlayTopCardAction(m, false));
         }
 		if(upgraded) {
 			for (final AbstractCard c : AbstractDungeon.player.discardPile.group) {
@@ -79,7 +79,7 @@ public class VoidGrenade extends CustomCard{
 				AbstractDungeon.player.discardPile.removeCard(tmp.getTopCard().cardID);
 				AbstractDungeon.player.drawPile.addToTop(tmp.getTopCard());
 				tmp.removeTopCard();
-				AbstractDungeon.actionManager.addToBottom(new PlayTopCardAction(m, false));
+				AbstractDungeon.actionManager.addToTop(new PlayTopCardAction(m, false));
 	        }
 	    }
 				

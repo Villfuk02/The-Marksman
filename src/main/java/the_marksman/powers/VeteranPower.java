@@ -12,8 +12,11 @@ public class VeteranPower extends AbstractPower
 	public static final String POWER_ID = "VeteranPower";
 	
     public static final String[] DESCRIPTIONS = new String[] {
-    		"Every turn, gain #b2 #yStrength. Lose all of it whenever you have empty draw pile."
+    		"Every turn, gain #b",
+    		" #yStrength. Lose all of it whenever you have empty draw pile."
 	};
+    
+    public int bonus = 0;
     
     public VeteranPower(final AbstractCreature owner, final int newAmount) {
         this.name = "Veteran";
@@ -26,14 +29,14 @@ public class VeteranPower extends AbstractPower
     
     @Override
     public void updateDescription() {
-    	this.description = DESCRIPTIONS[0];
+    	this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
     }  
     
     @Override
     public void atStartOfTurn() {
     	this.flash();
-    	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, owner,new StrengthPower(owner, 2), 2));
-    	this.amount += 2;
+    	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, owner,new StrengthPower(owner, this.amount), this.amount));
+    	bonus += this.amount;
     }
     
     @Override
@@ -45,8 +48,8 @@ public class VeteranPower extends AbstractPower
     
     public void onShuffle() {
     	this.flash();
-		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, owner,new StrengthPower(owner, -amount), -amount));
-    	this.amount = 0;
+		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, owner,new StrengthPower(owner, -bonus), -bonus));
+    	bonus = 0;
     }
    
 }
