@@ -324,7 +324,7 @@ public class TheMarksmanMod implements PostExhaustSubscriber,
 		BaseMod.addKeyword(new String[]{"precision"}, "This turn, increases #yCrit of all attacks with #yCrit.");
 		BaseMod.addKeyword(new String[]{"expose"}, "If target isn't #yVulnerable, apply #b1 #yVulnerable.");
 		BaseMod.addKeyword(new String[]{"grenade"}, "Grenades are cards, which attack ALL enemies and have #yGrenade in their name.");
-		BaseMod.addKeyword(new String[]{"warnings, warning"}, "Probably not important.");
+		BaseMod.addKeyword(new String[]{"warnings", "warning"}, "Probably not important.");
 	}
 	
 }
