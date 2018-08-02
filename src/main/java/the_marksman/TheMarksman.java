@@ -28,10 +28,14 @@ public class TheMarksman extends CustomPlayer{
 		retVal.add("DefendBlack");
 		retVal.add("DefendBlack");
 		retVal.add("DefendBlack");
+		retVal.add("DefendBlack");
+		retVal.add("RustyPistol");
 		retVal.add("RustyPistol");
 		retVal.add("RustyPistol");
 		retVal.add("RustyPistol");
 		retVal.add("StunGrenade");
+		retVal.add("StrikeBlack");
+		retVal.add("StrikeBlack");
 		retVal.add("StrikeBlack");
 		retVal.add("StrikeBlack");
 		return retVal;
@@ -46,7 +50,7 @@ public class TheMarksman extends CustomPlayer{
 	
 	public static CharSelectInfo getLoadout() {
 		return new CharSelectInfo("The Marksman", "After his entire family was killed, all he has left is his Rusty Handgun. NL He wants to avenge his family by Slaying The Spire.",
-				90, 90, 0, 90, 6,
+				90, 90, 0, 99, 6,
 			TheMarksmanEnum.THE_MARKSMAN, getStartingRelics(), getStartingDeck(), false);
 	}
 	

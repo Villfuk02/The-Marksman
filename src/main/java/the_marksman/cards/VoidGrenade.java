@@ -2,10 +2,12 @@ package the_marksman.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
 import com.megacrit.cardcrawl.actions.common.PlayTopCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.cards.status.Void;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -67,7 +69,12 @@ public class VoidGrenade extends CustomCard{
 			AbstractDungeon.player.drawPile.removeCard(tmp.getTopCard().cardID);
 			AbstractDungeon.player.drawPile.addToTop(tmp.getTopCard());
 			tmp.removeTopCard();
-			AbstractDungeon.actionManager.addToTop(new PlayTopCardAction(m, false));
+			if(AbstractDungeon.player.drawPile.getTopCard().cardID == "VoidGrenade") {
+				AbstractDungeon.actionManager.addToTop(new PlayTopCardAction(m, true));
+				AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(new Void(), 2));
+			}else {
+				AbstractDungeon.actionManager.addToTop(new PlayTopCardAction(m, false));
+			}
         }
 		if(upgraded) {
 			for (final AbstractCard c : AbstractDungeon.player.discardPile.group) {
@@ -79,7 +86,12 @@ public class VoidGrenade extends CustomCard{
 				AbstractDungeon.player.discardPile.removeCard(tmp.getTopCard().cardID);
 				AbstractDungeon.player.drawPile.addToTop(tmp.getTopCard());
 				tmp.removeTopCard();
-				AbstractDungeon.actionManager.addToTop(new PlayTopCardAction(m, false));
+				if(AbstractDungeon.player.drawPile.getTopCard().cardID == "VoidGrenade") {
+					AbstractDungeon.actionManager.addToTop(new PlayTopCardAction(m, true));
+					AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(new Void(), 2));
+				}else {
+					AbstractDungeon.actionManager.addToTop(new PlayTopCardAction(m, false));
+				}
 	        }
 	    }
 				
