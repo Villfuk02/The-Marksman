@@ -25,7 +25,7 @@ public class RocketLauncher extends CritCard{
 	private static final int DMG = 30;
 	private static final int DMG_UP = 6;
 	private static final int BURNING = 3;
-	private static final int BURNING_UP = 4;
+	private static final int BURNING_UP = 1;
 	
 	Random rand = new Random();
 	
