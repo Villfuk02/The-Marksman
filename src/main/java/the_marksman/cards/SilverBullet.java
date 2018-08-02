@@ -14,11 +14,10 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.random.Random;
 
-import basemod.abstracts.CustomCard;
 import the_marksman.AbstractCardEnum;
 import the_marksman.powers.CritsThisTurn;
 
-public class SilverBullet extends CustomCard{
+public class SilverBullet extends CritCard{
 	public static final String ID = "SilverBullet";
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static final String NAME = cardStrings.NAME;
@@ -36,7 +35,7 @@ public class SilverBullet extends CustomCard{
         		AbstractCard.CardType.ATTACK, AbstractCardEnum.BLACK,
         		AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.SELF_AND_ENEMY);
 		this.baseDamage = DMG;
-		this.baseMagicNumber = this.magicNumber = CRIT;
+		this.baseCrit = CRIT;
 		this.exhaust = true;
 	}
 
@@ -59,14 +58,9 @@ public class SilverBullet extends CustomCard{
 			
 		AbstractDungeon.actionManager.addToBottom(new DamageAction(p, new DamageInfo(p, 3, DamageType.HP_LOSS)));
 		
-		int pr = 0;
-		int sc = 1;
+		
 		int dmg = this.damage;
-		if(p.getPower("PrecisionPower") != null) {
-			pr = p.getPower("PrecisionPower").amount;
-		}
-		if(p.getPower("ConcentratedPower") != null) sc = 2;
-		if(rand.random(100)  < (this.magicNumber + pr) * sc) {
+		if(rand.random(100)  < this.crit) {
 			dmg *= 3;
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new CritsThisTurn(p, 1), 1));
 			AbstractDungeon.actionManager.addToBottom(new HealAction(p, p, 15));

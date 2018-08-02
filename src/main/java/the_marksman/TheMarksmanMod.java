@@ -103,6 +103,7 @@ import the_marksman.cards.TrustyPistol;
 import the_marksman.cards.UVLaser;
 import the_marksman.cards.Veteran;
 import the_marksman.cards.VoidGrenade;
+import the_marksman.patches.CritVariable;
 import the_marksman.cards.PumpShotgun;
 import the_marksman.cards.Railgun;
 import the_marksman.cards.Revolver;
@@ -193,6 +194,9 @@ public class TheMarksmanMod implements PostExhaustSubscriber,
 	@Override
 	public void receiveEditCards() {
 		logger.info("Adding Marksman Cards");
+		
+		BaseMod.addDynamicVariable(new CritVariable());
+		
 		// BASIC (5)
 		BaseMod.addCard(new RustyPistol());
 		BaseMod.addCard(new Defend());

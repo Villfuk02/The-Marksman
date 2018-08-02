@@ -14,13 +14,16 @@ C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\the_marksman\power
 C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\the_marksman\powers\EnergizedBlackPower.java
 C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\the_marksman\patches\BurnPatch.java
 C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\the_marksman\cards\BackupPlan.java
+C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\the_marksman\cards\RocketJump.java
 C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\the_marksman\cards\ClusterGrenade.java
 C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\the_marksman\cards\Revolver.java
 C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\the_marksman\powers\CorrosionPower.java
+C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\the_marksman\cards\CritCard.java
 C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\the_marksman\cards\ElectricBlood.java
 C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\the_marksman\cards\Gasoline.java
 C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\the_marksman\powers\ConcentratedPower.java
 C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\the_marksman\cards\HeightAdvantage.java
+C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\the_marksman\actions\ShotgunAction.java
 C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\the_marksman\cards\FirstAidKit.java
 C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\the_marksman\cards\Perfection.java
 C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\the_marksman\powers\CounterStrikePower.java
@@ -92,6 +95,7 @@ C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\the_marksman\cards
 C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\the_marksman\cards\SmokeBomb.java
 C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\the_marksman\cards\Insulation.java
 C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\the_marksman\cards\StunGrenade.java
+C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\the_marksman\patches\CritVariable.java
 C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\the_marksman\cards\RocketLauncher.java
 C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\the_marksman\relics\ScaleOfInjustice.java
 C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\the_marksman\cards\BlastShields.java

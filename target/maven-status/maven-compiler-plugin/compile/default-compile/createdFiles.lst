@@ -3,6 +3,7 @@ the_marksman\patches\GremlinMatchPatch.class
 the_marksman\cards\Insulation.class
 the_marksman\powers\FriendlyFirePower.class
 the_marksman\cards\ClusterGrenade.class
+the_marksman\patches\CritVariable.class
 the_marksman\cards\StunGrenade.class
 the_marksman\cards\LayDown.class
 the_marksman\cards\NuclearPower.class
@@ -41,6 +42,7 @@ the_marksman\cards\RunAndGun.class
 the_marksman\cards\ExpectAnything.class
 the_marksman\powers\EnergizedBlackPower.class
 the_marksman\powers\VeteranPower.class
+the_marksman\cards\CritCard.class
 the_marksman\powers\SilverBloodPower.class
 the_marksman\powers\PerfectionPower.class
 the_marksman\cards\ExtendedMagazines.class

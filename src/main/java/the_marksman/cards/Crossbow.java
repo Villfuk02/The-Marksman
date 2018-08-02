@@ -14,11 +14,10 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.FrailPower;
 import com.megacrit.cardcrawl.random.Random;
 
-import basemod.abstracts.CustomCard;
 import the_marksman.AbstractCardEnum;
 import the_marksman.powers.CritsThisTurn;
 
-public class Crossbow extends CustomCard{
+public class Crossbow extends CritCard{
 	public static final String ID = "Crossbow";
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static final String NAME = cardStrings.NAME;
@@ -39,6 +38,7 @@ public class Crossbow extends CustomCard{
 		this.baseDamage = DMG;
 		this.damageType = DamageType.THORNS;
 		this.baseMagicNumber = this.magicNumber = MAGIC;
+		this.baseCrit = 15;
 	}
 
 	@Override
@@ -60,15 +60,8 @@ public class Crossbow extends CustomCard{
 	@Override
 	public void use(AbstractPlayer p, AbstractMonster m) {
 		if (m != null) {
-			int pr = 0;
-			int sc = 1;
 			int dmg = this.damage;
-			if(p.getPower("PrecisionPower") != null) {
-				pr = p.getPower("PrecisionPower").amount;
-			}
-			if(p.getPower("ConcentratedPower") != null) sc = 2;
-			
-			if(rand.random(100)  < (15 + pr) * sc) {
+			if(rand.random(100)  < this.crit) {
 				dmg *= 3;
 				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new CritsThisTurn(p, 1), 1));
 			}	
@@ -77,7 +70,7 @@ public class Crossbow extends CustomCard{
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m,p,new FrailPower(m,this.magicNumber,false), this.magicNumber));
 			
 			dmg = this.damage;
-			if(rand.random(100)  < (15 + pr) * sc) {
+			if(rand.random(100)  < this.crit) {
 				dmg *= 3;
 				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new CritsThisTurn(p, 1), 1));
 			}	

@@ -11,11 +11,10 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.random.Random;
 
-import basemod.abstracts.CustomCard;
 import the_marksman.AbstractCardEnum;
 import the_marksman.actions.ShotgunAction;
 
-public class HeavyShotgun extends CustomCard{
+public class HeavyShotgun extends CritCard{
 	public static final String ID = "HeavyShotgun";
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static final String NAME = cardStrings.NAME;
@@ -34,7 +33,7 @@ public class HeavyShotgun extends CustomCard{
         		AbstractCard.CardType.ATTACK, AbstractCardEnum.BLACK,
         		AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ALL_ENEMY);
 		this.baseDamage = DMG;
-		this.baseMagicNumber = this.magicNumber = CRIT;
+		this.baseCrit = CRIT;
 	}
 
 	@Override
@@ -58,13 +57,7 @@ public class HeavyShotgun extends CustomCard{
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new VulnerablePower(p, 1, false), 1));
 		}
 		
-		int pr = 0;
-		int sc = 1;
-		if(p.getPower("PrecisionPower") != null) {
-			pr = p.getPower("PrecisionPower").amount;
-		}
-		if(p.getPower("ConcentratedPower") != null) sc = 2;
-		AbstractDungeon.actionManager.addToBottom(new ShotgunAction(AbstractDungeon.getMonsters().getRandomMonster(true), new DamageInfo(p, this.damage, damageTypeForTurn), 4, (this.magicNumber + pr) * sc, 2));
+		AbstractDungeon.actionManager.addToBottom(new ShotgunAction(AbstractDungeon.getMonsters().getRandomMonster(true), new DamageInfo(p, this.damage, damageTypeForTurn), 4, this.crit, 2));
 	    			
 	}
 }

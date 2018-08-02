@@ -1,7 +1,7 @@
 {	
 	"RustyPistol": {
 		"NAME": "Rusty Handgun",
-		"DESCRIPTION": "Deal !D! Damage. NL Crit: !M! % NL Exhaust."
+		"DESCRIPTION": "Deal !D! Damage. NL Crit: !C! % NL Exhaust."
 	},
 	"StrikeBlack": {
 		"NAME": "Strike",
@@ -47,31 +47,31 @@
 	},
 	"HandCannon": {
 		"NAME": "Hand Cannon",
-		"DESCRIPTION": "Deal !D! Damage. NL Crit: 10% NL Target loses !M! HP. NL Lose 25 Precision."
+		"DESCRIPTION": "Deal !D! Damage. NL Crit: !C! % NL Target loses !M! HP. NL Lose 25 Precision."
 	},
 	"BurstFire": {
 		"NAME": "Burst Fire",
-		"DESCRIPTION": "Deal !D! Damage and !M! times. NL Crit: 15% NL Lose 30 Precision."
+		"DESCRIPTION": "Deal !D! Damage and !M! times. NL Crit: !C! % NL Lose 30 Precision."
 	},
 	"TacticalShotgun": {
 		"NAME": "Tactical Shotgun",
-		"DESCRIPTION": "Expose yourself. NL Deal !D! Damage to random enemy 6 times. Crit: !M! % NL Draw a card for every Critical hit."
+		"DESCRIPTION": "Expose yourself. NL Deal !D! Damage to random enemy 6 times. Crit: !C! % NL Draw a card for every Critical hit."
 	},
 	"HeavyShotgun": {
 		"NAME": "Heavy Shotgun",
-		"DESCRIPTION": "Expose yourself. NL Deal !D! Damage to random enemy 4 times. Crit: !M! % NL Discard random card for every Critical hit."
+		"DESCRIPTION": "Expose yourself. NL Deal !D! Damage to random enemy 4 times. Crit: !C! % NL Discard random card for every Critical hit."
 	},
 	"PumpShotgun": {
 		"NAME": "Pump Shotgun",
-		"DESCRIPTION": "Expose yourself. NL Deal !D! Damage to random enemy !M! times. Crit: 25% NL Lose 20 Precision for every Critical hit."
+		"DESCRIPTION": "Expose yourself. NL Deal !D! Damage to random enemy !M! times. Crit: !C! % NL Lose 20 Precision for every Critical hit."
 	},
 	"Minigun": {
 		"NAME": "Minigun",
-		"DESCRIPTION": "Reduce Precision to 0. Deal 1 Silent Damage to random enemy !M! times. Crit: 20% NL Fires once more for every Critical hit."
+		"DESCRIPTION": "Deal 1 Silent Damage to random enemy !M! times. Crit: !C! % NL Ignores Precision. NL Fires once more for every Critical hit."
 	},
 	"Railgun": {
 		"NAME": "Railgun",
-		"DESCRIPTION": "Deal !D! Damage. NL Crit: X times !M! %."
+		"DESCRIPTION": "Deal !D! Damage. NL Crit: X times !C! %."
 	},
 	"AmmoBox": {
 		"NAME": "Ammo Box",
@@ -87,7 +87,7 @@
 	},
 	"Revolver": {
 		"NAME": "Revolver",
-		"DESCRIPTION": "Deal !D! Damage. NL Crit: 35% NL Critical hit deals !M! times as much damage instead of 3 times."
+		"DESCRIPTION": "Deal !D! Damage. NL Crit: !C! % NL Critical hit deals !M! times as much damage instead of 3 times."
 	},
 	"LockOnBlack": {
 		"NAME": "Lock On",
@@ -99,15 +99,15 @@
 	},
 	"RunAndGun": {
 		"NAME": "Run And Gun",
-		"DESCRIPTION": "Deal !D! damage, NL Crit: 10% NL Draw 1 card."
+		"DESCRIPTION": "Deal !D! damage, NL Crit: !C! % NL Draw 1 card."
 	},
 	"Bow": {
 		"NAME": "Bow",
-		"DESCRIPTION": "Deal !D! Silent damage, NL Crit: !M! %"
+		"DESCRIPTION": "Deal !D! Silent damage, NL Crit: !C! %"
 	},
 	"Crossbow": {
 		"NAME": "Crossbow",
-		"DESCRIPTION": "Deal !D! Silent damage and apply !M! Frail twice. NL Crit: 15%"
+		"DESCRIPTION": "Deal !D! Silent damage and apply !M! Frail twice. NL Crit: !C! %"
 	},
 	"SmokeBomb": {
 		"NAME": "Smoke Grenade",
@@ -155,7 +155,7 @@
 	"Chainsaw": {
 		"NAME": "Chainsaw",
 		"DESCRIPTION": "Expose yourself. NL Deal !D! Damage. NL Draw a 0-cost card from your draw pile.",
-		"UPGRADE_DESCRIPTION": "Expose yourself. NL Deal !D! Damage. NL Draw a 0-cost card from your draw pile. If there are none, draw 2 cards."
+		"UPGRADE_DESCRIPTION": "Expose yourself. NL Deal !D! Damage. NL Draw a 0-cost card from your draw pile. NL If there are none, draw 2 cards."
 	},
 	"Burn": {
 		"NAME": "Burn",
@@ -164,7 +164,7 @@
 	},
 	"RocketLauncher": {
 		"NAME": "Rocket Launcher",
-		"DESCRIPTION": "Deal !D! damage. NL Crit: 0% NL Apply !M! Burning to ALL enemies."
+		"DESCRIPTION": "Deal !D! damage. NL Crit: !C! % NL Apply !M! Burning to ALL enemies."
 	},
 	"CriticalDecision": {
 		"NAME": "Critical Decision",
@@ -172,7 +172,7 @@
 	},
 	"GammaRay": {
 		"NAME": "Gamma Ray",
-		"DESCRIPTION": "Deal !D! damage twice. NL Crit: 20% NL Critical hit multiplier stacks."
+		"DESCRIPTION": "Deal !D! damage twice. NL Crit: !C! % NL If this deals 2 critical hits, the second one deals 9 times as much damage."
 	},
 	"Guilt": {
 		"NAME": "Guilt",
@@ -270,11 +270,11 @@
 	},
 	"SilverBullet": {
 		"NAME": "Silver Bullet",
-		"DESCRIPTION": "Lose 3 HP. NL Deal !D! damage. NL Crit: !M! % NL If this deals Critical hit, heal 15 HP. NL Exhaust."
+		"DESCRIPTION": "Lose 3 HP. NL Deal !D! damage. NL Crit: !C! % NL If this deals Critical hit, heal 15 HP. NL Exhaust."
 	},
 	"GoldBullet": {
 		"NAME": "Golden Bullet",
-		"DESCRIPTION": "Spend 8 Gold. NL Deal !D! damage. NL Crit: !M! % NL If this deals Critical hit, Gain 40 Gold. NL Exhaust."
+		"DESCRIPTION": "Spend 8 Gold. NL Deal !D! damage. NL Crit: !C! % NL If this deals Critical hit, Gain 40 Gold. NL Exhaust."
 	},
 	"MetallicBlood": {
 		"NAME": "Steel Blood",
@@ -295,7 +295,7 @@
 	},
 	"Aggression": {
 		"NAME": "Aggression",
-		"DESCRIPTION": "Every time you become Vulnerable, remove the effect and ALL creatures gain !M! Strength for this turn."
+		"DESCRIPTION": "Every time you become Vulnerable, remove the effect and ALL creatures (including you) gain !M! Strength for this turn."
 	},
 	"ExpectAnything": {
 		"NAME": "Expect Anything",
@@ -303,7 +303,7 @@
 	},
 	"SniperRifle": {
 		"NAME": "Sniper Rifle",
-		"DESCRIPTION": "Deal !D! damage. NL Crit: !M! % NL If this deals Critical hit, copy this card into your draw pile. NL Exhaust."
+		"DESCRIPTION": "Deal !D! damage. NL Crit: !C! % NL If this deals Critical hit, copy this card into your draw pile. NL Exhaust."
 	},
 	"Hideout": {
 		"NAME": "Hideout",
@@ -364,7 +364,7 @@
 	},
 	"TrustyPistol": {
 		"NAME": "Trusty Handgun",
-		"DESCRIPTION": "Deal !D! Damage. NL Crit: !M! %"
+		"DESCRIPTION": "Deal !D! Damage. NL Crit: !C! %"
 	},
 	"Insulation": {
 		"NAME": "Insulation",
