@@ -23,10 +23,10 @@ public class Assasinate extends CustomCard{
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 	private static final int COST = 3;	
-	private static final int DMG = 36;
+	private static final int DMG = 38;
 	private static final int DMG_UP = 8;
 	private static final int MAGIC = 3;
-	private static final int MAGIC_UP = 1;
+	//private static final int MAGIC_UP = -1;
 	
 	Random rand = new Random();
 	
@@ -50,7 +50,7 @@ public class Assasinate extends CustomCard{
 		if (!this.upgraded) {
 			upgradeName();
 			this.upgradeDamage(DMG_UP);
-			this.upgradeMagicNumber(MAGIC_UP);
+			//this.upgradeMagicNumber(MAGIC_UP);
 		}
 	}
 

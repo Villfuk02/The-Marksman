@@ -24,9 +24,9 @@ public class RocketLauncher extends CustomCard{
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 	private static final int COST = 4;	
 	private static final int DMG = 30;
-	private static final int DMG_UP = 10;
-	private static final int BURNING = 4;
-	private static final int BURNING_UP = 2;
+	private static final int DMG_UP = 6;
+	private static final int BURNING = 3;
+	private static final int BURNING_UP = 4;
 	
 	Random rand = new Random();
 	

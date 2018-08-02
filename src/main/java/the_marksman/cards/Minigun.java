@@ -1,8 +1,5 @@
 package the_marksman.cards;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DamageRandomEnemyAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -16,7 +13,7 @@ import com.megacrit.cardcrawl.random.Random;
 
 import basemod.abstracts.CustomCard;
 import the_marksman.AbstractCardEnum;
-import the_marksman.powers.CritsThisTurn;
+import the_marksman.actions.ShotgunAction;
 
 public class Minigun extends CustomCard{
 	public static final String ID = "Minigun";
@@ -26,8 +23,8 @@ public class Minigun extends CustomCard{
 	private static final int COST = 3;	
 	private static final int DMG = 1;
 	private static final int CRIT = 20;
-	private static final int AMT = 8;
-	private static final int AMT_UP = 3;
+	private static final int AMT = 12;
+	private static final int AMT_UP = 4;
 	
 	Random rand = new Random();
 	
@@ -60,20 +57,13 @@ public class Minigun extends CustomCard{
 			AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, "PrecisionPower"));
 		}
 		
-		for (int i = 0; i < this.magicNumber; i++) {
-			int pr = 0;
-			int sc = 1;
-			int dmg = DMG;
-			if(p.getPower("PrecisionPower") != null) {
-				pr = p.getPower("PrecisionPower").amount;
-			}
-			if(p.getPower("ConcentratedPower") != null) sc = 2;
-			if(rand.random(100)  < (CRIT + pr) * sc) {
-				dmg *= 3;
-				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new CritsThisTurn(p, 1), 1));
-				i--;
-			}			
-			AbstractDungeon.actionManager.addToBottom(new DamageRandomEnemyAction(new DamageInfo(p, dmg, DamageType.THORNS), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-	    }				
+		int pr = 0;
+		int sc = 1;
+		if(p.getPower("PrecisionPower") != null) {
+			pr = p.getPower("PrecisionPower").amount;
+			if (pr > 0) pr = 0;
+		}
+		if(p.getPower("ConcentratedPower") != null) sc = 2;
+		AbstractDungeon.actionManager.addToBottom(new ShotgunAction(AbstractDungeon.getMonsters().getRandomMonster(true), new DamageInfo(p, DMG, DamageType.THORNS), this.magicNumber, (CRIT + pr) * sc, 3));				
 	}
 }

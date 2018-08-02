@@ -20,7 +20,6 @@ public class AmmoBox extends CustomCard{
 	private static final int DRAW = 3;
 	private static final int UPGRADE = 1;
 	
-	private boolean played = false;
 
 	public AmmoBox() {
 		super(ID, NAME, "img/cards/"+ID+".png", COST, DESCRIPTION,
@@ -42,22 +41,10 @@ public class AmmoBox extends CustomCard{
 		this.upgraded = true;
 		this.initializeTitle();
 	}
-	
-	@Override
-    public boolean hasEnoughEnergy() {
-        if (played)
-        	return false;
-        return super.hasEnoughEnergy();
-    }	
-	
-	@Override
-	public void atTurnStart() {
-		played = false;
-	}
 
 	@Override
 	public void use(AbstractPlayer p, AbstractMonster m) {		
 		AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, this.magicNumber));  
-		played = true;
+		this.modifyCostForTurn(1);
 	}
 }

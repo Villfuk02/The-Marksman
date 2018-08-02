@@ -23,7 +23,7 @@ public class Firewall extends CustomCard{
 	private static final int BLOCK = 30;
 	private static final int BLOCK_UP = 10;
 	private static final int MAGIC = 12;
-	private static final int MAGIC_UP = 4;
+	private static final int MAGIC_UP = -2;
 
 	public Firewall() {
 		super(ID, NAME, "img/cards/"+ID+".png", COST, DESCRIPTION,

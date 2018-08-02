@@ -20,16 +20,15 @@ public class SmokeBomb extends CustomCard{
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 	public static final String UP_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-	private static final int COST = 0;
-	private static final int MAGIC = 50;
-	private static final int MAGIC_UP = -30;
+	private static final int COST = 1;
+	private static final int COST_UP = 0;
+	private static final int MAGIC = 20;
 
 	public SmokeBomb() {
 		super(ID, NAME, "img/cards/"+ID+".png", COST, DESCRIPTION,
         		AbstractCard.CardType.SKILL, AbstractCardEnum.BLACK,
         		AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ALL);
 		this.baseMagicNumber = this.magicNumber = MAGIC;
-		this.exhaust = true;
 	}
 
 	@Override
@@ -41,12 +40,7 @@ public class SmokeBomb extends CustomCard{
 	public void upgrade() {
 		if(!upgraded) {
 			upgradeName();
-			
-			this.upgradeMagicNumber(MAGIC_UP);
-			this.exhaust = false;
-			
-			this.rawDescription = UP_DESCRIPTION;
-			this.initializeDescription();
+			this.upgradeBaseCost(COST_UP);
 		}
 	}
 

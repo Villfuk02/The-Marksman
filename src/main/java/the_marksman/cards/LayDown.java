@@ -22,9 +22,9 @@ public class LayDown extends CustomCard{
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 	private static final int COST = 1;
-	private static final int BLOCK = 6;
+	private static final int BLOCK = 7;
 	private static final int BLOCK_UP = 2;
-	private static final int MAGIC = 15;
+	private static final int MAGIC = 10;
 	private static final int MAGIC_UP = 10;
 
 	public LayDown() {

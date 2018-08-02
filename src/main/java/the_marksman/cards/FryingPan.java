@@ -21,10 +21,10 @@ public class FryingPan extends CustomCard{
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 	private static final int COST = 1;	
-	private static final int DMG = 7;
-	private static final int DMG_UP = 3;
-	private static final int BLOCK = 6;
-	private static final int BLOCK_UP = 3;
+	private static final int DMG = 8;
+	private static final int DMG_UP = 2;
+	private static final int BLOCK = 7;
+	private static final int BLOCK_UP = 2;
 	
 	Random rand = new Random();
 	

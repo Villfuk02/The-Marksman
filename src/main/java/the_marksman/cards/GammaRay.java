@@ -22,7 +22,7 @@ public class GammaRay extends CustomCard{
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 	private static final int COST = 2;	
-	private static final int DMG = 4;
+	private static final int DMG = 5;
 	private static final int DMG_UP = 1;
 	private static final int CRIT = 20;
 	

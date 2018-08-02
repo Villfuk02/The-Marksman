@@ -43,8 +43,7 @@
 	},
 	"ElectricGrenade": {
 		"NAME": "Electric Grenade",
-		"DESCRIPTION": "Gain [R]. NL Deal !D! Damage to ALL enemies.",
-		"UPGRADE_DESCRIPTION": "Gain [R]. NL Deal !D! Damage to ALL enemies. NL Draw 1 card."
+		"DESCRIPTION": "Deal !D! Damage to ALL enemies. NL Next turn, gain [R] [R] ."
 	},
 	"HandCannon": {
 		"NAME": "Hand Cannon",
@@ -52,7 +51,7 @@
 	},
 	"BurstFire": {
 		"NAME": "Burst Fire",
-		"DESCRIPTION": "Deal !D! Damage and Lose 15 Precision !M! times. NL Crit: 25%"
+		"DESCRIPTION": "Deal !D! Damage and !M! times. NL Crit: 15% NL Lose 30 Precision."
 	},
 	"TacticalShotgun": {
 		"NAME": "Tactical Shotgun",
@@ -72,15 +71,15 @@
 	},
 	"Railgun": {
 		"NAME": "Railgun",
-		"DESCRIPTION": "Deal !D! Damage. NL Crit: !M! X%."
+		"DESCRIPTION": "Deal !D! Damage. NL Crit: X times !M! %."
 	},
 	"AmmoBox": {
 		"NAME": "Ammo Box",
-		"DESCRIPTION": "Draw !M! cards. Can only be played once per turn."
+		"DESCRIPTION": "Draw !M! cards. NL This card cost 1 more energy for this turn."
 	},
 	"HeightAdvantage": {
 		"NAME": "Height Advantage",
-		"DESCRIPTION": "Gain !B! Block. NL Gian !M! Precision. NL Expose ALL enemies."
+		"DESCRIPTION": "Gain !B! Block. NL Gain !M! Precision. NL Expose ALL enemies."
 	},
 	"ExtendedMagazines": {
 		"NAME": "Extended Magazines",
@@ -108,12 +107,11 @@
 	},
 	"Crossbow": {
 		"NAME": "Crossbow",
-		"DESCRIPTION": "Deal !D! Silent damage twice, NL Crit: 5% NL Apply !M! Frail."
+		"DESCRIPTION": "Deal !D! Silent damage and apply !M! Frail twice. NL Crit: 15%"
 	},
 	"SmokeBomb": {
 		"NAME": "Smoke Grenade",
-		"DESCRIPTION": "Apply 2 Weak to ALL enemies. NL Lose !M! Precision. NL Exhaust.",
-		"UPGRADE_DESCRIPTION": "Apply 2 Weak to ALL enemies. NL Lose !M! Precision."
+		"DESCRIPTION": "Apply 2 Weak to ALL enemies. NL Lose !M! Precision."
 	},
 	"BatteryAcidBlack": {
 		"NAME": "Battery Acid",
@@ -126,7 +124,7 @@
 	},
 	"StealthMode": {
 		"NAME": "Stealth Mode",
-		"DESCRIPTION": "Gain 1 Intangible. NL Lose 1 Strength. NL Lose additional !M! Strength for this turn. NL Can be only played as a first card this turn."
+		"DESCRIPTION": "Gain !M! Intangible. NL Lose 1 Strength. NL Can be only played as a first card this turn."
 	},
 	"LuckyMode": {
 		"NAME": "Lucky Mode",
@@ -134,7 +132,7 @@
 	},
 	"AutomaticMode": {
 		"NAME": "Automatic Mode",
-		"DESCRIPTION": "Gain [R] [R]. NL Lose !M! Strength for this turn. NL Can be only played as a first card this turn."
+		"DESCRIPTION": "Gain [R] [R]. NL Put !M! Burns into your discard pile. NL Can be only played as a first card this turn."
 	},
 	"Molotov": {
 		"NAME": "Molotov Cocktail",
@@ -237,8 +235,8 @@
 	},
 	"SaveUp": {
 		"NAME": "Save Up",
-		"DESCRIPTION": "Next turn, gain [R] [R] and draw 2 more cards.",
-		"UPGRADE_DESCRIPTION": "Retain. NL Next turn, gain [R] [R] and draw 2 more cards."
+		"DESCRIPTION": "Next turn, gain [R] [R] and draw 3 more cards.",
+		"UPGRADE_DESCRIPTION": "Retain. NL Next turn, gain [R] [R] and draw 3 more cards."
 	},
 	"Calculated": {
 		"NAME": "Calculated",
@@ -272,7 +270,7 @@
 	},
 	"SilverBullet": {
 		"NAME": "Silver Bullet",
-		"DESCRIPTION": "Loose 3 HP. NL Deal !D! damage. NL Crit: !M! % NL If this deals Critical hit, heal 15 HP. NL Exhaust."
+		"DESCRIPTION": "Lose 3 HP. NL Deal !D! damage. NL Crit: !M! % NL If this deals Critical hit, heal 15 HP. NL Exhaust."
 	},
 	"GoldBullet": {
 		"NAME": "Golden Bullet",
@@ -325,7 +323,7 @@
 	},
 	"SilverBlood": {
 		"NAME": "Silver Blood",
-		"DESCRIPTION": "ALL enemies gain !M! Strength. Every time you take unblocked damage greater than 2, gain 1 Regen."
+		"DESCRIPTION": "ALL enemies gain !M! Strength. Every time you take unblocked damage greater than 1, gain 1 Regen."
 	},
 	"Perfection": {
 		"NAME": "Perfect Form",
@@ -342,7 +340,7 @@
 	},
 	"Assasinate": {
 		"NAME": "Assasinate",
-		"DESCRIPTION": "Deal !D! Silent Damage. NL Lose 2 Strength !M! times."
+		"DESCRIPTION": "Deal !D! Silent Damage. NL Lose 1 Strength !M! times."
 	},
 	"NuclearPower": {
 		"NAME": "Nuclear Power",
@@ -362,7 +360,7 @@
 	},
 	"LayDown": {
 		"NAME": "Lay Down",
-		"DESCRIPTION": "Gain !B! Block. NL Gain !M! Precision. NL Lose 2 Strength for this turn."
+		"DESCRIPTION": "Gain !B! Block. NL Gain !M! Precision. NL Lose 1 Strength for this turn."
 	},
 	"TrustyPistol": {
 		"NAME": "Trusty Handgun",
@@ -370,7 +368,8 @@
 	},
 	"Insulation": {
 		"NAME": "Insulation",
-		"DESCRIPTION": "Retain. NL Gain !B! Block. NL Exhaust ALL Burns in your draw pile. For each, apply !M! Burning to ALL enemies."
+		"DESCRIPTION": "Retain. NL Exhaust ALL Burns in your discard pile. For each, apply !M! Burning to ALL enemies.",
+		"UPGRADE_DESCRIPTION": "Retain. NL Exhaust ALL Burns in your draw and discard pile. For each, apply !M! Burning to ALL enemies."
 	},
 	"UVLaser": {
 		"NAME": "UV Laser",

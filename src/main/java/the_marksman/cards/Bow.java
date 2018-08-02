@@ -25,7 +25,7 @@ public class Bow extends CustomCard{
 	private static final int COST = 1;	
 	private static final int DMG = 6;
 	private static final int DMG_UP = 2;
-	private static final int MAGIC = 10;
+	private static final int MAGIC = 15;
 	private static final int MAGIC_UP = 5;
 	
 	Random rand = new Random();

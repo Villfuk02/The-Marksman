@@ -21,8 +21,8 @@ public class SkinSkill extends CustomCard{
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 	public static final String UP_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 	private static final int COST = 2;
-	private static final int BLOCK = 12;
-	private static final int BLOCK_UP = 3;	
+	private static final int BLOCK = 13;
+	private static final int BLOCK_UP = 4;	
 	
 	Random rand = new Random();
 	

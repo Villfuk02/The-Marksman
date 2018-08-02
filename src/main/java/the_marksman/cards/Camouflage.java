@@ -21,7 +21,7 @@ public class Camouflage extends CustomCard{
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 	private static final int COST = 1;
 	private static final int BLOCK = 11;
-	private static final int BLOCK_UP = 3;
+	private static final int BLOCK_UP = 4;
 
 	public Camouflage() {
 		super(ID, NAME, "img/cards/"+ID+".png", COST, DESCRIPTION,

@@ -10,6 +10,7 @@ the_marksman\powers\BurningPower.class
 the_marksman\powers\EyeForAnEyePower.class
 the_marksman\cards\SaveUp.class
 the_marksman\TheMarksmanMod.class
+the_marksman\actions\ShotgunAction.class
 the_marksman\cards\TrustyPistol.class
 the_marksman\cards\Molotov.class
 the_marksman\powers\PrecisionPower.class

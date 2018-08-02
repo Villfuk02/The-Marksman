@@ -19,7 +19,7 @@ public class CriticalDecision extends CustomCard{
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 	private static final int COST = 1;
 	private static final int MAGIC = 3;
-	private static final int MAGIC_UP = 1;
+	private static final int MAGIC_UP = 2;
 
 	public CriticalDecision() {
 		super(ID, NAME, "img/cards/"+ID+".png", COST, DESCRIPTION,

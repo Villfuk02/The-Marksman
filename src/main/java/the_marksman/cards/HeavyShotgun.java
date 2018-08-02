@@ -1,9 +1,6 @@
 package the_marksman.cards;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DamageRandomEnemyAction;
-import com.megacrit.cardcrawl.actions.common.DiscardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -16,7 +13,7 @@ import com.megacrit.cardcrawl.random.Random;
 
 import basemod.abstracts.CustomCard;
 import the_marksman.AbstractCardEnum;
-import the_marksman.powers.CritsThisTurn;
+import the_marksman.actions.ShotgunAction;
 
 public class HeavyShotgun extends CustomCard{
 	public static final String ID = "HeavyShotgun";
@@ -26,8 +23,8 @@ public class HeavyShotgun extends CustomCard{
 	private static final int COST = 3;	
 	private static final int DMG = 4;
 	private static final int DMG_UP = 1;
-	private static final int CRIT = 35;
-	private static final int CRIT_UP = 15;
+	private static final int CRIT = 40;
+	//private static final int CRIT_UP = 15;
 	
 	Random rand = new Random();
 	
@@ -50,9 +47,7 @@ public class HeavyShotgun extends CustomCard{
 		if (!this.upgraded) {
 			upgradeName();
 			this.upgradeDamage(DMG_UP);
-			this.upgradeMagicNumber(CRIT_UP);
-			this.magicNumber = CRIT + CRIT_UP;
-			
+			//this.upgradeMagicNumber(CRIT_UP);			
 		} 
 	}
 
@@ -63,20 +58,13 @@ public class HeavyShotgun extends CustomCard{
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new VulnerablePower(p, 1, false), 1));
 		}
 		
-		for (int i = 0; i < 4; i++) {
-			int pr = 0;
-			int sc = 1;
-			int dmg = this.damage;
-			if(p.getPower("PrecisionPower") != null) {
-				pr = p.getPower("PrecisionPower").amount;
-			}
-			if(p.getPower("ConcentratedPower") != null) sc = 2;
-			if(rand.random(100)  < (this.magicNumber + pr) * sc) {
-				dmg *= 3;
-				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new CritsThisTurn(p, 1), 1));
-				AbstractDungeon.actionManager.addToBottom(new DiscardAction(p, p, 1, true));
-			}			
-			AbstractDungeon.actionManager.addToBottom(new DamageRandomEnemyAction(new DamageInfo(p, dmg, this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-	    }				
+		int pr = 0;
+		int sc = 1;
+		if(p.getPower("PrecisionPower") != null) {
+			pr = p.getPower("PrecisionPower").amount;
+		}
+		if(p.getPower("ConcentratedPower") != null) sc = 2;
+		AbstractDungeon.actionManager.addToBottom(new ShotgunAction(AbstractDungeon.getMonsters().getRandomMonster(true), new DamageInfo(p, this.damage, damageTypeForTurn), 4, (this.magicNumber + pr) * sc, 2));
+	    			
 	}
 }

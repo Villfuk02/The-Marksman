@@ -19,7 +19,7 @@ public class BlastShields extends CustomCard{
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 	private static final int COST = 3;
-	private static final int MAGIC = 8;
+	private static final int MAGIC = 9;
 	private static final int MAGIC_UP = 4;
 	
 	Random rand = new Random();

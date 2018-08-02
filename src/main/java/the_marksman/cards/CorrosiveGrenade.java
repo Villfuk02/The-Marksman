@@ -23,8 +23,8 @@ public class CorrosiveGrenade extends CustomCard{
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 	public static final String UP_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 	private static final int COST = 1;	
-	private static final int DMG = 1;
-	private static final int DMG_UP = 2;
+	private static final int DMG = 3;
+	private static final int DMG_UP = 1;
 	private static final int CORROSION = 2;
 	private static final int CORROSION_UP = 1;
 	

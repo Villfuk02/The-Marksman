@@ -19,7 +19,7 @@ public class Perfection extends CustomCard{
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 	private static final int COST = 3;
-	private static final int MAGIC = 2;
+	private static final int MAGIC = 3;
 	private static final int MAGIC_UP = 1;
 	
 	Random rand = new Random();

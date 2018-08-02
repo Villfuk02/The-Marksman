@@ -22,9 +22,9 @@ public class NapalmGrenade extends CustomCard{
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 	private static final int COST = 2;	
-	private static final int DMG = 3;
-	private static final int DMG_UP = 1;
-	private static final int BURNING = 2;
+	private static final int DMG = 5;
+	//private static final int DMG_UP = 1;
+	private static final int BURNING = 3;
 	private static final int BURNING_UP = 2;
 	
 	Random rand = new Random();
@@ -47,9 +47,8 @@ public class NapalmGrenade extends CustomCard{
 	public void upgrade() {
 		if (!this.upgraded) {
 			upgradeName();
-			this.upgradeDamage(DMG_UP);
+			//this.upgradeDamage(DMG_UP);
 			this.upgradeMagicNumber(BURNING_UP);
-			this.magicNumber = BURNING + BURNING_UP;
 			
 		} 
 	}

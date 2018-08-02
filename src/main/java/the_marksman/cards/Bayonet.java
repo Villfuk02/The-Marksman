@@ -23,8 +23,8 @@ public class Bayonet extends CustomCard{
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 	public static final String UP_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 	private static final int COST = 0;
-	private static final int DMG = 5;
-	private static final int DMG_UP = 2;
+	private static final int DMG = 7;
+	private static final int DMG_UP = 3;
 
 	public Bayonet() {
 		super(ID, NAME, "img/cards/"+ID+".png", COST, DESCRIPTION,

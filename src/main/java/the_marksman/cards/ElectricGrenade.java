@@ -1,9 +1,8 @@
 package the_marksman.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -15,16 +14,16 @@ import com.megacrit.cardcrawl.random.Random;
 
 import basemod.abstracts.CustomCard;
 import the_marksman.AbstractCardEnum;
+import the_marksman.powers.EnergizedBlackPower;
 
 public class ElectricGrenade extends CustomCard{
 	public static final String ID = "ElectricGrenade";
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-	public static final String UP_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 	private static final int COST = 3;	
-	private static final int DMG = 8;
-	private static final int DMG_UP = 5;
+	private static final int DMG = 11;
+	private static final int DMG_UP = 15;
 	
 	Random rand = new Random();
 	
@@ -46,19 +45,13 @@ public class ElectricGrenade extends CustomCard{
 	public void upgrade() {
 		if (!this.upgraded) {
 			upgradeName();
-			this.upgradeDamage(DMG_UP);
-			this.baseDraw = 1;
-			this.rawDescription = UP_DESCRIPTION;
-			this.initializeDescription();
-			
+			this.upgradeDamage(DMG_UP);			
 		} 
 	}
 
 	@Override
 	public void use(AbstractPlayer p, AbstractMonster m) {
-		AbstractDungeon.actionManager.addToTop(new GainEnergyAction(1));
-		AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, baseDraw));
 		AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(p, DamageInfo.createDamageMatrix(this.damage, true), damageTypeForTurn, AbstractGameAction.AttackEffect.SLASH_VERTICAL));
-					
+		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new EnergizedBlackPower(p, 2), 2));
 	}
 }

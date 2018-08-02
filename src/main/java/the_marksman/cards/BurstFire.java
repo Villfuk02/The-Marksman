@@ -65,13 +65,13 @@ public class BurstFire extends CustomCard{
 			if(p.getPower("ConcentratedPower") != null) sc = 2;
 			for	(int i = 0; i < this.magicNumber; i++) {
 				dmg = this.damage;
-				if(rand.random(100)  < (25 - 15*i + pr) * sc) {
+				if(rand.random(100)  < (15 + pr) * sc) {
 					dmg *= 3;
 					AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new CritsThisTurn(p, 1), 1));
 				}		
-				AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, dmg, damageTypeForTurn),AbstractGameAction.AttackEffect.BLUNT_LIGHT));			
-				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new PrecisionPower(p, -15), -15));
+				AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, dmg, damageTypeForTurn),AbstractGameAction.AttackEffect.BLUNT_LIGHT));
 			}			
+			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new PrecisionPower(p, -30), -30));			
         }		
 	}
 }

@@ -26,7 +26,7 @@ public class Crossbow extends CustomCard{
 	private static final int COST = 1;	
 	private static final int DMG = 3;
 	private static final int DMG_UP = 1;
-	private static final int MAGIC = 2;
+	private static final int MAGIC = 1;
 	private static final int MAGIC_UP = 1;
 	
 	Random rand = new Random();
@@ -68,14 +68,16 @@ public class Crossbow extends CustomCard{
 			}
 			if(p.getPower("ConcentratedPower") != null) sc = 2;
 			
-			if(rand.random(100)  < (this.magicNumber + pr) * sc) {
+			if(rand.random(100)  < (15 + pr) * sc) {
 				dmg *= 3;
 				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new CritsThisTurn(p, 1), 1));
 			}	
 			AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, dmg, DamageType.THORNS),AbstractGameAction.AttackEffect.BLUNT_LIGHT));
 			
+			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m,p,new FrailPower(m,this.magicNumber,false), this.magicNumber));
+			
 			dmg = this.damage;
-			if(rand.random(100)  < (this.magicNumber + pr) * sc) {
+			if(rand.random(100)  < (15 + pr) * sc) {
 				dmg *= 3;
 				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new CritsThisTurn(p, 1), 1));
 			}	

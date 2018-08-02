@@ -24,9 +24,9 @@ public class HandCannon extends CustomCard{
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 	private static final int COST = 2;	
-	private static final int DMG = 6;
+	private static final int DMG = 8;
 	private static final int DMG_UP = 2;
-	private static final int LOSS = 5;
+	private static final int LOSS = 6;
 	private static final int LOSS_UP = 2;
 	
 	Random rand = new Random();
