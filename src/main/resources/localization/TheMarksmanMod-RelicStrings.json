@@ -10,7 +10,7 @@
     "NAME": "Rum Bottle",
     "FLAVOR": "Tasty alcoholic bevrage.",
     "DESCRIPTIONS": [
-      "At the start of each turn, gain #b1 #yConcentrated and lose #b20 #yPrecision."
+      "At the start of each turn, gain #b1 #yConcentrated and lose #b5 #yPrecision."
     ]
   },
   "ScaleOfInjustice": {

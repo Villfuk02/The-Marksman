@@ -61,5 +61,34 @@ public abstract class CritCard extends CustomCard{
             this.isMagicNumberModified = true;
         }
 	}
+	
+	public CritCard makeStatEquivalentCritCopy() {
+        final CritCard card = (CritCard)this.makeCopy();
+        for (int i = 0; i < this.timesUpgraded; ++i) {
+            card.upgrade();
+        }
+        card.name = this.name;
+        card.target = this.target;
+        card.upgraded = this.upgraded;
+        card.timesUpgraded = this.timesUpgraded;
+        card.baseDamage = this.baseDamage;
+        card.baseBlock = this.baseBlock;
+        card.baseMagicNumber = this.baseMagicNumber;
+        card.cost = this.cost;
+        card.costForTurn = this.costForTurn;
+        card.isCostModified = this.isCostModified;
+        card.isCostModifiedForTurn = this.isCostModifiedForTurn;
+        card.inBottleLightning = this.inBottleLightning;
+        card.inBottleFlame = this.inBottleFlame;
+        card.inBottleTornado = this.inBottleTornado;
+        card.isSeen = this.isSeen;
+        card.isLocked = this.isLocked;
+        card.misc = this.misc;
+        card.crit = this.crit;
+        card.baseCrit = this.baseCrit;
+        card.upgradedCrit = this.upgradedCrit;
+        card.isCritModified = this.isCritModified;
+        return card;
+    }
 
 }

@@ -27,7 +27,7 @@ public class RumBottle extends CustomRelic {
 	@Override
     public void atTurnStart() {
         flash();        
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new PrecisionPower(AbstractDungeon.player, -20), -20));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new PrecisionPower(AbstractDungeon.player, -5), -5));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new ConcentratedPower(AbstractDungeon.player, 1), 1));
     }
     

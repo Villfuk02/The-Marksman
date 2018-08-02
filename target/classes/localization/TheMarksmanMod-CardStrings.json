@@ -38,8 +38,8 @@
 	},
 	"VoidGrenade": {
 		"NAME": "Void Grenade",
-		"DESCRIPTION": "Deal !D! Damage to ALL enemies. Play ALL Grenades from your draw pile. NL WARNING : Do not mess with the Void!",
-		"UPGRADE_DESCRIPTION": "Deal !D! Damage to ALL enemies. Play ALL Grenades from your draw and discard piles. NL WARNING : Do not mess with the Void!"
+		"DESCRIPTION": "Deal !D! Damage to ALL enemies. Play ALL Grenades from your draw pile. NL WARNING: Do not mess with the Void!",
+		"UPGRADE_DESCRIPTION": "Deal !D! Damage to ALL enemies. Play ALL Grenades from your draw and discard piles. NL WARNING: Do not mess with the Void!"
 	},
 	"ElectricGrenade": {
 		"NAME": "Electric Grenade",

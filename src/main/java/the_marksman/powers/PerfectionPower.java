@@ -2,6 +2,9 @@ package the_marksman.powers;
 
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
+import the_marksman.TheMarksmanMod;
+import the_marksman.cards.CritCard;
+
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.ModifyDamageAction;
 import com.megacrit.cardcrawl.actions.defect.IncreaseMiscAction;
@@ -23,7 +26,7 @@ public class PerfectionPower extends AbstractPower
 	};
     
     public int usesLeft = 0;
-    public AbstractCard card;
+    public CritCard card;
     public UseCardAction action;
     
     public PerfectionPower(final AbstractCreature owner, final int newAmount) {
@@ -31,7 +34,8 @@ public class PerfectionPower extends AbstractPower
         this.ID = POWER_ID;
         this.owner = owner;     
         this.img = new Texture("img/powers/"+name+".png");
-        this.amount = newAmount;   
+        this.usesLeft += newAmount;
+        this.amount = newAmount; 
         this.updateDescription();
     }  
     
@@ -55,7 +59,10 @@ public class PerfectionPower extends AbstractPower
     
     @Override
     public void onUseCard(final AbstractCard c, final UseCardAction a) {
-    	this.card = c.makeStatEquivalentCopy();
+    	if(!(c instanceof CritCard))
+    		return;
+    	
+    	this.card = ((CritCard)c).makeStatEquivalentCritCopy();
         this.action = a;
         
         card.purgeOnUse = false;
@@ -70,7 +77,7 @@ public class PerfectionPower extends AbstractPower
             if (action.target != null) {
                 m = (AbstractMonster)action.target;
             }
-            final AbstractCard tmp = card.makeStatEquivalentCopy();
+            final CritCard tmp = card.makeStatEquivalentCritCopy();
             AbstractDungeon.player.limbo.addToBottom(tmp);
             tmp.current_x = card.current_x;
             tmp.current_y = card.current_y;
@@ -81,6 +88,7 @@ public class PerfectionPower extends AbstractPower
                 tmp.calculateCardDamage(m);
             }  
             tmp.purgeOnUse = true;
+            TheMarksmanMod.logger.info(tmp.crit);
             AbstractDungeon.actionManager.cardQueue.add(new CardQueueItem(tmp, m, card.energyOnUse));
             if (tmp.cardID.equals("Rampage")) {
                 AbstractDungeon.actionManager.addToBottom(new ModifyDamageAction(card, tmp.magicNumber));
@@ -89,5 +97,12 @@ public class PerfectionPower extends AbstractPower
                 AbstractDungeon.actionManager.addToBottom(new IncreaseMiscAction(card.cardID, card.misc + card.magicNumber, card.magicNumber));
             }
         }
+    }
+    
+    @Override
+    public void stackPower(final int stackAmount) {
+        this.fontScale = 8.0f;
+        this.amount += stackAmount;
+        this.usesLeft += stackAmount;
     }
 }
