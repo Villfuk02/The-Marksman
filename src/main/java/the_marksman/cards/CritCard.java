@@ -38,5 +38,28 @@ public abstract class CritCard extends CustomCard{
             this.isCritModified = true;
         }
 	}
+	
+	@Override
+	public void displayUpgrades() {
+		if (this.upgradedCrit) {
+			this.crit = this.baseCrit;
+            this.isCritModified = true;
+        }
+		if (this.upgradedCost) {
+            this.isCostModified = true;
+        }
+        if (this.upgradedDamage) {
+            this.damage = this.baseDamage;
+            this.isDamageModified = true;
+        }
+        if (this.upgradedBlock) {
+            this.block = this.baseBlock;
+            this.isBlockModified = true;
+        }
+        if (this.upgradedMagicNumber) {
+            this.magicNumber = this.baseMagicNumber;
+            this.isMagicNumberModified = true;
+        }
+	}
 
 }
