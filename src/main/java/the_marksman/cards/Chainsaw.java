@@ -3,7 +3,8 @@ package the_marksman.cards;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.common.EmptyDeckShuffleAction;
+import com.megacrit.cardcrawl.actions.common.ShuffleAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -67,7 +68,10 @@ public class Chainsaw extends CustomCard{
             }
         }	
 		if(upgraded) {			
-			AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, 2));			
+			if (!p.discardPile.isEmpty()) {
+	            AbstractDungeon.actionManager.addToBottom(new EmptyDeckShuffleAction());
+	        }
+	        AbstractDungeon.actionManager.addToBottom(new ShuffleAction(p.drawPile));	
 		}
     }			
 }

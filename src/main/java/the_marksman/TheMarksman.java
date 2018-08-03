@@ -28,8 +28,6 @@ public class TheMarksman extends CustomPlayer{
 		retVal.add("DefendBlack");
 		retVal.add("DefendBlack");
 		retVal.add("DefendBlack");
-		retVal.add("DefendBlack");
-		retVal.add("RustyPistol");
 		retVal.add("RustyPistol");
 		retVal.add("RustyPistol");
 		retVal.add("RustyPistol");

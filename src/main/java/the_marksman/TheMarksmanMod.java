@@ -319,7 +319,7 @@ public class TheMarksmanMod implements PostExhaustSubscriber,
 		BaseMod.addKeyword(new String[]{"corrosion"}, "At the end of turn, removes all Block and decreases Corrosion by #b1.");
 		BaseMod.addKeyword(new String[]{"silent damage", "silent"}, "This damage is NOT considered as #yAttack damage. That means it is not affected by #yStrength, #yWeakness or #yVulnerable. NL It also doesn't trigger #yThorns, #yCurl #yUp, etc.");
 		BaseMod.addKeyword(new String[]{"concentrated"}, "Doubles #yCrit for one turn.");
-		BaseMod.addKeyword(new String[]{"precision"}, "This turn, increases #yCrit of all attacks with #yCrit.");
+		BaseMod.addKeyword(new String[]{"precision"}, "Increases #yCrit of all attacks with #yCrit. Removed at the end of turn.");
 		BaseMod.addKeyword(new String[]{"expose"}, "If target isn't #yVulnerable, apply #b1 #yVulnerable.");
 		BaseMod.addKeyword(new String[]{"grenade"}, "Grenades are cards, which attack ALL enemies and have #yGrenade in their name.");
 		BaseMod.addKeyword(new String[]{"warnings", "warning"}, "Probably not important.");

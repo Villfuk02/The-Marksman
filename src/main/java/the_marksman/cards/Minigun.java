@@ -21,7 +21,7 @@ public class Minigun extends CritCard{
 	private static final int COST = 3;	
 	private static final int DMG = 1;
 	private static final int CRIT = 20;
-	private static final int AMT = 12;
+	private static final int AMT = 11;
 	private static final int AMT_UP = 4;
 	
 	Random rand = new Random();

@@ -18,8 +18,8 @@ public class FriendlyFire extends CustomCard{
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-	private static final int COST = 4;
-	private static final int COST_UP = 3;
+	private static final int COST = 3;
+	private static final int COST_UP = 2;
 	
 	Random rand = new Random();
 	

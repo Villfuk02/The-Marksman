@@ -155,7 +155,7 @@
 	"Chainsaw": {
 		"NAME": "Chainsaw",
 		"DESCRIPTION": "Expose yourself. NL Deal !D! Damage. NL Draw a 0-cost card from your draw pile.",
-		"UPGRADE_DESCRIPTION": "Expose yourself. NL Deal !D! Damage. NL Draw a 0-cost card from your draw pile. NL If there are none, draw 2 cards."
+		"UPGRADE_DESCRIPTION": "Expose yourself. NL Deal !D! Damage. NL Draw a 0-cost card from your draw pile. NL If there are none, shuffle your discard into your draw pile."
 	},
 	"Burn": {
 		"NAME": "Burn",
