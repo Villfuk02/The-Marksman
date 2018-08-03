@@ -73,8 +73,7 @@ public class ShotgunAction extends AbstractGameAction
 					break;
 				}
 			}
-			
-            this.info.applyPowers(this.info.owner, this.target);
+
             this.target.damage(this.info);    
             if (c)
             	this.info.base /= 3;

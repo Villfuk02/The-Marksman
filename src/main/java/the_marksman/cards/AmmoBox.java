@@ -41,6 +41,11 @@ public class AmmoBox extends CustomCard{
 		this.upgraded = true;
 		this.initializeTitle();
 	}
+	
+	@Override
+    public boolean canUpgrade() {
+        return true;
+    }
 
 	@Override
 	public void use(AbstractPlayer p, AbstractMonster m) {		

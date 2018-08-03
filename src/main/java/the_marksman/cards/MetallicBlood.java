@@ -22,14 +22,14 @@ public class MetallicBlood extends CustomCard{
 	private static final int COST = 1;
 	private static final int MAGIC = 4;
 	private static final int MAGIC_UP = 2;
-	private static final int POISON = 5;
+	private static final int POISON = 4;
 	
 	Random rand = new Random();
 	
 
 	public MetallicBlood() {
 		super(ID, NAME, "img/cards/"+ID+".png", COST, DESCRIPTION,
-        		AbstractCard.CardType.POWER, AbstractCardEnum.BLACK,
+        		AbstractCard.CardType.SKILL, AbstractCardEnum.BLACK,
         		AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF);
 		this.baseMagicNumber = this.magicNumber = MAGIC;
 	}

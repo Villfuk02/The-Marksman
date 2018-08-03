@@ -48,6 +48,11 @@ public class Minigun extends CritCard{
 		this.upgraded = true;
 		this.initializeTitle();
 	}
+	
+	@Override
+    public boolean canUpgrade() {
+        return true;
+    }
 
 	@Override
 	public void use(AbstractPlayer p, AbstractMonster m) {		

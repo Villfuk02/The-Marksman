@@ -83,7 +83,6 @@ the_marksman\AbstractCardEnum.class
 the_marksman\cards\Calculated.class
 the_marksman\cards\Assasinate.class
 the_marksman\cards\AntiFlame.class
-the_marksman\cards\AntiAirMissile.class
 the_marksman\patches\BurnPatch.class
 the_marksman\cards\Concentrate.class
 the_marksman\cards\SilverBullet.class

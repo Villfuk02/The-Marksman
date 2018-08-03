@@ -25,7 +25,7 @@ public class FirstAidKit extends CustomCard{
 	public FirstAidKit() {
 		super(ID, NAME, "img/cards/"+ID+".png", COST, DESCRIPTION,
         		AbstractCard.CardType.SKILL, AbstractCardEnum.BLACK,
-        		AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF);
+        		AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.SELF);
 	}
 
 	@Override

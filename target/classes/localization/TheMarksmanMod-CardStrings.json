@@ -192,11 +192,6 @@
 		"DESCRIPTION": "Use and Exhaust a Grenade from your draw pile, discard pile or hand.",
 		"UPGRADE_DESCRIPTION": "Retain. NL Use and Exhaust a Grenade from your draw pile, discard pile or hand."
 	},
-	"AntiAirMissile": {
-		"NAME": "Bird Net",
-		"DESCRIPTION": "Ethereal. NL Remove Flight and Ritual from ALL enemies. NL Exhaust.",
-		"UPGRADE_DESCRIPTION": "Innate. NL Retain. NL Remove Flight and Ritual from ALL enemies. NL Exhaust."
-	},
 	"AcidBottle": {
 		"NAME": "Acid Bottle",
 		"DESCRIPTION": "Apply !M! Corrosion to an enemy. NL Exhaust."
@@ -278,8 +273,8 @@
 	},
 	"MetallicBlood": {
 		"NAME": "Steel Blood",
-		"DESCRIPTION": "Gain 5 Poison. NL Gain !M! Metalicize.",
-		"UPGRADE_DESCRIPTION": "Retain. NL Gain 5 Poison. NL Gain !M! Metalicize."
+		"DESCRIPTION": "Gain 4 Poison. NL Gain !M! Metalicize.",
+		"UPGRADE_DESCRIPTION": "Retain. NL Gain 4 Poison. NL Gain !M! Metalicize."
 	},
 	"Kevlar": {
 		"NAME": "Kevlar",

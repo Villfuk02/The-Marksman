@@ -64,7 +64,6 @@ import the_marksman.cards.Perfection;
 import the_marksman.cards.AcidBottle;
 import the_marksman.cards.Aggression;
 import the_marksman.cards.AmmoBox;
-import the_marksman.cards.AntiAirMissile;
 import the_marksman.cards.AntiFlame;
 import the_marksman.cards.Assasinate;
 import the_marksman.cards.AutomaticMode;
@@ -205,7 +204,7 @@ public class TheMarksmanMod implements PostExhaustSubscriber,
 		
 		BaseMod.addCard(new TrustyPistol());
 		
-		// COMMON (21)
+		// COMMON (22)
 		//	Attacks (14)		
 		BaseMod.addCard(new Grenade());			//aoe
 		BaseMod.addCard(new NapalmGrenade());	//aoe, burning
@@ -220,9 +219,9 @@ public class TheMarksmanMod implements PostExhaustSubscriber,
 		BaseMod.addCard(new SilverBullet());	//HP stuff
 		BaseMod.addCard(new GoldenBullet());	//GOLD stuff
 		BaseMod.addCard(new UVLaser());			//silent aoe, weak
-		BaseMod.addCard(new RocketJump());			//burn, draw
+		BaseMod.addCard(new RocketJump());		//burn, draw
 		
-		//	Skills (8)
+		//	Skills (9)
 		BaseMod.addCard(new HeightAdvantage());	//block, +precision
 		BaseMod.addCard(new Camouflage());		//block, vulnerable
 		BaseMod.addCard(new Molotov());			//burning
@@ -231,13 +230,14 @@ public class TheMarksmanMod implements PostExhaustSubscriber,
 		BaseMod.addCard(new ExpectAnything());	//block, innate
 		BaseMod.addCard(new CombatTrousers());	//block, discard, retain
 		BaseMod.addCard(new LayDown());			//block, +precision
+		BaseMod.addCard(new FirstAidKit());		//heal lost hp
 		
 		
 		//	Powers (1)
 		BaseMod.addCard(new CounterStrike());	//dmg for -
 		
 		
-		// UNCOMMON (41)
+		// UNCOMMON (39)
 		// 	Attacks(12)
 		BaseMod.addCard(new FragGrenade());		//aoe, multi-hit
 		BaseMod.addCard(new CorrosiveGrenade());//aoe, corrosive
@@ -252,21 +252,19 @@ public class TheMarksmanMod implements PostExhaustSubscriber,
 		BaseMod.addCard(new FryingPan());		//block/atk
 		BaseMod.addCard(new SniperRifle());		//crit
 		
-		//	Skills (21)
+		//	Skills (20)
 		BaseMod.addCard(new ExtendedMagazines());//draw
 		BaseMod.addCard(new LockOn());			//concentrate +str
 		BaseMod.addCard(new SmokeBomb());		//weaken, -precision
 		BaseMod.addCard(new Concentrate());		//concentrated, no draw
 		BaseMod.addCard(new Defibrilator());	//self-damage, regen
 		BaseMod.addCard(new CriticalDecision());//draw, crit synergy
-		BaseMod.addCard(new AntiAirMissile());	//uhhh...
 		BaseMod.addCard(new AcidBottle());		//corrosion
 		BaseMod.addCard(new TheLaw());			//remove str/vuln/weak	
 		BaseMod.addCard(new SkinSkill());		//block, upgrade
 		BaseMod.addCard(new Foresight());		//block, headbutt
 		BaseMod.addCard(new SaveUp());			//->NextTurn
 		BaseMod.addCard(new FlareGun());		//vuln, unplayable
-		BaseMod.addCard(new FirstAidKit());		//heal lost hp
 		BaseMod.addCard(new ElectricBlood());	//+e, self-damage
 		BaseMod.addCard(new Kevlar());			//block, armor
 		BaseMod.addCard(new Hideout());			//block, crit synergy
@@ -274,13 +272,13 @@ public class TheMarksmanMod implements PostExhaustSubscriber,
 		BaseMod.addCard(new NuclearPower());	//X, energy maipulation
 		BaseMod.addCard(new AntiFlame());		//block, burn
 		BaseMod.addCard(new Insulation());		//block, burn -> burning
+		BaseMod.addCard(new MetallicBlood());	//self-damage, metallicize
 		
-		// 	Powers (8)
+		// 	Powers (7)
 		BaseMod.addCard(new Tracers());			//+precision
 		BaseMod.addCard(new Guilt());			//+e, -str
 		BaseMod.addCard(new ExplosivesExpert());//draw for grenade
 		BaseMod.addCard(new FragileBlood());	//spiky!
-		BaseMod.addCard(new MetallicBlood());	//self-damage, metallicize
 		BaseMod.addCard(new Aggression());		//vuln -> +str
 		BaseMod.addCard(new SilverBlood());		//regen for hit
 		BaseMod.addCard(new FlammableFumes());	//burn++
