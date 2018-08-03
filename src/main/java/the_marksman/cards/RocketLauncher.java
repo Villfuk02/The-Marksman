@@ -36,7 +36,7 @@ public class RocketLauncher extends CritCard{
         		AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.ENEMY);
 		this.baseDamage = DMG;
 		this.baseMagicNumber = this.magicNumber = BURNING;
-		this.baseCrit = 0;
+		this.baseCrit = 1;
 	}
 
 	@Override
