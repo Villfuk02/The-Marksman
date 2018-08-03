@@ -1,6 +1,7 @@
 package the_marksman.cards;
 
 
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -9,6 +10,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.NextTurnBlockPower;
+import com.megacrit.cardcrawl.vfx.combat.FlameBarrierEffect;
 
 import basemod.abstracts.CustomCard;
 import the_marksman.AbstractCardEnum;
@@ -50,7 +52,8 @@ public class Firewall extends CustomCard{
 	}
 
 	@Override
-	public void use(AbstractPlayer p, AbstractMonster m) {				
+	public void use(AbstractPlayer p, AbstractMonster m) {		
+		AbstractDungeon.actionManager.addToBottom(new VFXAction(new FlameBarrierEffect(p.hb.cY, p.hb.cX), 0.25f));		
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new BurningPower(p, this.magicNumber), this.magicNumber));
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new NextTurnBlockPower(p, this.block), this.block));  
 	}

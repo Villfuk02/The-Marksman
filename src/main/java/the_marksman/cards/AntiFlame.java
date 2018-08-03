@@ -1,6 +1,7 @@
 package the_marksman.cards;
 
 
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DiscardSpecificCardAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
@@ -11,6 +12,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.vfx.combat.FlameBarrierEffect;
 
 import basemod.abstracts.CustomCard;
 import the_marksman.AbstractCardEnum;
@@ -49,7 +51,8 @@ public class AntiFlame extends CustomCard{
 	}
 
 	@Override
-	public void use(AbstractPlayer p, AbstractMonster m) {				
+	public void use(AbstractPlayer p, AbstractMonster m) {		
+		AbstractDungeon.actionManager.addToBottom(new VFXAction(new FlameBarrierEffect(p.hb.cY, p.hb.cX), 0.25f));
 		AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
 		AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(new Burn(), this.magicNumber));  
 		for(AbstractCard c : AbstractDungeon.player.hand.group) {

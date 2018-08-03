@@ -1,6 +1,7 @@
 package the_marksman.cards;
 
 
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.PlayTopCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -12,6 +13,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.random.Random;
+import com.megacrit.cardcrawl.vfx.combat.FlameBarrierEffect;
 
 import basemod.abstracts.CustomCard;
 import the_marksman.AbstractCardEnum;
@@ -72,6 +74,8 @@ public class Insulation extends CustomCard{
             }
         }
 		for (int i = 0; i < amt; i++) {
+
+			AbstractDungeon.actionManager.addToBottom(new VFXAction(new FlameBarrierEffect(p.hb.cY, p.hb.cX), 0.25f));
 			AbstractCard c = tmp.getTopCard();
 			AbstractDungeon.player.discardPile.removeCard(c);
         	AbstractDungeon.player.drawPile.addToTop(c);

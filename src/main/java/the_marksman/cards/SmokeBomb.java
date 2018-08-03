@@ -1,6 +1,7 @@
 package the_marksman.cards;
 
 
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -9,6 +10,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.WeakPower;
+import com.megacrit.cardcrawl.vfx.combat.SmokeBombEffect;
 
 import basemod.abstracts.CustomCard;
 import the_marksman.AbstractCardEnum;
@@ -46,6 +48,7 @@ public class SmokeBomb extends CustomCard{
 
 	@Override
 	public void use(AbstractPlayer p, AbstractMonster m) {
+		AbstractDungeon.actionManager.addToBottom(new VFXAction(new SmokeBombEffect(p.hb.cX, p.hb.cY)));
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p,p,new PrecisionPower(p, -this.magicNumber), -this.magicNumber));
 		for (final AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p, new WeakPower(mo, 2, false),2));

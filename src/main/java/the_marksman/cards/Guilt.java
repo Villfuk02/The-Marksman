@@ -19,7 +19,9 @@ public class Guilt extends CustomCard{
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 	public static final String UP_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-	private static final int COST = 1;
+	private static final int COST = 2;
+	private static final int MAGIC = 2;
+	private static final int MAGIC_UP = 1;
 	
 	Random rand = new Random();
 	
@@ -28,6 +30,7 @@ public class Guilt extends CustomCard{
 		super(ID, NAME, "img/cards/"+ID+".png", COST, DESCRIPTION,
         		AbstractCard.CardType.POWER, AbstractCardEnum.BLACK,
         		AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF);
+        this.baseMagicNumber = this.magicNumber = MAGIC;
 	}
 
 	@Override
@@ -39,6 +42,7 @@ public class Guilt extends CustomCard{
 	public void upgrade() {
 		if (!this.upgraded) {
 			upgradeName();
+			this.upgradeMagicNumber(MAGIC_UP);
 			
 			this.isInnate = true;
 			this.rawDescription = UP_DESCRIPTION;
@@ -48,6 +52,6 @@ public class Guilt extends CustomCard{
 
 	@Override
 	public void use(AbstractPlayer p, AbstractMonster m) {		
-		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new GuiltPower(p, 1), 1));
+		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new GuiltPower(p, this.magicNumber), this.magicNumber));
 	}
 }

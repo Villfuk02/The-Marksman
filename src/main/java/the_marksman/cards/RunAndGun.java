@@ -22,9 +22,9 @@ public class RunAndGun extends CritCard{
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 	private static final int COST = 1;	
-	private static final int DMG = 6;
+	private static final int DMG = 5;
 	private static final int DMG_UP = 2;
-	private static final int DRAW = 1;
+	private static final int DRAW = 2;
 	//private static final int DRAW_UP = 5;
 	
 	Random rand = new Random();

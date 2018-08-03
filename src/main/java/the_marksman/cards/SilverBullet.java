@@ -23,7 +23,7 @@ public class SilverBullet extends CritCard{
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 	private static final int COST = 2;	
-	private static final int DMG = 16;
+	private static final int DMG = 20;
 	private static final int DMG_UP = 4;
 	private static final int CRIT = 10;
 	

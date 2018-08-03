@@ -22,7 +22,7 @@ public class GoldenBullet extends CritCard{
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 	private static final int COST = 2;	
-	private static final int DMG = 16;
+	private static final int DMG = 20;
 	private static final int DMG_UP = 4;
 	private static final int CRIT = 10;
 	
@@ -62,13 +62,13 @@ public class GoldenBullet extends CritCard{
 	@Override
 	public void use(AbstractPlayer p, AbstractMonster m) {	
 			
-		AbstractDungeon.actionManager.addToBottom(new ChangeGoldAction(-8));
+		AbstractDungeon.actionManager.addToBottom(new ChangeGoldAction(-8, m));
 		
 		int dmg = this.damage;
 		if(rand.random(100)  < this.crit) {
 			dmg *= 3;
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new CritsThisTurn(p, 1), 1));
-			AbstractDungeon.actionManager.addToBottom(new ChangeGoldAction(40));
+			AbstractDungeon.actionManager.addToBottom(new ChangeGoldAction(40, m));
 		}			
 		AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, dmg, this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
 	    				

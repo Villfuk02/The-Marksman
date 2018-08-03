@@ -58,7 +58,7 @@ public class CorrosiveGrenade extends CustomCard{
 
 	@Override
 	public void use(AbstractPlayer p, AbstractMonster m) {
-		AbstractDungeon.actionManager.addToTop(new DamageAllEnemiesAction(p, DamageInfo.createDamageMatrix(this.damage, true), damageTypeForTurn, AbstractGameAction.AttackEffect.FIRE));
+		AbstractDungeon.actionManager.addToTop(new DamageAllEnemiesAction(p, DamageInfo.createDamageMatrix(this.damage, true), damageTypeForTurn, AbstractGameAction.AttackEffect.POISON));
 		for (final AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
 				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p, new CorrosionPower(mo, this.magicNumber), this.magicNumber));
 	    }				

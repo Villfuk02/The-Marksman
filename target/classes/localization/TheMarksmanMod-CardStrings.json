@@ -99,11 +99,11 @@
 	},
 	"RunAndGun": {
 		"NAME": "Run And Gun",
-		"DESCRIPTION": "Deal !D! damage, NL Crit: !C! % NL Draw 1 card."
+		"DESCRIPTION": "Deal !D! damage, NL Crit: !C! % NL Draw 2 cards."
 	},
 	"Bow": {
 		"NAME": "Bow",
-		"DESCRIPTION": "Deal !D! Silent damage, NL Crit: !C! %"
+		"DESCRIPTION": "Deal !D! Silent damage. NL Crit: !C! % NL Lose 1 Strength."
 	},
 	"Crossbow": {
 		"NAME": "Crossbow",
@@ -176,8 +176,8 @@
 	},
 	"Guilt": {
 		"NAME": "Guilt",
-		"DESCRIPTION": "At the start of every turn, gain [R] . Every time you play an Attack, lose 1 Strength for one turn.",
-		"UPGRADE_DESCRIPTION": "Innate. NL At the start of every turn, gain [R]. NL Every time you play an Attack, lose 1 Strength for one turn."
+		"DESCRIPTION": "At the start of every turn, gain [R] [R] . Every time you play an Attack, lose !M! Strength for one turn.",
+		"UPGRADE_DESCRIPTION": "Innate. NL At the start of every turn, gain [R] [R] [R] . NL Every time you play an Attack, lose !M! Strength for one turn."
 	},
 	"ExplosivesExpert": {
 		"NAME": "Explosives Expert",
@@ -261,7 +261,8 @@
 	},
 	"ElectricBlood": {
 		"NAME": "Electric Blood",
-		"DESCRIPTION": "Gain [R] . NL Lose 8 HP. NL Deal !D! damage to ALL enemies."
+		"DESCRIPTION": "Gain [R] . NL Lose 10 HP. NL Deal !D! damage to ALL enemies.",
+		"UPGRADE_DESCRIPTION": "Gain [R] [R] . NL Lose 10 HP. NL Deal !D! damage to ALL enemies."
 	},
 	"SilverBullet": {
 		"NAME": "Silver Bullet",

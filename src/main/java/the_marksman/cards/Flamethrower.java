@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.random.Random;
+import com.megacrit.cardcrawl.vfx.combat.FlameParticleEffect;
 
 import basemod.abstracts.CustomCard;
 import the_marksman.AbstractCardEnum;
@@ -43,8 +44,6 @@ public class Flamethrower extends CustomCard{
 		if (!this.upgraded) {
 			upgradeName();
 			this.upgradeMagicNumber(BURNING_UP);
-			this.magicNumber = BURNING + BURNING_UP;
-			
 		} 
 	}
 
@@ -53,7 +52,10 @@ public class Flamethrower extends CustomCard{
 		AbstractDungeon.actionManager.addToTop(new GainEnergyAction(-this.energyOnUse));
 		for (int i = 0; i < this.energyOnUse; i++) {
 			for (final AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
-					AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p, new BurningPower(mo, this.magicNumber), this.magicNumber, true));
+				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p, new BurningPower(mo, this.magicNumber), this.magicNumber, true));
+				for(int j = 0; j < 50; j++) {
+					AbstractDungeon.effectsQueue.add(new FlameParticleEffect(mo.hb.cX, mo.hb.cY));
+				}
 		    }		
 		}		
 	}
