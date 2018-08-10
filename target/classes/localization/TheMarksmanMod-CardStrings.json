@@ -71,7 +71,7 @@
 	},
 	"Railgun": {
 		"NAME": "Railgun",
-		"DESCRIPTION": "Deal !D! Damage. NL Crit: X times !C! %."
+		"DESCRIPTION": "Deal !D! Damage X times. NL Crit: X times !C! %."
 	},
 	"AmmoBox": {
 		"NAME": "Ammo Box",
@@ -124,7 +124,8 @@
 	},
 	"StealthMode": {
 		"NAME": "Stealth Mode",
-		"DESCRIPTION": "Gain !M! Intangible. NL Lose 1 Strength. NL Can be only played as a first card this turn."
+		"DESCRIPTION": "Gain !M! Intangible. NL Lose 1 Strength. NL Can be only played as a first card this turn.",
+		"UPGRADE_DESCRIPTION": "Innate. NL Gain !M! Intangible. NL Lose 1 Strength. NL Can be only played as a first card this turn."
 	},
 	"LuckyMode": {
 		"NAME": "Lucky Mode",
@@ -149,8 +150,8 @@
 	},
 	"EyeForAnEye": {
 		"NAME": "Eye For An Eye",
-		"DESCRIPTION": "Every time you take unblocked damage, deal that much damage to a random enemy.",
-		"UPGRADE_DESCRIPTION": "Every time you take unblocked damage, deal 2 times as much damage to a random enemy."
+		"DESCRIPTION": "Every time you lose HP, deal that much damage to a random enemy.",
+		"UPGRADE_DESCRIPTION": "Every time you lose HP, deal 2 times as much damage to a random enemy."
 	},
 	"Chainsaw": {
 		"NAME": "Chainsaw",
@@ -176,7 +177,7 @@
 	},
 	"Guilt": {
 		"NAME": "Guilt",
-		"DESCRIPTION": "At the start of every turn, gain [R] [R] . Every time you play an Attack, lose !M! Strength for one turn.",
+		"DESCRIPTION": "At the start of every turn, gain [R] [R] . NL Every time you play an Attack, lose !M! Strength for one turn.",
 		"UPGRADE_DESCRIPTION": "Innate. NL At the start of every turn, gain [R] [R] [R] . NL Every time you play an Attack, lose !M! Strength for one turn."
 	},
 	"ExplosivesExpert": {
@@ -307,7 +308,7 @@
 	},
 	"Ignite": {
 		"NAME": "Ignite",
-		"DESCRIPTION": "This turn, whenever an Attack deals unblocked damage, apply 2 Burning."
+		"DESCRIPTION": "This turn, whenever you deal unblocked Attack damage, apply 2 Burning."
 	},
 	"CombatTrousers": {
 		"NAME": "Combat Trousers",
@@ -315,11 +316,11 @@
 	},
 	"GhostForm": {
 		"NAME": "Ghost Form",
-		"DESCRIPTION": "Gain 4 Intangible. NL ALL cards become Ethereal."
+		"DESCRIPTION": "Gain 2 Intangible. NL ALL cards become Ethereal."
 	},
 	"SilverBlood": {
 		"NAME": "Silver Blood",
-		"DESCRIPTION": "ALL enemies gain !M! Strength. Every time you take unblocked damage greater than 1, gain 1 Regen."
+		"DESCRIPTION": "ALL enemies gain !M! Strength. Every time you lose more than 1 HP, gain 1 Regen."
 	},
 	"Perfection": {
 		"NAME": "Perfect Form",

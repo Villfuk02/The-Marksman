@@ -19,8 +19,8 @@ public class GhostForm extends CustomCard{
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-	private static final int COST = 3;
-	private static final int COST_UP = 2;
+	private static final int COST = 1;
+	private static final int COST_UP = 0;
 	
 	Random rand = new Random();
 	
@@ -47,7 +47,7 @@ public class GhostForm extends CustomCard{
 
 	@Override
 	public void use(AbstractPlayer p, AbstractMonster m) {		
-		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new IntangiblePlayerPower(p, 4), 4));
-		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new GhostFormPower(p, 0), 0));
+		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new IntangiblePlayerPower(p, 2), 2));
+		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new GhostFormPower(p, -1)));
 	}
 }

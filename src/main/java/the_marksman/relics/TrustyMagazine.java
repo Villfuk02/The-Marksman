@@ -26,13 +26,25 @@ public class TrustyMagazine extends CustomRelic {
 	@Override
 	public String getUpdatedDescription() {
 		return DESCRIPTIONS[0];
-	}	
+	}
 	
 	@Override
-    public void onEquip() {
-		this.instantObtain(AbstractDungeon.player, 0, false);
-		this.playLandingSFX();
-		this.flash();
+    public void obtain()
+    {
+        if (AbstractDungeon.player.hasRelic(RustyMagazine.ID)) {
+            for (int i=0; i<AbstractDungeon.player.relics.size(); ++i) {
+                if (AbstractDungeon.player.relics.get(i).relicId.equals(RustyMagazine.ID)) {
+                    instantObtain(AbstractDungeon.player, i, true);
+                    break;
+                }
+            }
+        } else {
+            super.obtain();
+        }
+    }
+	
+	@Override
+    public void onEquip() {		
 		final Iterator<AbstractCard> i = AbstractDungeon.player.masterDeck.group.iterator();
         while (i.hasNext()) {
             final AbstractCard e = i.next();

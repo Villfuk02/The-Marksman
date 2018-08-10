@@ -19,8 +19,8 @@ public class CounterStrike extends CustomCard{
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 	private static final int COST = 1;
-	private static final int MAGIC = 4;
-	private static final int MAGIC_UP = 2;
+	private static final int MAGIC = 3;
+	private static final int MAGIC_UP = 1;
 	
 	Random rand = new Random();
 	
@@ -28,7 +28,7 @@ public class CounterStrike extends CustomCard{
 	public CounterStrike() {
 		super(ID, NAME, "img/cards/"+ID+".png", COST, DESCRIPTION,
         		AbstractCard.CardType.POWER, AbstractCardEnum.BLACK,
-        		AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.SELF);
+        		AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF);
 		this.baseMagicNumber = this.magicNumber = MAGIC;
 	}
 

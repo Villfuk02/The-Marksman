@@ -21,7 +21,6 @@ public class Guilt extends CustomCard{
 	public static final String UP_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 	private static final int COST = 2;
 	private static final int MAGIC = 2;
-	private static final int MAGIC_UP = 1;
 	
 	Random rand = new Random();
 	
@@ -42,7 +41,6 @@ public class Guilt extends CustomCard{
 	public void upgrade() {
 		if (!this.upgraded) {
 			upgradeName();
-			this.upgradeMagicNumber(MAGIC_UP);
 			
 			this.isInnate = true;
 			this.rawDescription = UP_DESCRIPTION;

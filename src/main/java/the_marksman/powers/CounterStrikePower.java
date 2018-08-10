@@ -14,8 +14,8 @@ public class CounterStrikePower extends AbstractPower
 	public static final String POWER_ID = "CounterStrikePower";
 	
     public static final String[] DESCRIPTIONS = new String[] {
-    		"Every time you become #yVulnerable, remove the effect and ALL creatures gain #b",
-    		" #yStrength for this turn."
+    		"Every time you lose #yStrength or #yDexterity, deal #b",
+    		"  damage to ALL enemies."
 	};
     
     public CounterStrikePower(final AbstractCreature owner, final int newAmount) {

@@ -22,7 +22,7 @@ public class StealthMode extends CustomCard{
 	public static final String UP_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 	private static final int COST = 0;
 	private static final int MAGIC = 1;
-	private static final int MAGIC_UP = 2;
+	//private static final int MAGIC_UP = 0;
 
 	public StealthMode() {
 		super(ID, NAME, "img/cards/"+ID+".png", COST, DESCRIPTION,
@@ -40,7 +40,10 @@ public class StealthMode extends CustomCard{
 	public void upgrade() {
 		if(!this.upgraded) {
 			upgradeName();
-			this.upgradeMagicNumber(MAGIC_UP);
+			this.isInnate = true;
+			this.rawDescription = UP_DESCRIPTION;
+			this.initializeDescription();
+			//this.upgradeMagicNumber(MAGIC_UP);
 			
 		}
 	}

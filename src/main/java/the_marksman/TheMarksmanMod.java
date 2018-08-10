@@ -204,7 +204,7 @@ public class TheMarksmanMod implements PostExhaustSubscriber,
 		
 		BaseMod.addCard(new TrustyPistol());
 		
-		// COMMON (22)
+		// COMMON (21)
 		//	Attacks (14)		
 		BaseMod.addCard(new Grenade());			//aoe
 		BaseMod.addCard(new NapalmGrenade());	//aoe, burning
@@ -233,11 +233,9 @@ public class TheMarksmanMod implements PostExhaustSubscriber,
 		BaseMod.addCard(new FirstAidKit());		//heal lost hp
 		
 		
-		//	Powers (1)
-		BaseMod.addCard(new CounterStrike());	//dmg for -
 		
 		
-		// UNCOMMON (39)
+		// UNCOMMON (40)
 		// 	Attacks(12)
 		BaseMod.addCard(new FragGrenade());		//aoe, multi-hit
 		BaseMod.addCard(new CorrosiveGrenade());//aoe, corrosive
@@ -274,7 +272,7 @@ public class TheMarksmanMod implements PostExhaustSubscriber,
 		BaseMod.addCard(new Insulation());		//block, burn -> burning
 		BaseMod.addCard(new MetallicBlood());	//self-damage, metallicize
 		
-		// 	Powers (7)
+		// 	Powers (8)
 		BaseMod.addCard(new Tracers());			//+precision
 		BaseMod.addCard(new Guilt());			//+e, -str
 		BaseMod.addCard(new ExplosivesExpert());//draw for grenade
@@ -282,6 +280,7 @@ public class TheMarksmanMod implements PostExhaustSubscriber,
 		BaseMod.addCard(new Aggression());		//vuln -> +str
 		BaseMod.addCard(new SilverBlood());		//regen for hit
 		BaseMod.addCard(new FlammableFumes());	//burn++
+		BaseMod.addCard(new CounterStrike());	//dmg for -
 		
 		
 		// RARE (19)
@@ -315,7 +314,7 @@ public class TheMarksmanMod implements PostExhaustSubscriber,
 	@Override
 	public void receiveEditKeywords() {		
 		BaseMod.addKeyword(new String[]{"crit", "critical"}, "Chance of single hit dealing #yTRIPLE Damage.");
-		BaseMod.addKeyword(new String[]{"burning"}, "Burning creatures take damage at the end of their turn. Each turn, Burning is decreased by the amount Blocked.");
+		BaseMod.addKeyword(new String[]{"burning"}, "Burning creatures take damage at the end of their turn. Each turn, Burning is decreased by the amount Blocked. Also lowers Transient's damage.");
 		BaseMod.addKeyword(new String[]{"corrosion"}, "At the end of turn, removes all Block and decreases Corrosion by #b1.");
 		BaseMod.addKeyword(new String[]{"silent damage", "silent"}, "This damage is NOT considered as #yAttack damage. That means it is not affected by #yStrength, #yWeakness or #yVulnerable. NL It also doesn't trigger #yThorns, #yCurl #yUp, etc.");
 		BaseMod.addKeyword(new String[]{"concentrated"}, "Doubles #yCrit for one turn.");
