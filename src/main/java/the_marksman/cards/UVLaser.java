@@ -61,7 +61,7 @@ public class UVLaser extends CustomCard{
 				AbstractDungeon.actionManager.addToBottom(new VFXAction(new SmallLaserEffect(p.hb.cX, p.hb.cY, mo.hb.cX, mo.hb.cY)));
 		}
 		
-		AbstractDungeon.actionManager.addToTop(new DamageAllEnemiesAction(p, DamageInfo.createDamageMatrix(this.damage, true), DamageType.THORNS, AbstractGameAction.AttackEffect.NONE));
+		AbstractDungeon.actionManager.addToTop(new DamageAllEnemiesAction(p, DamageInfo.createDamageMatrix(this.baseDamage, true), DamageType.THORNS, AbstractGameAction.AttackEffect.NONE));
 		AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(p, p, new WeakPower(p, 2, false), 2));
 	}
 }

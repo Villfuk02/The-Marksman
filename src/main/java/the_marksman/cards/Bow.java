@@ -53,11 +53,18 @@ public class Bow extends CritCard{
 			this.upgradeCrit(MAGIC_UP);
 		}
 	}
+	
+	@Override
+	public void applyPowers() {
+		this.damageType = DamageType.THORNS;
+		this.damageTypeForTurn = DamageType.THORNS;
+		this.damage = this.baseDamage;
+	}
 
 	@Override
 	public void use(AbstractPlayer p, AbstractMonster m) {
 		if (m != null) {
-			int dmg = this.damage;
+			int dmg = this.baseDamage;
 			if(rand.random(100)  < this.crit) {
 				dmg *= 3;
 				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new CritsThisTurn(p, 1), 1));

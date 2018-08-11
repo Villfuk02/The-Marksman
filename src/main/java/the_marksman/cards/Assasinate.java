@@ -46,6 +46,13 @@ public class Assasinate extends CustomCard{
 	public AbstractCard makeCopy() {
 		return new Assasinate();
 	}
+	
+	@Override
+	public void applyPowers() {
+		this.damageType = DamageType.THORNS;
+		this.damageTypeForTurn = DamageType.THORNS;
+		this.damage = this.baseDamage;
+	}
 
 	@Override
 	public void upgrade() {
@@ -60,7 +67,7 @@ public class Assasinate extends CustomCard{
 	public void use(AbstractPlayer p, AbstractMonster m) {
 
 		AbstractDungeon.actionManager.addToBottom(new VFXAction(new WeightyImpactEffect(m.hb.cX, m.hb.cY)));
-		AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, this.damage, DamageType.THORNS),AbstractGameAction.AttackEffect.NONE));			
+		AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, this.baseDamage, DamageType.THORNS),AbstractGameAction.AttackEffect.NONE));			
 			
 		for(int i = 0; i < this.magicNumber; i++) {
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p,p,new StrengthPower(p,-1), -1));
