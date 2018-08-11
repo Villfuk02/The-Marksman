@@ -87,6 +87,7 @@ public class Insulation extends CustomCard{
 		}
 		
 		tmp.clear();
+		amt = 0;
 		if(!upgraded)
 			return;
 		
