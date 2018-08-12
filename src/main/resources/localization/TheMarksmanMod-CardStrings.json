@@ -38,8 +38,8 @@
 	},
 	"VoidGrenade": {
 		"NAME": "Void Grenade",
-		"DESCRIPTION": "Deal !D! Damage to ALL enemies. Play ALL Grenades from your draw pile. NL WARNING: Do not mess with the Void!",
-		"UPGRADE_DESCRIPTION": "Deal !D! Damage to ALL enemies. Play ALL Grenades from your draw and discard piles. NL WARNING: Do not mess with the Void!"
+		"DESCRIPTION": "Deal !D! Damage to ALL enemies. Play ALL Grenades from your draw pile. NL WARNING: Don't let the Voids merge!",
+		"UPGRADE_DESCRIPTION": "Deal !D! Damage to ALL enemies. Play ALL Grenades from your draw and discard piles. NL WARNING: Don't let the Voids merge!"
 	},
 	"ElectricGrenade": {
 		"NAME": "Electric Grenade",
@@ -118,9 +118,9 @@
 		"DESCRIPTION": "Gain [R] [R] [R] . NL Gain 1 Corrosion. NL Exhaust.",
 		"UPGRADE_DESCRIPTION": "Gain [R] [R] [R] [R] . NL Gain 1 Corrosion. NL Exhaust."
 	},
-	"Camouflage": {
-		"NAME": "Camouflage",
-		"DESCRIPTION": "Gain 1 Vulnerable. NL Gain !B! Block."
+	"Decoy": {
+		"NAME": "Decoy",
+		"DESCRIPTION": "Expose yourself. NL Gain !B! Block."
 	},
 	"StealthMode": {
 		"NAME": "Stealth Mode",
@@ -375,5 +375,9 @@
 	"RocketJump": {
 		"NAME": "Rocket Jump",
 		"DESCRIPTION": "Deal !D! damage. NL Shuffle 3 Burns into your discard pile. NL Draw !M! cards."
+	},
+	"Camouflage": {
+		"NAME": "Camouflage",
+		"DESCRIPTION": "Gain !B! Block."
 	}
 }

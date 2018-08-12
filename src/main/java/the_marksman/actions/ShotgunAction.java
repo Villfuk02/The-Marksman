@@ -21,7 +21,6 @@ public class ShotgunAction extends AbstractGameAction
     private int numTimes;
     private int crit;
     private int action;
-    private boolean c = false;
     
     Random rand = new Random();
     
@@ -52,9 +51,10 @@ public class ShotgunAction extends AbstractGameAction
             this.target.damageFlashFrames = 4;
             AbstractDungeon.effectList.add(new FlashAtkImgEffect(this.target.hb.cX, this.target.hb.cY, this.attackEffect));
             
+            DamageInfo tempInfo = new DamageInfo(AbstractDungeon.player, info.base, info.type);
+            
 			if(rand.random(100)  < this.crit) {
-				this.info.base *= 3;
-				c = true;
+				tempInfo = new DamageInfo(AbstractDungeon.player, info.base*3, info.type);
 				AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player, new CritsThisTurn(AbstractDungeon.player, 1), 1));
 				switch (action) {
 				case 0:
@@ -74,9 +74,7 @@ public class ShotgunAction extends AbstractGameAction
 				}
 			}
 
-            this.target.damage(this.info);    
-            if (c)
-            	this.info.base /= 3;
+            this.target.damage(tempInfo);
             if (this.numTimes > 1 && !AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
                 --this.numTimes;
                 AbstractDungeon.actionManager.addToTop(new ShotgunAction(AbstractDungeon.getMonsters().getRandomMonster(true), this.info, this.numTimes, crit, action));

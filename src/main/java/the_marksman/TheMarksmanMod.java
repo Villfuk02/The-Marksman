@@ -76,6 +76,7 @@ import the_marksman.cards.Bow;
 import the_marksman.cards.BurstFire;
 import the_marksman.cards.Calculated;
 import the_marksman.cards.Camouflage;
+import the_marksman.cards.Decoy;
 import the_marksman.cards.Chainsaw;
 import the_marksman.cards.ClusterGrenade;
 import the_marksman.cards.CombatTrousers;
@@ -204,7 +205,7 @@ public class TheMarksmanMod implements PostExhaustSubscriber,
 		
 		BaseMod.addCard(new TrustyPistol());
 		
-		// COMMON (21)
+		// COMMON (22)
 		//	Attacks (14)		
 		BaseMod.addCard(new Grenade());			//aoe
 		BaseMod.addCard(new NapalmGrenade());	//aoe, burning
@@ -223,7 +224,7 @@ public class TheMarksmanMod implements PostExhaustSubscriber,
 		
 		//	Skills (9)
 		BaseMod.addCard(new HeightAdvantage());	//block, +precision
-		BaseMod.addCard(new Camouflage());		//block, vulnerable
+		BaseMod.addCard(new Decoy());			//block, vulnerable
 		BaseMod.addCard(new Molotov());			//burning
 		BaseMod.addCard(new BackupPlan());		//seek
 		BaseMod.addCard(new Calculated());		//+precision
@@ -231,6 +232,7 @@ public class TheMarksmanMod implements PostExhaustSubscriber,
 		BaseMod.addCard(new CombatTrousers());	//block, discard, retain
 		BaseMod.addCard(new LayDown());			//block, +precision
 		BaseMod.addCard(new FirstAidKit());		//heal lost hp
+		BaseMod.addCard(new Camouflage());		//block
 		
 		
 		
