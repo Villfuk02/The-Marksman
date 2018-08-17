@@ -320,7 +320,7 @@
 	},
 	"SilverBlood": {
 		"NAME": "Silver Blood",
-		"DESCRIPTION": "ALL enemies gain !M! Strength. Every time you lose more than 1 HP, gain 1 Regen."
+		"DESCRIPTION": "ALL enemies gain !M! Strength. Every time you lose HP, gain 1 Regen."
 	},
 	"Perfection": {
 		"NAME": "Perfect Form",

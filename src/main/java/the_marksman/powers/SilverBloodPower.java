@@ -13,7 +13,7 @@ public class SilverBloodPower extends AbstractPower
 	public static final String POWER_ID = "SilverBloodPower";
 	
     public static final String[] DESCRIPTIONS = new String[] {
-    		"Every time you take unblocked damage greater than 2, gain #b",
+    		"Every time you lose HP, gain #b",
     		" Regen."
 	};
     
@@ -33,7 +33,7 @@ public class SilverBloodPower extends AbstractPower
     
     @Override
     public int onAttacked(DamageInfo info, int damageAmount) {
-    	if (damageAmount > 2)
+    	if (damageAmount > 0)
     		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, owner, new RegenPower(owner, this.amount), this.amount));
     	return damageAmount;
     }
