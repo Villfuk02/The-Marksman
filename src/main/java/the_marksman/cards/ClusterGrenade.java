@@ -55,8 +55,15 @@ public class ClusterGrenade extends CustomCard{
 
 	@Override
 	public void use(AbstractPlayer p, AbstractMonster m) {
-		AbstractDungeon.actionManager.addToTop(new GainEnergyAction(-this.energyOnUse));
-		for (int i = 0; i < this.energyOnUse+1; i++) {
+		int effect = this.energyOnUse;
+		if (!this.freeToPlayOnce) {
+            p.energy.use(effect);
+        }
+		if (p.hasRelic("Chemical X")) {
+	         effect += 2;
+	         p.getRelic("Chemical X").flash();
+	    }
+		for (int i = 0; i < effect+1; i++) {
 			AbstractDungeon.actionManager.addToBottom(new VFXAction(new ExplosionSmallEffect(MathUtils.random(p.hb.cX, Settings.WIDTH - p.hb.cX), MathUtils.random(p.hb.cY, Settings.HEIGHT - p.hb.cY))));
 			AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(p, DamageInfo.createDamageMatrix(this.damage, true), damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
 		}

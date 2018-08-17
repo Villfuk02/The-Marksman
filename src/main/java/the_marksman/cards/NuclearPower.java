@@ -1,7 +1,6 @@
 package the_marksman.cards;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -50,8 +49,15 @@ public class NuclearPower extends CustomCard{
 	
 	@Override
 	public void use(AbstractPlayer p, AbstractMonster m) {
-		AbstractDungeon.actionManager.addToTop(new GainEnergyAction(-this.energyOnUse));
-		int amt = this.energyOnUse*2 - this.magicNumber;
+		int effect = this.energyOnUse;
+		if (!this.freeToPlayOnce) {
+            p.energy.use(effect);
+        }
+		if (p.hasRelic("Chemical X")) {
+	         effect += 2;
+	         p.getRelic("Chemical X").flash();
+	    }		
+		int amt = effect*2 - this.magicNumber;
 		if(amt != 0)
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new EnergizedBlackPower(p, amt), amt));
 	}

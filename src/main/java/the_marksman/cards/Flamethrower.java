@@ -1,7 +1,6 @@
 package the_marksman.cards;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -49,8 +48,15 @@ public class Flamethrower extends CustomCard{
 
 	@Override
 	public void use(AbstractPlayer p, AbstractMonster m) {
-		AbstractDungeon.actionManager.addToTop(new GainEnergyAction(-this.energyOnUse));
-		for (int i = 0; i < this.energyOnUse; i++) {
+		int effect = this.energyOnUse;
+		if (!this.freeToPlayOnce) {
+            p.energy.use(effect);
+        }
+		if (p.hasRelic("Chemical X")) {
+	         effect += 2;
+	         p.getRelic("Chemical X").flash();
+	    }
+		for (int i = 0; i < effect; i++) {
 			for (final AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
 				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p, new BurningPower(mo, this.magicNumber), this.magicNumber, true));
 				for(int j = 0; j < 50; j++) {
