@@ -3,7 +3,7 @@
   "name": "The Marksman",
   "author_list": ["Villfuk02"],
   "description": "This mod add new character called The Marksman with new mechanics like Critical hits and Burning. Also changes Burns to light you on fire and adds a new shared relic: Scales Of Injustice.",
-  "version": "0.2.15",
+  "version": "0.2.16",
   "sts_version": "08-02-2018",
   "mts_version": "2.9.1",
   "dependencies": ["basemod"],

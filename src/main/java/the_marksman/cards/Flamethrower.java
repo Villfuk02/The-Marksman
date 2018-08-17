@@ -59,10 +59,13 @@ public class Flamethrower extends CustomCard{
 		for (int i = 0; i < effect; i++) {
 			for (final AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
 				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p, new BurningPower(mo, this.magicNumber), this.magicNumber, true));
-				for(int j = 0; j < 50; j++) {
-					AbstractDungeon.effectsQueue.add(new FlameParticleEffect(mo.hb.cX, mo.hb.cY));
-				}
+				
 		    }		
-		}		
+		}
+		for (final AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
+			for(int j = 0; j < 100; j++) {
+				AbstractDungeon.effectsQueue.add(new FlameParticleEffect(mo.hb.cX, mo.hb.cY));
+			}
+		}
 	}
 }

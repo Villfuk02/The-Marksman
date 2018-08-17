@@ -26,13 +26,19 @@ public class RustyMagazine extends CustomRelic {
     public void atBattleStart() {
         flash();        
         AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));
-    	for (final AbstractCard c : AbstractDungeon.player.drawPile.group) {
-                if (c.cardID == "RustyPistol" && c.canUpgrade()) {
-                	c.upgrade(); 
-                }
+        for (final AbstractCard c : AbstractDungeon.player.drawPile.group) {
+            if (c.cardID == "RustyPistol" && c.canUpgrade()) {
+            	c.upgrade(); 
             }
-    	}
-    
+        }
+	
+	
+	for (final AbstractCard c : AbstractDungeon.player.hand.group) {
+        if (c.cardID == "RustyPistol" && c.canUpgrade()) {
+        	c.upgrade(); 
+        }
+    }
+} 
 	
 	@Override
 	public AbstractRelic makeCopy() {
