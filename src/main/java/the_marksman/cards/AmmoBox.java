@@ -46,10 +46,17 @@ public class AmmoBox extends CustomCard{
     public boolean canUpgrade() {
         return true;
     }
+	
+	@Override
+	public void atTurnStart() {
+		this.updateCost(-this.cost);
+		this.isCostModified = false;
+	}
 
 	@Override
 	public void use(AbstractPlayer p, AbstractMonster m) {		
 		AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, this.magicNumber));  
 		this.updateCost(1);
+		p.gainEnergy(1);
 	}
 }
