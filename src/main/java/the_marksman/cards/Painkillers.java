@@ -3,7 +3,6 @@ package the_marksman.cards;
 
 import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.common.HealAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -12,62 +11,69 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
-import the_marksman.AbstractCardEnum;
 
-public class FirstAidKit extends CustomCard{
-	public static final String ID = "FirstAidKit";
+public class Painkillers extends CustomCard{
+	public static final String ID = "Painkillers";
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-	public static final String UP_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 	public static final String[] EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
 	private static final int COST = 1;
+	private static final int MAGIC = 75;
+	private static final int MAGIC_UP = 25;
 
-	public FirstAidKit() {
+	public Painkillers() {
 		super(ID, NAME, "img/cards/"+ID+".png", COST, DESCRIPTION,
-        		AbstractCard.CardType.SKILL, AbstractCardEnum.BLACK,
-        		AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF);
+        		AbstractCard.CardType.SKILL, AbstractCard.CardColor.COLORLESS,
+        		AbstractCard.CardRarity.BASIC, AbstractCard.CardTarget.SELF);
+		magicNumber = baseMagicNumber = MAGIC;
+		this.exhaust = true;
+	}
+	
+	public Painkillers(boolean upgraded) {
+		super(ID, NAME, "img/cards/"+ID+".png", COST, DESCRIPTION,
+        		AbstractCard.CardType.SKILL, AbstractCard.CardColor.COLORLESS,
+        		AbstractCard.CardRarity.BASIC, AbstractCard.CardTarget.SELF);
+		magicNumber = baseMagicNumber = MAGIC;
+		this.exhaust = true;
+		if(upgraded)
+			upgrade();
 	}
 
 	@Override
 	public AbstractCard makeCopy() {
-		return new FirstAidKit();
+		return new Painkillers();
 	}
 
 	@Override
 	public void upgrade() {
 		if(!upgraded) {
-			upgradeName();			
-			
-			this.rawDescription = UP_DESCRIPTION;
-			this.initializeDescription();
+			upgradeName();
+			this.upgradeMagicNumber(MAGIC_UP);
 		}
 	}
-	
+	@Override
+	public void atTurnStart() {
+		if(upgraded)
+			retain = true;
+	}
 	
 	@Override
     public void applyPowers() {
         super.applyPowers();
-        final int count = GameActionManager.damageReceivedThisTurn;
-        this.rawDescription = getDesc() + EXTENDED_DESCRIPTION[0] + count + EXTENDED_DESCRIPTION[1];        
+        final int count = (GameActionManager.damageReceivedThisTurn * magicNumber)/100;
+        this.rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[0] + count + EXTENDED_DESCRIPTION[1];        
         this.initializeDescription();
     }
     
     @Override
     public void onMoveToDiscard() {
-        this.rawDescription = getDesc();
+        this.rawDescription = DESCRIPTION;
         this.initializeDescription();
     }
 
 	@Override
 	public void use(AbstractPlayer p, AbstractMonster m) {		
-		AbstractDungeon.actionManager.addToBottom(new HealAction(p,p,GameActionManager.damageReceivedThisTurn));
-		AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Painkillers(this.upgraded), 2, true, false));
-	}
-	
-	private String getDesc() {
-		if(upgraded)
-			return UP_DESCRIPTION;
-		return DESCRIPTION;
+		AbstractDungeon.actionManager.addToBottom(new HealAction(p,p,(GameActionManager.damageReceivedThisTurn * magicNumber)/100));
 	}
 }

@@ -28,7 +28,7 @@ public class ElectricBlood extends CustomCard{
 	public static final String UP_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 	private static final int COST = 0;
 	private static final int DMG = 1;
-	private static final int SELF = 10;
+	private static final int SELF = 8;
 
 	public ElectricBlood() {
 		super(ID, NAME, "img/cards/"+ID+".png", COST, DESCRIPTION,

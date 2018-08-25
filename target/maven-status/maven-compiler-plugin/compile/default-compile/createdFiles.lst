@@ -38,6 +38,9 @@ the_marksman\cards\ExplosivesExpert.class
 the_marksman\patches\VampiresPatch.class
 the_marksman\cards\ElectricGrenade.class
 the_marksman\cards\HeavyShotgun.class
+the_marksman\cards\HandClaws.class
+the_marksman\cards\SawBlade.class
+the_marksman\powers\FirepowerPower.class
 the_marksman\cards\RunAndGun.class
 the_marksman\cards\ExpectAnything.class
 the_marksman\powers\EnergizedBlackPower.class
@@ -46,6 +49,7 @@ the_marksman\cards\CritCard.class
 the_marksman\powers\SilverBloodPower.class
 the_marksman\powers\PerfectionPower.class
 the_marksman\cards\ExtendedMagazines.class
+the_marksman\cards\Firepower.class
 the_marksman\cards\SkinSkill.class
 the_marksman\cards\AutomaticMode.class
 the_marksman\cards\HeightAdvantage.class
@@ -79,6 +83,7 @@ the_marksman\cards\SniperRifle.class
 the_marksman\cards\GoldenBullet.class
 the_marksman\cards\RocketJump.class
 the_marksman\cards\LuckyMode.class
+the_marksman\cards\Painkillers.class
 the_marksman\powers\ExplosivesExpertPower.class
 the_marksman\AbstractCardEnum.class
 the_marksman\cards\Calculated.class

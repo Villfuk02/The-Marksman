@@ -28,6 +28,7 @@ import the_marksman.cards.ExpectAnything;
 import the_marksman.cards.ExplosivesExpert;
 import the_marksman.cards.ExtendedMagazines;
 import the_marksman.cards.EyeForAnEye;
+import the_marksman.cards.Firepower;
 import the_marksman.cards.Firewall;
 import the_marksman.cards.FirstAidKit;
 import the_marksman.cards.Flamethrower;
@@ -46,6 +47,7 @@ import the_marksman.cards.Grenade;
 import the_marksman.cards.GrenadeLauncher;
 import the_marksman.cards.Guilt;
 import the_marksman.cards.HandCannon;
+import the_marksman.cards.HandClaws;
 import the_marksman.cards.HeavyShotgun;
 import the_marksman.cards.HeightAdvantage;
 import the_marksman.cards.Hideout;
@@ -60,6 +62,7 @@ import the_marksman.cards.Minigun;
 import the_marksman.cards.Molotov;
 import the_marksman.cards.NapalmGrenade;
 import the_marksman.cards.NuclearPower;
+import the_marksman.cards.Painkillers;
 import the_marksman.cards.Perfection;
 import the_marksman.cards.AcidBottle;
 import the_marksman.cards.Aggression;
@@ -87,6 +90,7 @@ import the_marksman.cards.CriticalDecision;
 import the_marksman.cards.Crossbow;
 import the_marksman.cards.RustyPistol;
 import the_marksman.cards.SaveUp;
+import the_marksman.cards.SawBlade;
 import the_marksman.cards.SilverBlood;
 import the_marksman.cards.SilverBullet;
 import the_marksman.cards.SkinSkill;
@@ -197,6 +201,9 @@ public class TheMarksmanMod implements PostExhaustSubscriber,
 		
 		BaseMod.addDynamicVariable(new CritVariable());
 		
+		// COLORLESS (1)
+		BaseMod.addCard(new Painkillers());
+		
 		// BASIC (5)
 		BaseMod.addCard(new RustyPistol());
 		BaseMod.addCard(new Defend());
@@ -205,7 +212,7 @@ public class TheMarksmanMod implements PostExhaustSubscriber,
 		
 		BaseMod.addCard(new TrustyPistol());
 		
-		// COMMON (22)
+		// COMMON (21)
 		//	Attacks (14)		
 		BaseMod.addCard(new Grenade());			//aoe
 		BaseMod.addCard(new NapalmGrenade());	//aoe, burning
@@ -222,7 +229,7 @@ public class TheMarksmanMod implements PostExhaustSubscriber,
 		BaseMod.addCard(new UVLaser());			//silent aoe, weak
 		BaseMod.addCard(new RocketJump());		//burn, draw
 		
-		//	Skills (9)
+		//	Skills (8)
 		BaseMod.addCard(new HeightAdvantage());	//block, +precision
 		BaseMod.addCard(new Decoy());			//block, vulnerable
 		BaseMod.addCard(new Molotov());			//burning
@@ -231,14 +238,13 @@ public class TheMarksmanMod implements PostExhaustSubscriber,
 		BaseMod.addCard(new ExpectAnything());	//block, innate
 		BaseMod.addCard(new CombatTrousers());	//block, discard, retain
 		BaseMod.addCard(new LayDown());			//block, +precision
-		BaseMod.addCard(new FirstAidKit());		//heal lost hp
 		BaseMod.addCard(new Camouflage());		//block
 		
 		
 		
 		
-		// UNCOMMON (40)
-		// 	Attacks(12)
+		// UNCOMMON (43)
+		// 	Attacks(13)
 		BaseMod.addCard(new FragGrenade());		//aoe, multi-hit
 		BaseMod.addCard(new CorrosiveGrenade());//aoe, corrosive
 		BaseMod.addCard(new ElectricGrenade());	//+e, aoe, electric
@@ -251,8 +257,10 @@ public class TheMarksmanMod implements PostExhaustSubscriber,
 		BaseMod.addCard(new Flamethrower());	//X, burn
 		BaseMod.addCard(new FryingPan());		//block/atk
 		BaseMod.addCard(new SniperRifle());		//crit
+		BaseMod.addCard(new Assasinate());		//one big hit, -str
+		BaseMod.addCard(new SawBlade());		//pull 0-cost
 		
-		//	Skills (20)
+		//	Skills (22)
 		BaseMod.addCard(new ExtendedMagazines());//draw
 		BaseMod.addCard(new LockOn());			//concentrate +str
 		BaseMod.addCard(new SmokeBomb());		//weaken, -precision
@@ -273,6 +281,8 @@ public class TheMarksmanMod implements PostExhaustSubscriber,
 		BaseMod.addCard(new AntiFlame());		//block, burn
 		BaseMod.addCard(new Insulation());		//block, burn -> burning
 		BaseMod.addCard(new MetallicBlood());	//self-damage, metallicize
+		BaseMod.addCard(new FirstAidKit());		//heal lost hp
+		BaseMod.addCard(new HandClaws());		//hp -> shivs
 		
 		// 	Powers (8)
 		BaseMod.addCard(new Tracers());			//+precision
@@ -283,15 +293,15 @@ public class TheMarksmanMod implements PostExhaustSubscriber,
 		BaseMod.addCard(new SilverBlood());		//regen for hit
 		BaseMod.addCard(new FlammableFumes());	//burn++
 		BaseMod.addCard(new CounterStrike());	//dmg for -
+		BaseMod.addCard(new Firepower());		//burning -> burning
 		
 		
-		// RARE (19)
-		//	Attacks (5)
+		// RARE (18)
+		//	Attacks (4)
 		BaseMod.addCard(new VoidGrenade());		//aoe, grenade succ
 		BaseMod.addCard(new ClusterGrenade());	//X, aoe
 		BaseMod.addCard(new Minigun());			//multi-hit, infinite
 		BaseMod.addCard(new RocketLauncher());	//one big hit, burning
-		BaseMod.addCard(new Assasinate());		//one big hit, -str
 		
 		//	Skills (7)
 		BaseMod.addCard(new AmmoBox());			//draw, infinite
@@ -323,7 +333,7 @@ public class TheMarksmanMod implements PostExhaustSubscriber,
 		BaseMod.addKeyword(new String[]{"precision"}, "Increases #yCrit of all attacks with #yCrit. Removed at the end of turn.");
 		BaseMod.addKeyword(new String[]{"expose"}, "If target isn't #yVulnerable, apply #b1 #yVulnerable.");
 		BaseMod.addKeyword(new String[]{"grenade"}, "Grenades are cards, which attack ALL enemies and have #yGrenade in their name.");
-		BaseMod.addKeyword(new String[]{"warnings", "warning"}, "Probably not important.");
+		BaseMod.addKeyword(new String[]{"painkillers"}, "Painkillers are #b0 cost Skills which heal a portion of your HP and Exhaust.");
 	}
 	
 }

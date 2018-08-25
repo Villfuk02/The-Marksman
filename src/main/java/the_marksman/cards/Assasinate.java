@@ -36,7 +36,7 @@ public class Assasinate extends CustomCard{
 	public Assasinate() {
 		super(ID, NAME, "img/cards/"+ID+".png", COST, DESCRIPTION,
         		AbstractCard.CardType.ATTACK, AbstractCardEnum.BLACK,
-        		AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.ENEMY);
+        		AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ENEMY);
 		this.baseDamage = DMG;
 		this.damageType = DamageType.THORNS;
 		this.baseMagicNumber = this.magicNumber = MAGIC;

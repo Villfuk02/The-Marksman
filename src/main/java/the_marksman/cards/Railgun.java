@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.random.Random;
+import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
 import the_marksman.AbstractCardEnum;
 import the_marksman.powers.CritsThisTurn;
@@ -52,6 +53,9 @@ public class Railgun extends CritCard{
 	@Override
 	public void use(AbstractPlayer p, AbstractMonster m) {
 		if (m != null) {
+			if (this.energyOnUse < EnergyPanel.totalCount) {
+	            this.energyOnUse = EnergyPanel.totalCount;
+	        }
 			int effect = this.energyOnUse;
 			if (!this.freeToPlayOnce) {
 	            p.energy.use(effect);

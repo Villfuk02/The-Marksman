@@ -2,9 +2,8 @@ package the_marksman.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.EmptyDeckShuffleAction;
-import com.megacrit.cardcrawl.actions.common.ShuffleAction;
+import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -18,28 +17,28 @@ import com.megacrit.cardcrawl.random.Random;
 import basemod.abstracts.CustomCard;
 import the_marksman.AbstractCardEnum;
 
-public class Chainsaw extends CustomCard{
-	public static final String ID = "Chainsaw";
+public class SawBlade extends CustomCard{
+	public static final String ID = "SawBlade";
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 	public static final String UP_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 	private static final int COST = 0;
-	private static final int DMG = 6;
+	private static final int DMG = 4;
 	
 	Random rand = new Random();
 	
 
-	public Chainsaw() {
+	public SawBlade() {
 		super(ID, NAME, "img/cards/"+ID+".png", COST, DESCRIPTION,
         		AbstractCard.CardType.ATTACK, AbstractCardEnum.BLACK,
-        		AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.SELF_AND_ENEMY);
+        		AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ALL);
 		this.baseDamage = DMG;
 	}
 
 	@Override
 	public AbstractCard makeCopy() {
-		return new Chainsaw();
+		return new SawBlade();
 	}
 
 	@Override
@@ -59,20 +58,18 @@ public class Chainsaw extends CustomCard{
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new VulnerablePower(p, 1, false), 1));
 		}
 		
-		AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, this.damage, damageTypeForTurn),AbstractGameAction.AttackEffect.SLASH_HORIZONTAL)); 
+		AbstractDungeon.actionManager.addToTop(new DamageAllEnemiesAction(p, DamageInfo.createDamageMatrix(this.damage, true), damageTypeForTurn, AbstractGameAction.AttackEffect.SLASH_VERTICAL));	 
+		
+		if(upgraded) {			
+	        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, 1));	
+		}
 		
 		for (final AbstractCard c : AbstractDungeon.player.drawPile.group) {
             if (c.costForTurn == 0) {
             	AbstractDungeon.player.drawPile.moveToHand(c, AbstractDungeon.player.drawPile);       
             	return;
             }
-        }	
-		if(upgraded) {			
-			if (!p.discardPile.isEmpty()) {
-	            AbstractDungeon.actionManager.addToBottom(new EmptyDeckShuffleAction());
-	        }
-	        AbstractDungeon.actionManager.addToBottom(new ShuffleAction(p.drawPile));	
-		}
+        }
     }			
 }
 

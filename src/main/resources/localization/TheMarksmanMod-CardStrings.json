@@ -249,8 +249,8 @@
 	},
 	"FirstAidKit": {
 		"NAME": "First Aid Kit",
-		"DESCRIPTION": "Heal ALL HP lost this turn.",
-		"UPGRADE_DESCRIPTION": "Retain. NL Heal ALL HP lost this turn.",
+		"DESCRIPTION": "Heal ALL HP lost this turn. NL Shuffle 2 Painkillers into your draw pile.",
+		"UPGRADE_DESCRIPTION": "Heal ALL HP lost this turn. NL Shuffle 2 Upgraded Painkillers into your draw pile.",
 		"EXTENDED_DESCRIPTION": [
 			" NL (Heals ",
 			" HP.)"
@@ -275,8 +275,8 @@
 	},
 	"MetallicBlood": {
 		"NAME": "Steel Blood",
-		"DESCRIPTION": "Gain 4 Poison. NL Gain !M! Metalicize.",
-		"UPGRADE_DESCRIPTION": "Retain. NL Gain 4 Poison. NL Gain !M! Metalicize."
+		"DESCRIPTION": "Lose 6 HP. NL Gain !M! Metalicize.",
+		"UPGRADE_DESCRIPTION": "Retain. NL Lose 6 HP. NL Gain !M! Metalicize."
 	},
 	"Kevlar": {
 		"NAME": "Kevlar",
@@ -379,5 +379,26 @@
 	"Camouflage": {
 		"NAME": "Camouflage",
 		"DESCRIPTION": "Gain !B! Block."
+	},
+	"Firepower": {
+		"NAME": "Firepower",
+		"DESCRIPTION": "Every time you gain Burning, remove that effect and apply that much Burning to ALL enemies."
+	},
+	"Painkillers": {
+		"NAME": "Painkillers",
+		"DESCRIPTION": "Heal !M! % of HP lost this turn. NL Exhaust.",
+		"EXTENDED_DESCRIPTION": [
+			" NL (Heals ",
+			" HP.)"
+		]
+	},
+	"HandClaws": {
+		"NAME": "Hand Claws",
+		"DESCRIPTION": "Lose 6 HP. NL Add !D! Shivs to your hand. NL (Affected by damage modifiers.)"
+	},
+	"SawBlade": {
+		"NAME": "Saw Blade",
+		"DESCRIPTION": "Expose yourself. NL Deal !D! Damage to ALL enemies. NL Draw a 0-cost card from your draw pile.",
+		"UPGRADE_DESCRIPTION": "Expose yourself. NL Deal !D! Damage to ALL enemies. NL Draw 1 card. NL Draw a 0-cost card from your draw pile."
 	}
 }

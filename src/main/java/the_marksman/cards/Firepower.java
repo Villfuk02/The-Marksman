@@ -1,55 +1,52 @@
 package the_marksman.cards;
 
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.random.Random;
 
 import basemod.abstracts.CustomCard;
 import the_marksman.AbstractCardEnum;
+import the_marksman.powers.FirepowerPower;
 
-public class AmmoBox extends CustomCard{
-	public static final String ID = "AmmoBox";
+public class Firepower extends CustomCard{
+	public static final String ID = "Firepower";
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-	private static final int COST = 0;
-	private static final int DRAW = 3;
-	private static final int UPGRADE = 1;
+	private static final int COST = 2;
+	private static final int UP_COST = 1;
+	private static final int MAGIC = 1;
+	
+	Random rand = new Random();
 	
 
-	public AmmoBox() {
+	public Firepower() {
 		super(ID, NAME, "img/cards/"+ID+".png", COST, DESCRIPTION,
-        		AbstractCard.CardType.SKILL, AbstractCardEnum.BLACK,
-        		AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.SELF);
-		this.baseMagicNumber = this.magicNumber = DRAW;
+        		AbstractCard.CardType.POWER, AbstractCardEnum.BLACK,
+        		AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF);
+		this.baseMagicNumber = this.magicNumber = MAGIC;
 	}
 
 	@Override
 	public AbstractCard makeCopy() {
-		return new AmmoBox();
+		return new Firepower();
 	}
 
 	@Override
 	public void upgrade() {
-		this.timesUpgraded++;
-		this.name = NAME + "+" + timesUpgraded;		
-		this.upgradeMagicNumber(UPGRADE);
-		this.upgraded = true;
-		this.initializeTitle();
+		if (!this.upgraded) {
+			upgradeName();
+			this.upgradeBaseCost(UP_COST);
+		} 
 	}
-	
-	@Override
-    public boolean canUpgrade() {
-        return true;
-    }
 
 	@Override
 	public void use(AbstractPlayer p, AbstractMonster m) {		
-		AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, this.magicNumber));  
-		this.updateCost(1);
+		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new FirepowerPower(p, this.magicNumber), this.magicNumber));
 	}
 }
