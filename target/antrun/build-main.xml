@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <project name="maven-antrun-" default="main"  >
 <target name="main">
-  <copy file="target/TheMarksman.jar" tofile="C:/Users/Villfuk/Desktop/Slay.the.Spire.Patch.32/mods/TheMarksman.jar"/>
+  <copy file="target/TheMarksman.jar" tofile="../_ModTheSpire/mods/TheMarksman.jar"/>
 </target>
 </project>
