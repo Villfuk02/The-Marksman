@@ -67,7 +67,7 @@
 	},
 	"Minigun": {
 		"NAME": "Minigun",
-		"DESCRIPTION": "Deal 1 Silent Damage to random enemy !M! times. Crit: !C! % NL Ignores Precision. NL Fires once more for every Critical hit."
+		"DESCRIPTION": "Deal 1 Silent Damage to random enemy !M! times. NL Crit: !C! % NL Ignores Precision. NL Fires once more for every Critical hit. NL Infinitely upgradeable."
 	},
 	"Railgun": {
 		"NAME": "Railgun",
@@ -75,7 +75,7 @@
 	},
 	"AmmoBox": {
 		"NAME": "Ammo Box",
-		"DESCRIPTION": "Draw !M! cards. NL This card cost 1 more energy for this turn."
+		"DESCRIPTION": "Draw !M! cards. NL This card costs 1 more energy for this turn. NL Infinitely upgradeable."
 	},
 	"HeightAdvantage": {
 		"NAME": "Height Advantage",
