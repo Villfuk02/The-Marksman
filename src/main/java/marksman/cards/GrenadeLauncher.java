@@ -18,7 +18,6 @@ public class GrenadeLauncher extends CustomCard{
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-	public static final String UP_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 	private static final int COST = 0;
 	
 
@@ -37,7 +36,6 @@ public class GrenadeLauncher extends CustomCard{
 	public void upgrade() {
 		if (!this.upgraded) {
 			upgradeName();
-			this.rawDescription = UP_DESCRIPTION;
 			this.initializeDescription();
 			this.retain = true;
 			
