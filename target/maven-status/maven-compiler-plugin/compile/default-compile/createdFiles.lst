@@ -16,6 +16,7 @@ marksman\cards\Molotov.class
 marksman\powers\GhostFormPower.class
 marksman\powers\EyeForAnEyePower.class
 marksman\cards\ExplosivesExpert.class
+marksman\actions\DisplayStunAction.class
 marksman\cards\Kevlar.class
 marksman\cards\TrustyPistol.class
 marksman\cards\Veteran.class

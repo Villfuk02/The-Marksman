@@ -29,7 +29,7 @@ public class ElectricGrenade extends CustomCard{
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 	private static final int COST = 3;	
-	private static final int DMG = 9;
+	private static final int DMG = 8;
 	private static final int DMG_UP = 3;
 	
 	Random rand = new Random();

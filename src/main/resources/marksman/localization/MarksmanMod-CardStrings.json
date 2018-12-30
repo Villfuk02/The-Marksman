@@ -33,7 +33,7 @@
 	},
 	"StunGrenade": {
 		"NAME": "Stun Grenade",
-		"DESCRIPTION": "Stun ALL enemies and apply !M! Weak and Vulnerable to ALL enemies. NL Exhaust."
+		"DESCRIPTION": "Apply 1 Stunned, !M! Weak and !M! Vulnerable to ALL enemies. NL Exhaust."
 	},
 	"VoidGrenade": {
 		"NAME": "Void Grenade",
@@ -237,7 +237,7 @@
 	},
 	"BlackPowder": {
 		"NAME": "Black Powder",
-		"DESCRIPTION": "Every time a card is exhausted, shuffle HE Grenade into your draw pile."
+		"DESCRIPTION": "Every time a card is Exhausted, shuffle HE Grenade into your draw pile."
 	},
 	"FlareGun": {
 		"NAME": "Flare Gun",
