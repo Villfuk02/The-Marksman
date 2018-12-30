@@ -17,7 +17,7 @@ public class IgnitePower extends AbstractPower
 	public static final String POWER_ID = "IgnitePower";
 	
     public static final String[] DESCRIPTIONS = new String[] {
-    		"Whenever an #yAttack deals unblocked damage, apply #b",
+    		"Whenever you hit an enemy with an #yAttack, apply #b",
     		" #yBurning."
 	};
     
@@ -37,7 +37,7 @@ public class IgnitePower extends AbstractPower
     
     @Override
     public void onAttack(final DamageInfo info, final int damageAmount, final AbstractCreature target) {
-        if (damageAmount > 0 && target != this.owner && info.type == DamageInfo.DamageType.NORMAL) {
+        if (target != null && target != this.owner && info.type == DamageInfo.DamageType.NORMAL) {
             this.flash();
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(target, this.owner, new BurningPower(target, this.amount), this.amount, true));
         }

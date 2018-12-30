@@ -6,7 +6,7 @@
     <!-- Change These to match your mod -->
     <groupId>StsMod</groupId>
     <artifactId>TheMarksman</artifactId>
-    <version>0.2.23</version>
+    <version>0.2.25</version>
     <packaging>jar</packaging>
     <name>TheMarksman</name>
     <description>Slay the Spire mod</description>

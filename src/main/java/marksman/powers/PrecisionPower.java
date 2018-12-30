@@ -15,8 +15,8 @@ public class PrecisionPower extends AbstractPower
 	public static final String POWER_ID = "PrecisionPower";
 	
     public static final String[] DESCRIPTIONS = new String[] {
-    		"This turn, increases #yCrit of all atacks with #yCrit by #b",
-    		"This turn, decreases #yCrit of all atacks with #yCrit by #b",
+    		"This turn, increases #yCrit chance of all atacks with #yCrit by #b",
+    		"This turn, decreases #yCrit chance of all atacks with #yCrit by #b",
     		"%."
 	};
     

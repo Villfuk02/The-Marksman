@@ -20,8 +20,8 @@ public class NuclearPower extends CustomCard{
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 	private static final int COST = -1;
-	private static final int MAGIC = 3;
-	private static final int MAGIC_UP = -1;
+	private static final int MAGIC = 2;
+	private static final int MAGIC_UP = 1;
 	
 	Random rand = new Random();
 	
@@ -58,7 +58,7 @@ public class NuclearPower extends CustomCard{
 	         effect += 2;
 	         p.getRelic("Chemical X").flash();
 	    }		
-		int amt = effect*2 - this.magicNumber;
+		int amt = effect * this.magicNumber;
 		if(amt != 0)
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new EnergizedBlackPower(p, amt), amt));
 	}

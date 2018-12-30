@@ -51,14 +51,7 @@ public class GoldenBullet extends CritCard{
 			this.upgradeDamage(DMG_UP);
 			
 		} 
-	}
-	
-	@Override
-    public boolean hasEnoughEnergy() {
-        if (AbstractDungeon.player.gold < 8)
-        	return false;
-        return super.hasEnoughEnergy();
-    }
+	}	
 
 	@Override
 	public void use(AbstractPlayer p, AbstractMonster m) {	

@@ -21,8 +21,8 @@ public class LuckyMode extends CustomCard{
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 	public static final String UP_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 	private static final int COST = 0;
-	private static final int MAGIC = 35;
-	private static final int MAGIC_UP = 15;
+	private static final int MAGIC = 50;
+	private static final int MAGIC_UP = 20;
 
 	public LuckyMode() {
 		super(ID, NAME, MarksmanMod.CARD_IMG_PATH + ID + ".png", COST, DESCRIPTION,

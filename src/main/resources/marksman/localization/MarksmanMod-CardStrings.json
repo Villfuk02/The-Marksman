@@ -107,7 +107,7 @@
 	},
 	"Crossbow": {
 		"NAME": "Crossbow",
-		"DESCRIPTION": "Deal !D! Silent damage twice and apply !M! Frail twice. NL Crit: !C! %"
+		"DESCRIPTION": "Deal !D! Silent damage twice and remove !M! Artifact. NL Crit: !C! %"
 	},
 	"SmokeBomb": {
 		"NAME": "Smoke Grenade",
@@ -190,8 +190,7 @@
 	},
 	"GrenadeLauncher": {
 		"NAME": "Grenade Launcher",
-		"DESCRIPTION": "Use and Exhaust a Grenade from your draw pile, discard pile or hand.",
-		"UPGRADE_DESCRIPTION": "Retain. NL Use and Exhaust a Grenade from your draw pile, discard pile or hand."
+		"DESCRIPTION": "Use and Exhaust up to !M! Grenades from your draw pile, discard pile or hand (in this order)."
 	},
 	"AcidBottle": {
 		"NAME": "Acid Bottle",
@@ -249,8 +248,8 @@
 	},
 	"FirstAidKit": {
 		"NAME": "First Aid Kit",
-		"DESCRIPTION": "Heal ALL HP lost this turn. NL Shuffle 2 Painkillers into your draw pile.",
-		"UPGRADE_DESCRIPTION": "Heal ALL HP lost this turn. NL Shuffle 2 Upgraded Painkillers into your draw pile.",
+		"DESCRIPTION": "Heal ALL HP lost this turn. NL Shuffle 2 Painkillers into your draw pile. NL Draw 1 card.",
+		"UPGRADE_DESCRIPTION": "Heal ALL HP lost this turn. NL Shuffle 2 Upgraded Painkillers into your draw pile. NL Draw 1 card.",
 		"EXTENDED_DESCRIPTION": [
 			" NL (Heals ",
 			" HP.)"
@@ -308,7 +307,7 @@
 	},
 	"Ignite": {
 		"NAME": "Ignite",
-		"DESCRIPTION": "This turn, whenever you deal unblocked Attack damage, apply 2 Burning."
+		"DESCRIPTION": "This turn, whenever you hit an enemy with an Attack, apply 2 Burning."
 	},
 	"CombatTrousers": {
 		"NAME": "Combat Trousers",
@@ -341,11 +340,11 @@
 	},
 	"NuclearPower": {
 		"NAME": "Nuclear Power",
-		"DESCRIPTION": "Next turn, gain NL 2 X - !M! Energy."
+		"DESCRIPTION": "Next turn, gain X times !M! Energy."
 	},
 	"CounterStrike": {
 		"NAME": "Counter Strike",
-		"DESCRIPTION": "Every time you lose Strength or Dexterity, deal !M! damage to ALL enemies."
+		"DESCRIPTION": "Innate. NL Every time you lose Strength, Deal !M! Damage to ALL enemies and gain 1 Dexterity."
 	},
 	"Firewall": {
 		"NAME": "Firewall",

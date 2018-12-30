@@ -11,7 +11,8 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.FrailPower;
+import com.megacrit.cardcrawl.powers.ArtifactPower;
+import com.megacrit.cardcrawl.powers.FocusPower;
 import com.megacrit.cardcrawl.random.Random;
 
 import marksman.MarksmanMod;
@@ -26,7 +27,7 @@ public class Crossbow extends CritCard{
 	private static final int COST = 1;	
 	private static final int DMG = 3;
 	private static final int DMG_UP = 1;
-	private static final int MAGIC = 1;
+	private static final int MAGIC = 2;
 	private static final int MAGIC_UP = 1;
 	
 	Random rand = new Random();
@@ -82,8 +83,11 @@ public class Crossbow extends CritCard{
 			}	
 			AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, dmg, DamageType.THORNS),AbstractGameAction.AttackEffect.BLUNT_LIGHT));
 			
-			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m,p,new FrailPower(m,this.magicNumber,false), this.magicNumber));
-			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m,p,new FrailPower(m,this.magicNumber,false), this.magicNumber));
+			for (int i = 0; i < this.magicNumber; i++) {
+				if(m.hasPower(ArtifactPower.POWER_ID)) {
+					AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new FocusPower(m, -1), -1));					
+				}
+			}
         }		
 	}
 }

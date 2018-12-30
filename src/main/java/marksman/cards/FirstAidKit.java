@@ -2,6 +2,7 @@ package marksman.cards;
 
 
 import com.megacrit.cardcrawl.actions.GameActionManager;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -63,6 +64,7 @@ public class FirstAidKit extends CustomCard{
 	@Override
 	public void use(AbstractPlayer p, AbstractMonster m) {		
 		AbstractDungeon.actionManager.addToBottom(new HealAction(p,p,GameActionManager.damageReceivedThisTurn));
+		AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, 1));
 		AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Painkillers(this.upgraded), 2, true, false));
 	}
 	

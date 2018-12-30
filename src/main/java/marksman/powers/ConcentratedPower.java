@@ -15,9 +15,9 @@ public class ConcentratedPower extends AbstractPower
 	public static final String POWER_ID = "ConcentratedPower";
 	
     public static final String[] DESCRIPTIONS = new String[] {
-    		"Doubles #yCrit of all atacks with #yCrit for #b",
+    		"Doubles #yCrit chance of all atacks with #yCrit for #b",
     		" turns.",
-    		"Doubles #yCrit of all atacks with #yCrit for this turn."
+    		"Doubles #yCrit chance of all atacks with #yCrit for this turn."
 	};
     
     public ConcentratedPower(final AbstractCreature owner, final int newAmount) {
