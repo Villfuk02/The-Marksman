@@ -26,9 +26,9 @@ public class Assasinate extends CustomCard{
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 	private static final int COST = 3;	
-	private static final int DMG = 38;
-	private static final int DMG_UP = 8;
-	private static final int MAGIC = 3;
+	private static final int DMG = 40;
+	private static final int DMG_UP = 10;
+	private static final int MAGIC = 5;
 	//private static final int MAGIC_UP = -1;
 	
 	Random rand = new Random();
@@ -69,9 +69,7 @@ public class Assasinate extends CustomCard{
 
 		AbstractDungeon.actionManager.addToBottom(new VFXAction(new WeightyImpactEffect(m.hb.cX, m.hb.cY)));
 		AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, this.baseDamage, DamageType.THORNS),AbstractGameAction.AttackEffect.NONE));			
-			
-		for(int i = 0; i < this.magicNumber; i++) {
-			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p,p,new StrengthPower(p,-1), -1));
-		}
+		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p,p,new StrengthPower(p,-this.magicNumber), -this.magicNumber));
+		
 	}
 }

@@ -5,9 +5,9 @@
     "Villfuk02","Residualshade"
   ],
   "description": "Adds The Marksman as a new playable character and slightly changes how Burns work. Thanks Residualshade for updating the mod and everyone from the StS modding community for all the help!",
-  "version": "0.2.26",
+  "version": "0.3.0",
   "dependencies": [
-    "basemod"
+    "basemod", "stslib"
   ],
   "sts_version": "12-20-2018",
   "mts_version": "3.6.0",

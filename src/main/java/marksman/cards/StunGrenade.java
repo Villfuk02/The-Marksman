@@ -2,6 +2,7 @@ package marksman.cards;
 
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.MathUtils;
+import com.evacipated.cardcrawl.mod.stslib.powers.StunMonsterPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -14,6 +15,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.monsters.AbstractMonster.Intent;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 import com.megacrit.cardcrawl.random.Random;
@@ -29,11 +31,8 @@ public class StunGrenade extends CustomCard{
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-	public static final String UP_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 	private static final int COST = 3;
-	private static final int DMG = 3;
-	private static final int DMG_UP = 3;
-	private static final int MAGIC = 3;
+	private static final int MAGIC = 2;
 	private static final int MAGIC_UP = 1;
 	
 	Random rand = new Random();
@@ -43,7 +42,6 @@ public class StunGrenade extends CustomCard{
 		super(ID, NAME, MarksmanMod.CARD_IMG_PATH + ID + ".png", COST, DESCRIPTION,
         		AbstractCard.CardType.ATTACK, AbstractCardEnum.BLACK,
         		AbstractCard.CardRarity.BASIC, AbstractCard.CardTarget.ALL_ENEMY);
-		this.baseDamage = DMG;
 		this.baseMagicNumber = this.magicNumber = MAGIC;
 		this.exhaust = true;
 	}
@@ -57,11 +55,8 @@ public class StunGrenade extends CustomCard{
 	public void upgrade() {
 		if (!this.upgraded) {
 			upgradeName();
-			this.upgradeDamage(DMG_UP);
-			this.upgradeMagicNumber(MAGIC_UP);			
-			this.rawDescription = UP_DESCRIPTION;
+			this.upgradeMagicNumber(MAGIC_UP);	
 			this.initializeDescription();
-			this.isInnate = true;
 			
 		} 
 	}
@@ -72,8 +67,12 @@ public class StunGrenade extends CustomCard{
 		AbstractDungeon.actionManager.addToBottom(new VFXAction(new RoomTintEffect(new Color(0.9f,0.9f,0.89f,1f), 1f, 0.1f, false)));
 		AbstractDungeon.actionManager.addToTop(new DamageAllEnemiesAction(p, DamageInfo.createDamageMatrix(this.damage, true), damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
 		for (final AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
+			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p, new StunMonsterPower(mo, 1), 1));
+			mo.setMove(mo.nextMove, Intent.STUN);
+			mo.createIntent();
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p, new WeakPower(mo, this.magicNumber, false), this.magicNumber));
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p, new VulnerablePower(mo, this.magicNumber, false), this.magicNumber));
-	    }				
+	    }	
+		
 	}
 }

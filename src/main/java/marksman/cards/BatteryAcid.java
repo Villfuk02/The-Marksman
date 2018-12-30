@@ -47,9 +47,9 @@ public class BatteryAcid extends CustomCard{
 	@Override
 	public void use(AbstractPlayer p, AbstractMonster m) {	
 		if(upgraded)
-			AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(4));
+			AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(3));
 		else
-			AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(3));   
+			AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(2));   
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new CorrosionPower(p, 1), 1));
 	}
 }

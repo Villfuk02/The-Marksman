@@ -33,8 +33,7 @@
 	},
 	"StunGrenade": {
 		"NAME": "Stun Grenade",
-		"DESCRIPTION": "Deal !D! Damage and apply !M! Weak and Vulnerable to ALL enemies. NL Exhaust.",
-		"UPGRADE_DESCRIPTION": "Innate. NL Deal !D! Damage and apply !M! Weak and Vulnerable to ALL enemies. NL Exhaust."
+		"DESCRIPTION": "Stun ALL enemies and apply !M! Weak and Vulnerable to ALL enemies. NL Exhaust."
 	},
 	"VoidGrenade": {
 		"NAME": "Void Grenade",
@@ -115,8 +114,8 @@
 	},
 	"BatteryAcidBlack": {
 		"NAME": "Battery Acid",
-		"DESCRIPTION": "Gain [R] [R] [R] . NL Gain 1 Corrosion. NL Exhaust.",
-		"UPGRADE_DESCRIPTION": "Gain [R] [R] [R] [R] . NL Gain 1 Corrosion. NL Exhaust."
+		"DESCRIPTION": "Gain [R] [R] . NL Gain 1 Corrosion. NL Exhaust.",
+		"UPGRADE_DESCRIPTION": "Gain [R] [R] [R] . NL Gain 1 Corrosion. NL Exhaust."
 	},
 	"Decoy": {
 		"NAME": "Decoy",
@@ -124,8 +123,7 @@
 	},
 	"StealthMode": {
 		"NAME": "Stealth Mode",
-		"DESCRIPTION": "Gain !M! Intangible. NL Lose 1 Strength. NL Can be only played as a first card this turn.",
-		"UPGRADE_DESCRIPTION": "Innate. NL Gain !M! Intangible. NL Lose 1 Strength. NL Can be only played as a first card this turn."
+		"DESCRIPTION": "Gain 1 Intangible. NL Lose 2 Strength. NL Draw !M! Cards. NL Can be only played as a first card this turn."
 	},
 	"LuckyMode": {
 		"NAME": "Lucky Mode",
@@ -133,7 +131,7 @@
 	},
 	"AutomaticMode": {
 		"NAME": "Automatic Mode",
-		"DESCRIPTION": "Gain [R] [R]. NL Put !M! Burns into your discard pile. NL Can be only played as a first card this turn."
+		"DESCRIPTION": "Gain [R] [R] [R]. NL Put !M! Burns into your discard pile. NL Can be only played as a first card this turn."
 	},
 	"Molotov": {
 		"NAME": "Molotov Cocktail",
@@ -207,8 +205,8 @@
 	},
 	"TheLaw": {
 		"NAME": "The Law",
-		"DESCRIPTION": "Retain. NL Remove ALL Strength, Vulnerable, Weak, Intangible and Slow from ALL creatures (Including you). NL Exhaust.",
-		"UPGRADE_DESCRIPTION": "Innate. NL Retain. NL Remove ALL  Strength, Vulnerable, Weak, Intangible and Slow from ALL creatures (Including you). NL Exhaust."
+		"DESCRIPTION": "Retain. NL Remove ALL Strength, Vulnerable, Weak, Intangible and Slow NL from ALL creatures NL (Including you). NL Exhaust.",
+		"UPGRADE_DESCRIPTION": "Innate. NL Retain. NL Remove ALL  Strength, Vulnerable, Weak, Intangible and Slow NL from ALL creatures NL (Including you). NL Exhaust."
 	},
 	"SkinSkill": {
 		"NAME": "Skin = Skill",
@@ -336,7 +334,7 @@
 	},
 	"Assasinate": {
 		"NAME": "Assasinate",
-		"DESCRIPTION": "Deal !D! Silent Damage. NL Lose 1 Strength !M! times."
+		"DESCRIPTION": "Deal !D! Silent Damage. NL Lose !M! Strength."
 	},
 	"NuclearPower": {
 		"NAME": "Nuclear Power",

@@ -56,7 +56,7 @@ public class AutomaticMode extends CustomCard{
 
 	@Override
 	public void use(AbstractPlayer p, AbstractMonster m) {		
-		AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(2));
+		AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(3));
 		AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(new Burn(), this.magicNumber));  
 	}
 }

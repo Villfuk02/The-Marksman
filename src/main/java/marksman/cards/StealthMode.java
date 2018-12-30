@@ -2,6 +2,7 @@ package marksman.cards;
 
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -20,10 +21,9 @@ public class StealthMode extends CustomCard{
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-	public static final String UP_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 	private static final int COST = 0;
-	private static final int MAGIC = 1;
-	//private static final int MAGIC_UP = 0;
+	private static final int MAGIC = 2;
+	private static final int MAGIC_UP = 1;
 
 	public StealthMode() {
 		super(ID, NAME, MarksmanMod.CARD_IMG_PATH + ID + ".png", COST, DESCRIPTION,
@@ -41,10 +41,8 @@ public class StealthMode extends CustomCard{
 	public void upgrade() {
 		if(!this.upgraded) {
 			upgradeName();
-			this.isInnate = true;
-			this.rawDescription = UP_DESCRIPTION;
 			this.initializeDescription();
-			//this.upgradeMagicNumber(MAGIC_UP);
+			this.upgradeMagicNumber(MAGIC_UP);
 			
 		}
 	}
@@ -59,7 +57,8 @@ public class StealthMode extends CustomCard{
 
 	@Override
 	public void use(AbstractPlayer p, AbstractMonster m) {		
-		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new IntangiblePlayerPower(p, this.magicNumber),this.magicNumber));
-		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, -1),-1));
+		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new IntangiblePlayerPower(p, 1), 1));
+		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, -2),-2));
+		AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, this.magicNumber));
 	}
 }
