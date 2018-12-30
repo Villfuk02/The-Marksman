@@ -40,7 +40,6 @@ public class ExtendedMagazines extends CustomCard{
 		if (!this.upgraded) {
 			upgradeName();
 			this.upgradeMagicNumber(UPGRADE);
-			this.magicNumber = DRAW + UPGRADE;
 			
 		}		
 	}

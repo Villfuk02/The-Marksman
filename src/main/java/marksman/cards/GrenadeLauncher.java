@@ -19,12 +19,14 @@ public class GrenadeLauncher extends CustomCard{
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 	private static final int COST = 0;
-	
+	private static final int MAGIC = 2;
+	private static final int MAGIC_UP = 1;
 
 	public GrenadeLauncher() {
 		super(ID, NAME, MarksmanMod.CARD_IMG_PATH + ID + ".png", COST, DESCRIPTION,
         		AbstractCard.CardType.ATTACK, AbstractCardEnum.BLACK,
         		AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ALL_ENEMY);
+		this.baseMagicNumber = this.magicNumber = MAGIC;
 	}
 
 	@Override
@@ -38,7 +40,7 @@ public class GrenadeLauncher extends CustomCard{
 			upgradeName();
 			this.initializeDescription();
 			this.retain = true;
-			
+			this.upgradeMagicNumber(MAGIC_UP);
 		} 
 	}
 	
