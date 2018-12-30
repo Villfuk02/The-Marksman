@@ -22,7 +22,7 @@ public class Revolver extends CritCard{
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 	private static final int COST = 1;	
-	private static final int DMG = 4;
+	private static final int DMG = 3;
 	//private static final int DMG_UP = 3;
 	private static final int CRIT = 5;
 	private static final int CRIT_UP = 2;
@@ -36,7 +36,7 @@ public class Revolver extends CritCard{
         		AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.ENEMY);
 		this.baseDamage = DMG;
 		this.baseMagicNumber = this.magicNumber = CRIT;
-		this.baseCrit = 25;
+		this.baseCrit = 40;
 	}
 
 	@Override

@@ -63,6 +63,11 @@ public class TrustyMagazine extends CustomRelic {
         }
         AbstractDungeon.gridSelectScreen.openConfirmationGrid(group, "Repaired.");
 	}
+	
+	@Override
+    public boolean canSpawn() {
+		return AbstractDungeon.player.hasRelic("RustyMagazine");
+	}
     
 	
 	@Override

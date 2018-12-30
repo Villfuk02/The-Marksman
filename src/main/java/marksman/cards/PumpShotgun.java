@@ -22,7 +22,7 @@ public class PumpShotgun extends CritCard{
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 	private static final int COST = 2;	
-	private static final int DMG = 3;
+	private static final int DMG = 2;
 	//private static final int DMG_UP = 1;
 	private static final int CRIT = 25;
 	private static final int AMT = 4;

@@ -1,7 +1,7 @@
 {	
 	"RustyPistol": {
 		"NAME": "Rusty Handgun",
-		"DESCRIPTION": "Deal !D! Damage. NL Crit: !C! % NL Exhaust."
+		"DESCRIPTION": "Deal !D! Damage. NL Crit: !C! % NL If this Crits, Exhaust."
 	},
 	"StrikeBlack": {
 		"NAME": "Strike",
@@ -47,11 +47,11 @@
 	},
 	"HandCannon": {
 		"NAME": "Hand Cannon",
-		"DESCRIPTION": "Deal !D! Damage. NL Crit: !C! % NL Target loses !M! HP. NL Lose 25 Precision."
+		"DESCRIPTION": "Deal !D! Damage. NL Target loses !M! HP. NL Lose 25 Precision."
 	},
 	"BurstFire": {
 		"NAME": "Burst Fire",
-		"DESCRIPTION": "Deal !D! Damage !M! times. NL Crit: !C! % NL Lose 30 Precision."
+		"DESCRIPTION": "Deal !D! Damage !M! times. NL Crit: !C! % NL Lose 10 Precision for every Critical hit."
 	},
 	"TacticalShotgun": {
 		"NAME": "Tactical Shotgun",
@@ -59,11 +59,11 @@
 	},
 	"HeavyShotgun": {
 		"NAME": "Heavy Shotgun",
-		"DESCRIPTION": "Expose yourself. NL Deal !D! Damage to random enemy 4 times. Crit: !C! % NL Discard random card for every Critical hit."
+		"DESCRIPTION": "Expose yourself. NL Deal !D! Damage to random enemy 4 times. Crit: !C! % NL Discard a random card for every Critical hit."
 	},
 	"PumpShotgun": {
 		"NAME": "Pump Shotgun",
-		"DESCRIPTION": "Expose yourself. NL Deal !D! Damage to random enemy !M! times. Crit: !C! % NL Lose 20 Precision for every Critical hit."
+		"DESCRIPTION": "Expose yourself. NL Deal !D! Damage to random enemy !M! times. Crit: !C! % NL Lose 1 Strength for this turn for every Critical hit."
 	},
 	"Minigun": {
 		"NAME": "Minigun",
@@ -107,7 +107,7 @@
 	},
 	"Crossbow": {
 		"NAME": "Crossbow",
-		"DESCRIPTION": "Deal !D! Silent damage and apply !M! Frail twice. NL Crit: !C! %"
+		"DESCRIPTION": "Deal !D! Silent damage twice and apply !M! Frail twice. NL Crit: !C! %"
 	},
 	"SmokeBomb": {
 		"NAME": "Smoke Grenade",
@@ -200,7 +200,7 @@
 	"Bayonet": {
 		"NAME": "Bayonet",
 		"DESCRIPTION": "Expose yourself. NL Deal !D! damage for every Critical hit this turn. NL Exhaust.",
-		"UPGRADE_DESCRIPTION": "Retain. NL Expose yourself. NL Deal !D! damage for every Critical hit this turn. NL Exhaust."
+		"UPGRADE_DESCRIPTION": "Expose yourself. NL Deal !D! damage for every Critical hit this turn."
 	},
 	"Flamethrower": {
 		"NAME": "Flamethrower",
@@ -208,8 +208,8 @@
 	},
 	"TheLaw": {
 		"NAME": "The Law",
-		"DESCRIPTION": "Retain. NL Remove ALL effects affecting damage from ALL creatures. NL Exhaust.",
-		"UPGRADE_DESCRIPTION": "Innate. NL Retain. NL Remove ALL effects affecting damage from ALL creatures. NL Exhaust."
+		"DESCRIPTION": "Retain. NL Remove ALL Strength, Vulnerable, Weak, Intangible and Slow from ALL creatures (Including you). NL Exhaust.",
+		"UPGRADE_DESCRIPTION": "Innate. NL Retain. NL Remove ALL  Strength, Vulnerable, Weak, Intangible and Slow from ALL creatures (Including you). NL Exhaust."
 	},
 	"SkinSkill": {
 		"NAME": "Skin = Skill",
@@ -288,7 +288,7 @@
 	},
 	"Veteran": {
 		"NAME": "Veteran",
-		"DESCRIPTION": "Innate. NL Lose !M! Strength. NL Every turn, gain 2 Strength. Whenever is your draw pile empty, lose the Strength."
+		"DESCRIPTION": "Innate. NL Lose !M! Strength. NL Every turn, gain 2 Strength. Whenever is your draw pile empty, lose the Strength you gained."
 	},
 	"Aggression": {
 		"NAME": "Aggression",
@@ -394,11 +394,15 @@
 	},
 	"HandClaws": {
 		"NAME": "Hand Claws",
-		"DESCRIPTION": "Lose 6 HP. NL Add !D! Shivs to your hand. NL (Affected by damage modifiers.)"
+		"DESCRIPTION": "Lose 6 HP. NL Add !D! Shivs to your hand. NL (Amount of Shivs affected by damage modifiers.)"
 	},
 	"SawBlade": {
 		"NAME": "Saw Blade",
 		"DESCRIPTION": "Expose yourself. NL Deal !D! Damage to ALL enemies. NL Draw a 0-cost card from your draw pile.",
 		"UPGRADE_DESCRIPTION": "Expose yourself. NL Deal !D! Damage to ALL enemies. NL Draw 1 card. NL Draw a 0-cost card from your draw pile."
+	},
+	"Reposition": {
+		"NAME": "Reposition",
+		"DESCRIPTION": "Draw 2 cards. NL Lose 1 Strength for this turn."
 	}
 }

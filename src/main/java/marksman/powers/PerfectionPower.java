@@ -46,7 +46,7 @@ public class PerfectionPower extends AbstractPower
     
     @Override
     public void onApplyPower(final AbstractPower power, final AbstractCreature target, final AbstractCreature source) {
-    	if(usesLeft > 0 && target == AbstractDungeon.player && power.ID == "CritsThisTurn") {
+    	if(usesLeft > 0 && target == AbstractDungeon.player && power.ID == CritsThisTurn.POWER_ID) {
 	    	DoubleCard();
 		}
     }  

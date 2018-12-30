@@ -3,6 +3,7 @@ package marksman.powers;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.LoseStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
+import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
@@ -36,16 +37,17 @@ public class AggressionPower extends AbstractPower
     
     @Override
     public void onApplyPower(final AbstractPower power, final AbstractCreature target, final AbstractCreature source) {
-    	if(target == AbstractDungeon.player && power.ID == "Vulnerable") {
+    	if(target == AbstractDungeon.player && power.ID == VulnerablePower.POWER_ID) {
 	    	this.flash();    	
-	    	AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(target, target, "Vulnerable"));
+	    	AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(target, target, VulnerablePower.POWER_ID));
 	    	
-	    	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, owner,new StrengthPower(owner, this.amount), this.amount));
-	    	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, owner,new LoseStrengthPower(owner, this.amount), this.amount));
+
+	    	AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(owner, owner,new LoseStrengthPower(owner, this.amount), this.amount));
+	    	AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(owner, owner,new StrengthPower(owner, this.amount), this.amount));
 	    	
 	    	for (final AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
-	    		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, owner,new StrengthPower(mo, this.amount), this.amount));
-		    	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, owner,new LoseStrengthPower(mo, this.amount), this.amount));
+		    	AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(mo, owner,new LoseStrengthPower(mo, this.amount), this.amount));
+	    		AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(mo, owner,new StrengthPower(mo, this.amount), this.amount));
 	    	}
 		}
     }   

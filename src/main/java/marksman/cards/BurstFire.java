@@ -62,10 +62,11 @@ public class BurstFire extends CritCard{
 				if(rand.random(100)  < this.crit) {
 					dmg *= 3;
 					AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new CritsThisTurn(p, 1), 1));
+					AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new PrecisionPower(p, -10), -10));	
 				}		
 				AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, dmg, damageTypeForTurn),AbstractGameAction.AttackEffect.BLUNT_LIGHT));
 			}			
-			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new PrecisionPower(p, -30), -30));			
+					
         }		
 	}
 }

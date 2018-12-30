@@ -7,11 +7,12 @@ import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.*;
 import com.megacrit.cardcrawl.core.*;
 import com.megacrit.cardcrawl.dungeons.*;
+import com.megacrit.cardcrawl.powers.GainStrengthPower;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.random.Random;
 import com.megacrit.cardcrawl.vfx.combat.*;
 
 import marksman.powers.CritsThisTurn;
-import marksman.powers.PrecisionPower;
 
 import com.megacrit.cardcrawl.actions.utility.*;
 
@@ -61,7 +62,8 @@ public class ShotgunAction extends AbstractGameAction
 					AbstractDungeon.actionManager.addToTop(new DrawCardAction(AbstractDungeon.player, 1));
 					break;
 				case 1:
-					AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new PrecisionPower(AbstractDungeon.player, -20), -20));
+					AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, -1), -1));
+					AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new GainStrengthPower(AbstractDungeon.player, 1), 1));
 					break;
 				case 2:
 					AbstractDungeon.actionManager.addToTop(new DiscardAction(AbstractDungeon.player, AbstractDungeon.player, 1, true));

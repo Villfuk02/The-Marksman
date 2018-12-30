@@ -19,9 +19,13 @@ import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import marksman.MarksmanMod;
+import marksman.cards.Defend;
+import marksman.cards.RustyPistol;
+import marksman.cards.Strike;
 import marksman.cards.StunGrenade;
 import marksman.patches.AbstractCardEnum;
 import marksman.patches.TheMarksmanEnum;
+import marksman.relics.RustyMagazine;
 
 public class TheMarksman extends CustomPlayer{
 
@@ -40,32 +44,32 @@ public class TheMarksman extends CustomPlayer{
 	@Override
 	public ArrayList<String> getStartingDeck() {
 		ArrayList<String> retVal = new ArrayList<>();		
-		retVal.add("DefendBlack");
-		retVal.add("DefendBlack");
-		retVal.add("DefendBlack");
-		retVal.add("DefendBlack");
-		retVal.add("RustyPistol");
-		retVal.add("RustyPistol");
-		retVal.add("RustyPistol");
-		retVal.add("StunGrenade");
-		retVal.add("StrikeBlack");
-		retVal.add("StrikeBlack");
-		retVal.add("StrikeBlack");
-		retVal.add("StrikeBlack");
+		retVal.add(Defend.ID);
+		retVal.add(Defend.ID);
+		retVal.add(Defend.ID);
+		retVal.add(Defend.ID);
+		retVal.add(Defend.ID);
+		retVal.add(RustyPistol.ID);
+		retVal.add(RustyPistol.ID);
+		retVal.add(RustyPistol.ID);
+		retVal.add(StunGrenade.ID);
+		retVal.add(Strike.ID);
+		retVal.add(Strike.ID);
+		retVal.add(Strike.ID);
 		return retVal;
 	}
 	
 	@Override
 	public ArrayList<String> getStartingRelics() {
 		ArrayList<String> retVal = new ArrayList<>();
-		retVal.add("RustyMagazine");
-		UnlockTracker.markRelicAsSeen("RustyMagazine");
+		retVal.add(RustyMagazine.ID);
+		UnlockTracker.markRelicAsSeen(RustyMagazine.ID);
 		return retVal;
 	}
 	
 	@Override
 	public CharSelectInfo getLoadout() {
-		return new CharSelectInfo(NAME, "After his entire family was consumed by the spire's corrupton, all he has left is his Rusty Handgun. NL He wants to avenge his family.",
+		return new CharSelectInfo(NAME, "After his entire family was consumed by the spire's corrupton, NL all he has left is his Rusty Handgun. He wants to avenge his family.",
 				90, 90, 0, 99, 6,
 			this, getStartingRelics(), getStartingDeck(), false);
 	}

@@ -3,6 +3,7 @@ package marksman.cards;
 
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.cards.CardGroup.CardGroupType;
@@ -77,7 +78,7 @@ public class Insulation extends CustomCard{
 
 			AbstractDungeon.actionManager.addToBottom(new VFXAction(new FlameBarrierEffect(p.hb.cY, p.hb.cX), 0.25f));
 			AbstractCard c = tmp.getTopCard();
-			AbstractDungeon.player.discardPile.moveToExhaustPile(c);
+			AbstractDungeon.actionManager.addToTop(new ExhaustSpecificCardAction(c, AbstractDungeon.player.discardPile));
         	tmp.removeTopCard();
 			for (final AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
 				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p, new BurningPower(mo, this.magicNumber), this.magicNumber, true));
@@ -97,7 +98,7 @@ public class Insulation extends CustomCard{
         }
 		for (int i = 0; i < amt; i++) {
 			AbstractCard c = tmp.getTopCard();
-			AbstractDungeon.player.drawPile.moveToExhaustPile(c);
+			AbstractDungeon.actionManager.addToTop(new ExhaustSpecificCardAction(c, AbstractDungeon.player.drawPile));
         	tmp.removeTopCard();
 			for (final AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
 				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p, new BurningPower(mo, this.magicNumber), this.magicNumber, true));

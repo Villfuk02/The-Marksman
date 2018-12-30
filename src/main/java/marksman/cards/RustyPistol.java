@@ -25,7 +25,7 @@ public class RustyPistol extends CritCard{
 	private static final int DMG = 4;
 	//private static final int DMG_UP = 1;
 	private static final int CRIT = 30;
-	private static final int CRIT_UP = 30;
+	private static final int CRIT_UP = 25;
 	
 	Random rand = new Random();
 	
@@ -36,7 +36,6 @@ public class RustyPistol extends CritCard{
         		AbstractCard.CardRarity.BASIC, AbstractCard.CardTarget.ENEMY);
 		this.baseDamage = DMG;
 		this.baseCrit = this.crit = CRIT;
-		this.exhaust = true;
 	}
 
 	@Override
@@ -62,6 +61,7 @@ public class RustyPistol extends CritCard{
 			if(rand.random(100)  < this.crit) {
 				dmg *= 3;
 				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new CritsThisTurn(p, 1), 1));
+				this.exhaust = true;
 			}	
 			AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, dmg, damageTypeForTurn),AbstractGameAction.AttackEffect.BLUNT_LIGHT));
 		}		

@@ -45,10 +45,10 @@ public class BurningPower extends AbstractPower
     public void atEndOfTurn(final boolean isPlayer) {
     	this.flash();
     	
-    	if(!isPlayer && AbstractDungeon.player.hasPower("FriendlyFirePower"))
-    		AbstractDungeon.actionManager.addToBottom(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, amount*AbstractDungeon.player.getPower("FriendlyFirePower").amount));    	
+    	if(!isPlayer && AbstractDungeon.player.hasPower(FriendlyFirePower.POWER_ID))
+    		AbstractDungeon.actionManager.addToBottom(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, amount*AbstractDungeon.player.getPower(FriendlyFirePower.POWER_ID).amount));    	
     		
-    	AbstractPower cor = owner.getPower("CorrosionPower");
+    	AbstractPower cor = owner.getPower(CorrosionPower.POWER_ID);
     	if(cor != null && cor.amount > 0) {
     	}else {
     		AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(owner, owner, ID, owner.currentBlock));

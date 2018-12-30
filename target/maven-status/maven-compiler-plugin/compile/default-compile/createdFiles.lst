@@ -78,6 +78,7 @@ marksman\cards\Calculated.class
 marksman\cards\EyeForAnEye.class
 marksman\cards\Perfection.class
 marksman\cards\Foresight.class
+marksman\cards\Reposition.class
 marksman\powers\BurningPower.class
 marksman\cards\RustyPistol.class
 marksman\cards\Aggression.class

@@ -35,9 +35,9 @@ public class FirepowerPower extends AbstractPower
     
     @Override
     public void onApplyPower(final AbstractPower power, final AbstractCreature target, final AbstractCreature source) {
-    	if(target == AbstractDungeon.player && power.ID == "BurningPower") {
+    	if(target == AbstractDungeon.player && power.ID == BurningPower.POWER_ID) {
 	    	this.flash();	    	
-	    	AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(target, target, "BurningPower", power.amount));
+	    	AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(target, target, BurningPower.POWER_ID, power.amount));
 	    	
 	    	int amt = power.amount * this.amount;
 	    	

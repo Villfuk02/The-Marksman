@@ -13,19 +13,19 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.random.Random;
 
+import basemod.abstracts.CustomCard;
 import marksman.MarksmanMod;
 import marksman.patches.AbstractCardEnum;
-import marksman.powers.CritsThisTurn;
 import marksman.powers.PrecisionPower;
 
-public class HandCannon extends CritCard{
+public class HandCannon extends CustomCard{
 	public static final String ID = "HandCannon";
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 	private static final int COST = 2;	
-	private static final int DMG = 8;
-	private static final int DMG_UP = 2;
+	private static final int DMG = 9;
+	private static final int DMG_UP = 3;
 	private static final int LOSS = 6;
 	private static final int LOSS_UP = 2;
 	
@@ -38,7 +38,6 @@ public class HandCannon extends CritCard{
         		AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.ENEMY);
 		this.baseDamage = DMG;
 		this.baseMagicNumber = this.magicNumber = LOSS;
-		this.baseCrit = 10;
 	}
 
 	@Override
@@ -60,12 +59,7 @@ public class HandCannon extends CritCard{
 	@Override
 	public void use(AbstractPlayer p, AbstractMonster m) {
 		if (m != null) {
-			int dmg = this.damage;
-			if(rand.random(100)  < this.crit) {
-				dmg *= 3;
-				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new CritsThisTurn(p, 1), 1));
-			}	
-			AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, dmg, damageTypeForTurn),AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+			AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, this.damage, damageTypeForTurn),AbstractGameAction.AttackEffect.BLUNT_LIGHT));
 			AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, 1, DamageType.HP_LOSS),AbstractGameAction.AttackEffect.BLUNT_LIGHT));
 			
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new PrecisionPower(p, -25), -25));

@@ -73,9 +73,7 @@ public class Crossbow extends CritCard{
 				dmg *= 3;
 				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new CritsThisTurn(p, 1), 1));
 			}	
-			AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, dmg, DamageType.THORNS),AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-			
-			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m,p,new FrailPower(m,this.magicNumber,false), this.magicNumber));
+			AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, dmg, DamageType.THORNS),AbstractGameAction.AttackEffect.BLUNT_LIGHT));			
 			
 			dmg = this.baseDamage;
 			if(rand.random(100)  < this.crit) {
@@ -84,6 +82,7 @@ public class Crossbow extends CritCard{
 			}	
 			AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, dmg, DamageType.THORNS),AbstractGameAction.AttackEffect.BLUNT_LIGHT));
 			
+			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m,p,new FrailPower(m,this.magicNumber,false), this.magicNumber));
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m,p,new FrailPower(m,this.magicNumber,false), this.magicNumber));
         }		
 	}

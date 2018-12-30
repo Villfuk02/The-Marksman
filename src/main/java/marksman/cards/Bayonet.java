@@ -25,7 +25,7 @@ public class Bayonet extends CustomCard{
 	public static final String UP_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 	private static final int COST = 0;
 	private static final int DMG = 7;
-	private static final int DMG_UP = 3;
+	private static final int DMG_UP = 2;
 
 	public Bayonet() {
 		super(ID, NAME, MarksmanMod.CARD_IMG_PATH + ID + ".png", COST, DESCRIPTION,
@@ -47,15 +47,9 @@ public class Bayonet extends CustomCard{
 			this.upgradeDamage(DMG_UP);
 			this.rawDescription = UP_DESCRIPTION;
 			this.initializeDescription();
-			this.retain = true;
+			this.exhaust = false;
 		}
 	}	
-	
-	@Override
-	public void atTurnStart() {
-		if(upgraded)
-			retain = true;
-	}
 
 	@Override
 	public void use(AbstractPlayer p, AbstractMonster m) {

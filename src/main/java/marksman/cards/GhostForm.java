@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
 import com.megacrit.cardcrawl.random.Random;
 
 import basemod.abstracts.CustomCard;
+import basemod.helpers.BaseModCardTags;
 import marksman.MarksmanMod;
 import marksman.patches.AbstractCardEnum;
 import marksman.powers.GhostFormPower;
@@ -30,6 +31,7 @@ public class GhostForm extends CustomCard{
 		super(ID, NAME, MarksmanMod.CARD_IMG_PATH + ID + ".png", COST, DESCRIPTION,
         		AbstractCard.CardType.POWER, AbstractCardEnum.BLACK,
         		AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.SELF);
+		this.tags.add(BaseModCardTags.FORM);
 	}
 
 	@Override

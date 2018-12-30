@@ -64,8 +64,10 @@ public class GammaRay extends CritCard{
 					dmg *= 3;
 					AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new CritsThisTurn(p, 1), 1));
 					if(dmg == this.damage * 9)
-				        AbstractDungeon.actionManager.addToBottom(new VFXAction(p, new MindblastEffect(p.dialogX, p.dialogY,false), 0.1f));
-				}		
+				        AbstractDungeon.actionManager.addToBottom(new VFXAction(p, new MindblastEffect(p.dialogX, p.dialogY,false), 0.1f));					
+				}	else {
+					dmg = this.damage;					
+				}
 				AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, dmg, damageTypeForTurn),AbstractGameAction.AttackEffect.NONE));
 			}			
         }		

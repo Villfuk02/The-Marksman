@@ -39,12 +39,12 @@ public class FlammableFumesPower extends AbstractPower
         if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
             this.flash();
             for (final AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
-                if (!m.isDead && !m.isDying && m.hasPower("BurningPower")) {
+                if (!m.isDead && !m.isDying && m.hasPower(BurningPower.POWER_ID)) {
                     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, this.owner, new BurningPower(m, this.amount), this.amount));
                 }
             }
         }
-        if (owner.hasPower("BurningPower")) {
+        if (owner.hasPower(BurningPower.POWER_ID)) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, this.owner, new BurningPower(owner, this.amount), this.amount));
         }
     }

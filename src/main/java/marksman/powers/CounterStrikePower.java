@@ -1,6 +1,8 @@
 package marksman.powers;
 
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.DexterityPower;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
@@ -35,7 +37,7 @@ public class CounterStrikePower extends AbstractPower
     
     @Override
     public void onApplyPower(final AbstractPower power, final AbstractCreature target, final AbstractCreature source) {
-    	if(target == AbstractDungeon.player && (power.ID == "Strength" || power.ID == "Dexterity") && power.amount < 0) {
+    	if(target == AbstractDungeon.player && (power.ID == StrengthPower.POWER_ID || power.ID == DexterityPower.POWER_ID) && power.amount < 0) {
 	    	this.flash();    	
 	    	AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(AbstractDungeon.player, DamageInfo.createDamageMatrix(this.amount, true), DamageType.THORNS, AbstractGameAction.AttackEffect.SLASH_VERTICAL));
 		}
