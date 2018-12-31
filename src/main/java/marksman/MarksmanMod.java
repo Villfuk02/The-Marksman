@@ -14,16 +14,25 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
+import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.megacrit.cardcrawl.unlock.AbstractUnlock;
+import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
 import basemod.BaseMod;
+import basemod.abstracts.CustomUnlockBundle;
 import basemod.helpers.RelicType;
 import basemod.interfaces.PostBattleSubscriber;
 import basemod.interfaces.PostDungeonInitializeSubscriber;
 import basemod.interfaces.PostExhaustSubscriber;
+import basemod.interfaces.PostPowerApplySubscriber;
+import basemod.interfaces.SetUnlocksSubscriber;
 import marksman.cards.*;
 import marksman.relics.*;
 import basemod.interfaces.EditCardsSubscriber;
@@ -36,7 +45,8 @@ import basemod.interfaces.EditStringsSubscriber;
 public class MarksmanMod implements PostExhaustSubscriber,
 	PostBattleSubscriber, PostDungeonInitializeSubscriber,
 	EditCardsSubscriber, EditCharactersSubscriber, EditKeywordsSubscriber,
-	EditStringsSubscriber, EditRelicsSubscriber{	
+	EditStringsSubscriber, EditRelicsSubscriber, PostPowerApplySubscriber, 
+	SetUnlocksSubscriber{	
 	
 	public static final Logger logger = LogManager.getLogger(MarksmanMod.class.getName());
     
@@ -147,7 +157,13 @@ public class MarksmanMod implements PostExhaustSubscriber,
 		BaseMod.addRelicToCustomPool(new RustyMagazine(), AbstractCardEnum.BLACK);
 		BaseMod.addRelicToCustomPool(new RumBottle(), AbstractCardEnum.BLACK);
 		BaseMod.addRelicToCustomPool(new TrustyMagazine(), AbstractCardEnum.BLACK);
+		BaseMod.addRelicToCustomPool(new RustyHelmet(), AbstractCardEnum.BLACK);
 		BaseMod.addRelic(new ScaleOfInjustice(), RelicType.SHARED);
+		
+		BaseMod.addRelic(new InfiniteLighter(), RelicType.SHARED);
+		BaseMod.addRelic(new LighterOrb(), RelicType.BLUE);
+		BaseMod.addRelic(new PoisonLighter(), RelicType.GREEN);
+		BaseMod.addRelic(new HellfireLighter(), RelicType.RED);
 	}
 	
 	@Override
@@ -290,5 +306,67 @@ public class MarksmanMod implements PostExhaustSubscriber,
 		BaseMod.addKeyword(new String[]{"grenade"}, "Grenades are cards, which attack ALL enemies and have #yGrenade in their name.");
 		BaseMod.addKeyword(new String[]{"painkillers"}, "Painkillers are #b0 cost Skills which heal a portion of your #yHP you lost in your turn and #yExhaust.");
 	}
+	
+	@Override
+    public void receivePostPowerApplySubscriber(AbstractPower p, AbstractCreature target, AbstractCreature source) {
+        for (AbstractRelic r : AbstractDungeon.player.relics) {
+        	if (r instanceof  InfiniteLighter) {
+                ((InfiniteLighter)r).onApplyPower(p, target, source);
+            }
+        	if (r instanceof  HellfireLighter) {
+                ((HellfireLighter)r).onApplyPower(p, target, source);
+            }
+        	if (r instanceof  PoisonLighter) {
+                ((PoisonLighter)r).onApplyPower(p, target, source);
+            }
+        	if (r instanceof  RustyHelmet) {
+                ((RustyHelmet)r).onApplyPower(p, target, source);
+            }
+        }
+    }
+	
+	@Override
+    public void receiveSetUnlocks() {
+        BaseMod.addUnlockBundle(new CustomUnlockBundle(
+             RocketJump.ID, CounterStrike.ID, RocketLauncher.ID
+             ), TheMarksmanEnum.THE_MARKSMAN, 1);
+
+        BaseMod.addUnlockBundle(new CustomUnlockBundle(
+             BackupPlan.ID, Insulation.ID, VoidGrenade.ID
+             ), TheMarksmanEnum.THE_MARKSMAN, 2);
+
+        BaseMod.addUnlockBundle(new CustomUnlockBundle(AbstractUnlock.UnlockType.RELIC,
+             ScaleOfInjustice.ID, RumBottle.ID, InfiniteLighter.ID
+             ), TheMarksmanEnum.THE_MARKSMAN, 3);
+
+        BaseMod.addUnlockBundle(new CustomUnlockBundle(
+             GoldenBullet.ID, NuclearPower.ID, Minigun.ID
+             ), TheMarksmanEnum.THE_MARKSMAN, 4);
+
+        BaseMod.addUnlockBundle(new CustomUnlockBundle(AbstractUnlock.UnlockType.RELIC,
+        	 HellfireLighter.ID, PoisonLighter.ID, LighterOrb.ID
+             ), TheMarksmanEnum.THE_MARKSMAN, 5);
+        
+        UnlockTracker.addCard(RocketJump.ID);
+        UnlockTracker.addCard(CounterStrike.ID);
+        UnlockTracker.addCard(RocketLauncher.ID);
+        
+        UnlockTracker.addCard(BackupPlan.ID);
+        UnlockTracker.addCard(Insulation.ID);
+        UnlockTracker.addCard(VoidGrenade.ID);
+        
+        UnlockTracker.addRelic(ScaleOfInjustice.ID);
+        UnlockTracker.addRelic(RumBottle.ID);
+        UnlockTracker.addRelic(InfiniteLighter.ID);
+        
+        UnlockTracker.addCard(GoldenBullet.ID);
+        UnlockTracker.addCard(NuclearPower.ID);
+        UnlockTracker.addCard(Minigun.ID);
+        
+        UnlockTracker.addRelic(HellfireLighter.ID);
+        UnlockTracker.addRelic(PoisonLighter.ID);
+        UnlockTracker.addRelic(LighterOrb.ID);
+                
+    }
 	
 }

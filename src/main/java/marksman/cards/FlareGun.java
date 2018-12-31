@@ -23,6 +23,8 @@ public class FlareGun extends CustomCard{
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 	public static final String UP_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 	private static final int COST = -2;
+	private static final int DRAW = 1;
+	private static final int UP = 2;
 	
 	Random rand = new Random();
 	
@@ -31,6 +33,7 @@ public class FlareGun extends CustomCard{
 		super(ID, NAME, MarksmanMod.CARD_IMG_PATH + ID + ".png", COST, DESCRIPTION,
         		AbstractCard.CardType.SKILL, AbstractCardEnum.BLACK,
         		AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ALL);
+		this.baseMagicNumber = this.magicNumber = DRAW;
 	}
 
 	@Override
@@ -44,7 +47,7 @@ public class FlareGun extends CustomCard{
 			upgradeName();
 			this.rawDescription = UP_DESCRIPTION;
 			this.initializeDescription();
-			
+			this.upgradeMagicNumber(UP);
 		} 
 	}
 
@@ -65,8 +68,7 @@ public class FlareGun extends CustomCard{
 		if(!AbstractDungeon.player.hasPower("Vulnerable") && first) {
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new VulnerablePower(AbstractDungeon.player, 1, false), 1));
 		}
-		if(upgraded)
-			AbstractDungeon.actionManager.addToBottom(new DrawCardAction(AbstractDungeon.player, 1));
+		AbstractDungeon.actionManager.addToBottom(new DrawCardAction(AbstractDungeon.player, this.magicNumber));
 	}
 	
 	@Override

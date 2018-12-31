@@ -16,7 +16,7 @@ public class RumBottle extends CustomRelic {
 	
 	public RumBottle() {
 		super(ID, new Texture(MarksmanMod.RELIC_IMG_PATH + ID + ".png"),
-				RelicTier.COMMON, LandingSound.SOLID); 
+				RelicTier.RARE, LandingSound.CLINK); 
 	}
 	
 	@Override

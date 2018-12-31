@@ -71,7 +71,7 @@ public class TrustyMagazine extends CustomRelic {
 	
 	@Override
     public boolean canSpawn() {
-		return AbstractDungeon.player.hasRelic("RustyMagazine");
+		return AbstractDungeon.player.hasRelic(RustyMagazine.ID);
 	}
     
 	

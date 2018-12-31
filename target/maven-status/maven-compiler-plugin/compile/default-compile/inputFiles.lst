@@ -4,6 +4,7 @@ C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\marksman\actions\R
 C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\marksman\cards\Revolver.java
 C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\marksman\cards\LayDown.java
 C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\marksman\relics\RumBottle.java
+C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\marksman\relics\InfiniteLighter.java
 C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\marksman\cards\Concentrate.java
 C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\marksman\cards\CombatTrousers.java
 C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\marksman\cards\SilverBlood.java
@@ -13,6 +14,7 @@ C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\marksman\powers\Pr
 C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\marksman\cards\Railgun.java
 C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\marksman\cards\Foresight.java
 C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\marksman\cards\RunAndGun.java
+C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\marksman\relics\LighterOrb.java
 C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\marksman\cards\TrustyPistol.java
 C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\marksman\powers\FlammableFumesPower.java
 C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\marksman\cards\Firepower.java
@@ -21,6 +23,7 @@ C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\marksman\cards\Fra
 C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\marksman\cards\GammaRay.java
 C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\marksman\cards\Reposition.java
 C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\marksman\cards\FriendlyFire.java
+C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\marksman\relics\HellfireLighter.java
 C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\marksman\cards\TheLaw.java
 C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\marksman\cards\CriticalDecision.java
 C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\marksman\powers\CounterStrikePower.java
@@ -114,8 +117,10 @@ C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\marksman\cards\Cha
 C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\marksman\cards\CritCard.java
 C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\marksman\powers\ExplosivesExpertPower.java
 C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\marksman\cards\BackupPlan.java
+C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\marksman\relics\PoisonLighter.java
 C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\marksman\patches\CritVariable.java
 C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\marksman\cards\LuckyMode.java
+C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\marksman\relics\RustyHelmet.java
 C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\marksman\cards\Insulation.java
 C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\marksman\cards\Hideout.java
 C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\marksman\relics\RustyMagazine.java

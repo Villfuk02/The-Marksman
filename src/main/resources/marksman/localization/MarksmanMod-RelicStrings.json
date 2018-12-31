@@ -26,5 +26,40 @@
     "DESCRIPTIONS": [
       "Replaces #bRusty #bMagazine. #yTransform ALL #yRusty #yHandguns to #gTrusty #gHandguns."
     ]
+  },
+  "InfiniteLighter": {
+    "NAME": "Infinite Lighter",
+    "FLAVOR": "It's flame can't be put out.",
+    "DESCRIPTIONS": [
+      "Whenever you apply #yBurning, apply an additional #b1 #yBurning."
+    ]
+  },
+  "LighterOrb": {
+    "NAME": "Lighter Orb",
+    "FLAVOR": "It's not that dark nor heavy.",
+    "DESCRIPTIONS": [
+      "Whenever you #yEvoke an #bOrb, apply #b1 #yBurning to ALL enemies."
+    ]
+  },
+  "PoisonLighter": {
+    "NAME": "Poison Lighter",
+    "FLAVOR": "Who would have thought Poison is flammable.",
+    "DESCRIPTIONS": [
+      "Whenever you apply #yPoison, apply #b1 #yBurning to ALL enemies."
+    ]
+  },
+  "HellfireLighter": {
+    "NAME": "Hellfire Lighter",
+    "FLAVOR": "It's flame grows with your strength.",
+    "DESCRIPTIONS": [
+      "Whenever you apply #yVulnerable or gain #yStrength, apply #b1 #yBurning to ALL enemies."
+    ]
+  },
+  "RustyHelmet": {
+    "NAME": "Rusty Helmet",
+    "FLAVOR": "It brings back memories, but how did it get here?",
+    "DESCRIPTIONS": [
+      "Whenever you land a #yCritical #yHit, gain #b3 #yBlock."
+    ]
   }
 }

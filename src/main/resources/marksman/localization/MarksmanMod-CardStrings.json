@@ -206,7 +206,7 @@
 	"TheLaw": {
 		"NAME": "The Law",
 		"DESCRIPTION": "Retain. NL Remove ALL Strength, Vulnerable, Weak, Intangible and Slow NL from ALL creatures NL (Including you). NL Exhaust.",
-		"UPGRADE_DESCRIPTION": "Innate. NL Retain. NL Remove ALL  Strength, Vulnerable, Weak, Intangible and Slow NL from ALL creatures NL (Including you). NL Exhaust."
+		"UPGRADE_DESCRIPTION": "Innate. Retain. NL Remove ALL  Strength, Vulnerable, Weak, Intangible and Slow NL from ALL creatures NL (Including you). NL Exhaust."
 	},
 	"SkinSkill": {
 		"NAME": "Skin = Skill",
@@ -228,8 +228,8 @@
 	},
 	"SaveUp": {
 		"NAME": "Save Up",
-		"DESCRIPTION": "Next turn, gain [R] [R] and draw 3 more cards.",
-		"UPGRADE_DESCRIPTION": "Retain. NL Next turn, gain [R] [R] and draw 3 more cards."
+		"DESCRIPTION": "Next turn, gain [R] [R] [R] and draw 3 more cards.",
+		"UPGRADE_DESCRIPTION": "Retain. NL Next turn, gain [R] [R] [R] and draw 3 more cards."
 	},
 	"Calculated": {
 		"NAME": "Calculated",
@@ -241,8 +241,8 @@
 	},
 	"FlareGun": {
 		"NAME": "Flare Gun",
-		"DESCRIPTION": "Unplayable. NL When drawn, Expose yourself, Expose ALL enemies, apply 1 Weak to ALL enemies.",
-		"UPGRADE_DESCRIPTION": "Unplayable. NL When drawn, Expose yourself, Expose ALL enemies, apply 1 Weak to ALL enemies, Draw 1 card."
+		"DESCRIPTION": "Unplayable. NL When drawn, Expose yourself, Expose ALL enemies, apply 1 Weak to ALL enemies, Draw 1 card.",
+		"UPGRADE_DESCRIPTION": "Unplayable. NL When drawn, Expose yourself, Expose ALL enemies, apply 1 Weak to ALL enemies, Draw 2 cards."
 	},
 	"FirstAidKit": {
 		"NAME": "First Aid Kit",

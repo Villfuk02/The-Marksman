@@ -8,6 +8,7 @@ marksman\cards\Grenade.class
 marksman\powers\FlammableFumesPower.class
 marksman\cards\CorrosiveGrenade.class
 marksman\character\TheMarksman.class
+marksman\relics\PoisonLighter.class
 marksman\powers\FirepowerPower.class
 marksman\powers\FriendlyFirePower.class
 marksman\cards\Defend.class
@@ -53,6 +54,7 @@ marksman\cards\BlackPowder.class
 marksman\cards\AmmoBox.class
 marksman\cards\AntiFlame.class
 marksman\cards\NuclearPower.class
+marksman\relics\HellfireLighter.class
 marksman\cards\CombatTrousers.class
 marksman\patches\PandorasBoxPatch.class
 marksman\cards\BatteryAcid.class
@@ -95,6 +97,7 @@ marksman\cards\SniperRifle.class
 marksman\patches\BurnPatch.class
 marksman\cards\BackupPlan.class
 marksman\cards\BlastShields.class
+marksman\relics\LighterOrb.class
 marksman\cards\SilverBullet.class
 marksman\cards\FragileBlood.class
 marksman\cards\CritCard.class
@@ -105,6 +108,7 @@ marksman\cards\PumpShotgun.class
 marksman\powers\PerfectionPower.class
 marksman\cards\Insulation.class
 marksman\cards\SmokeBomb.class
+marksman\relics\InfiniteLighter.class
 marksman\powers\ConcentratedPower.class
 marksman\cards\SaveUp.class
 marksman\cards\MetallicBlood.class
@@ -119,6 +123,7 @@ marksman\powers\CounterStrikePower.class
 marksman\cards\ElectricBlood.class
 marksman\relics\TrustyMagazine.class
 marksman\cards\TacticalShotgun.class
+marksman\relics\RustyHelmet.class
 marksman\relics\ScaleOfInjustice.class
 marksman\cards\SkinSkill.class
 marksman\cards\Firepower.class

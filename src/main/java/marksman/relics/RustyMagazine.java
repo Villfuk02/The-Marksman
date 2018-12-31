@@ -34,7 +34,7 @@ public class RustyMagazine extends CustomRelic {
 		if(triggered)
 			return;
 		
-		triggered = true;
+		triggered = true;		
 		
 		flash();
 		AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));               

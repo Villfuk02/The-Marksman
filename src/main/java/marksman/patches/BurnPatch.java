@@ -18,7 +18,7 @@ public class BurnPatch {
 	@SpireInsertPatch(rloc=3)
 	public static SpireReturn Insert(Burn __instance, AbstractPlayer p, AbstractMonster m) {
 		MarksmanMod.logger.info("BURN");
-		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new BurningPower(AbstractDungeon.player, __instance.upgraded?4:2), __instance.upgraded?4:2));
+		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, null, new BurningPower(AbstractDungeon.player, __instance.upgraded?4:2), __instance.upgraded?4:2));
 		return SpireReturn.Return(null);
 	}
 }
