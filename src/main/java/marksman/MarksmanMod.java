@@ -14,6 +14,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.AbstractCard.CardColor;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardHelper;
@@ -85,6 +86,11 @@ public class MarksmanMod implements PostExhaustSubscriber,
 	public static final String MARKSMAN_SKELETON_ATLAS = MARKSMAN_CHARACTER_PATH + "skeleton.atlas";
 	public static final String MARKSMAN_SKELETON_JSON = MARKSMAN_CHARACTER_PATH + "skeleton.json";
 	public static final String MARKSMAN_ANIMATION_PATH = MARKSMAN_CHARACTER_PATH + "anim/Construct.scml";
+	
+	public static int talk = 0;
+	
+	public String database_export = "";
+	public int latest_id = 0;
 		
 	public MarksmanMod() {
 		BaseMod.subscribe(this);
@@ -170,128 +176,158 @@ public class MarksmanMod implements PostExhaustSubscriber,
 	public void receiveEditCards() {
 		logger.info("Adding Marksman Cards");
 		
+		database_export = "";
+		latest_id = 0;
+		
 		BaseMod.addDynamicVariable(new CritVariable());
 		
 		// COLORLESS (1)
-		BaseMod.addCard(new Painkillers());
+		AddCard(new Painkillers());
 		
 		// BASIC (5)
-		BaseMod.addCard(new RustyPistol());
-		BaseMod.addCard(new Defend());
-		BaseMod.addCard(new Strike());
-		BaseMod.addCard(new StunGrenade());
+		AddCard(new RustyPistol());
+		AddCard(new Defend());
+		AddCard(new Strike());
+		AddCard(new StunGrenade());
 		
-		BaseMod.addCard(new TrustyPistol());
+		AddCard(new TrustyPistol());
 		
 		// COMMON (21)
 		//	Attacks (14)		
-		BaseMod.addCard(new Grenade());			//aoe
-		BaseMod.addCard(new NapalmGrenade());	//aoe, burning
-		BaseMod.addCard(new HandCannon()); 		//-precision
-		BaseMod.addCard(new BurstFire()); 		//-precision, multi-hit
-		BaseMod.addCard(new PumpShotgun());		//multi-hit, -precision
-		BaseMod.addCard(new Revolver());		//high-crit
-		BaseMod.addCard(new RunAndGun());		//draw
-		BaseMod.addCard(new Bow());				//silent
-		BaseMod.addCard(new Chainsaw());		//pull 0-cost
-		BaseMod.addCard(new Bayonet());			//crit synergy
-		BaseMod.addCard(new SilverBullet());	//HP stuff
-		BaseMod.addCard(new GoldenBullet());	//GOLD stuff
-		BaseMod.addCard(new UVLaser());			//silent aoe, weak
-		BaseMod.addCard(new RocketJump());		//burn, draw
+		AddCard(new Grenade());			//aoe
+		AddCard(new NapalmGrenade());	//aoe, burning
+		AddCard(new HandCannon()); 		//-precision
+		AddCard(new BurstFire()); 		//-precision, multi-hit
+		AddCard(new PumpShotgun());		//multi-hit, -precision
+		AddCard(new Revolver());		//high-crit
+		AddCard(new RunAndGun());		//draw
+		AddCard(new Bow());				//silent
+		AddCard(new Chainsaw());		//pull 0-cost
+		AddCard(new Bayonet());			//crit synergy
+		AddCard(new SilverBullet());	//HP stuff
+		AddCard(new GoldenBullet());	//GOLD stuff
+		AddCard(new UVLaser());			//silent aoe, weak
+		AddCard(new RocketJump());		//burn, draw
 		
 		//	Skills (8)
-		BaseMod.addCard(new HeightAdvantage());	//block, +precision
-		BaseMod.addCard(new Decoy());			//block, vulnerable
-		BaseMod.addCard(new Molotov());			//burning
-		BaseMod.addCard(new BackupPlan());		//seek
-		BaseMod.addCard(new Calculated());		//+precision
-		BaseMod.addCard(new ExpectAnything());	//block, innate
-		BaseMod.addCard(new CombatTrousers());	//block, discard, retain
-		BaseMod.addCard(new LayDown());			//block, +precision
-		BaseMod.addCard(new Camouflage());		//block
-		BaseMod.addCard(new Reposition());		//draw, -str
+		AddCard(new HeightAdvantage());	//block, +precision
+		AddCard(new Decoy());			//block, vulnerable
+		AddCard(new Molotov());			//burning
+		AddCard(new BackupPlan());		//seek
+		AddCard(new Calculated());		//+precision
+		AddCard(new ExpectAnything());	//block, innate
+		AddCard(new CombatTrousers());	//block, discard, retain
+		AddCard(new LayDown());			//block, +precision
+		AddCard(new Camouflage());		//block
+		AddCard(new Reposition());		//draw, -str
 		
 		
 		
 		// UNCOMMON (43)
 		// 	Attacks(13)
-		BaseMod.addCard(new FragGrenade());		//aoe, multi-hit
-		BaseMod.addCard(new CorrosiveGrenade());//aoe, corrosive
-		BaseMod.addCard(new ElectricGrenade());	//+e, aoe, electric
-		BaseMod.addCard(new TacticalShotgun());	//multi-hit, draw
-		BaseMod.addCard(new HeavyShotgun());	//multi-hit, discard
-		BaseMod.addCard(new Railgun());			//X
-		BaseMod.addCard(new Crossbow());		//silent, frail
-		BaseMod.addCard(new GammaRay());		//criiit
-		BaseMod.addCard(new GrenadeLauncher());	//exh grenade
-		BaseMod.addCard(new Flamethrower());	//X, burn
-		BaseMod.addCard(new FryingPan());		//block/atk
-		BaseMod.addCard(new SniperRifle());		//crit
-		BaseMod.addCard(new Assasinate());		//one big hit, -str
-		BaseMod.addCard(new SawBlade());		//pull 0-cost
+		AddCard(new FragGrenade());		//aoe, multi-hit
+		AddCard(new CorrosiveGrenade());//aoe, corrosive
+		AddCard(new ElectricGrenade());	//+e, aoe, electric
+		AddCard(new TacticalShotgun());	//multi-hit, draw
+		AddCard(new HeavyShotgun());	//multi-hit, discard
+		AddCard(new Railgun());			//X
+		AddCard(new Crossbow());		//silent, frail
+		AddCard(new GammaRay());		//criiit
+		AddCard(new GrenadeLauncher());	//exh grenade
+		AddCard(new Flamethrower());	//X, burn
+		AddCard(new FryingPan());		//block/atk
+		AddCard(new SniperRifle());		//crit
+		AddCard(new Assasinate());		//one big hit, -str
+		AddCard(new SawBlade());		//pull 0-cost
 		
 		//	Skills (22)
-		BaseMod.addCard(new ExtendedMagazines());//draw
-		BaseMod.addCard(new LockOn());			//concentrate +str
-		BaseMod.addCard(new SmokeBomb());		//weaken, -precision
-		BaseMod.addCard(new Concentrate());		//concentrated, no draw
-		BaseMod.addCard(new Defibrilator());	//self-damage, regen
-		BaseMod.addCard(new CriticalDecision());//draw, crit synergy
-		BaseMod.addCard(new AcidBottle());		//corrosion
-		BaseMod.addCard(new TheLaw());			//remove str/vuln/weak	
-		BaseMod.addCard(new SkinSkill());		//block, upgrade
-		BaseMod.addCard(new Foresight());		//block, headbutt
-		BaseMod.addCard(new SaveUp());			//->NextTurn
-		BaseMod.addCard(new FlareGun());		//vuln, unplayable
-		BaseMod.addCard(new ElectricBlood());	//+e, self-damage
-		BaseMod.addCard(new Kevlar());			//block, armor
-		BaseMod.addCard(new Hideout());			//block, crit synergy
-		BaseMod.addCard(new Ignite());			//burn for hit
-		BaseMod.addCard(new NuclearPower());	//X, energy maipulation
-		BaseMod.addCard(new AntiFlame());		//block, burn
-		BaseMod.addCard(new Insulation());		//block, burn -> burning
-		BaseMod.addCard(new MetallicBlood());	//self-damage, metallicize
-		BaseMod.addCard(new FirstAidKit());		//heal lost hp
-		BaseMod.addCard(new HandClaws());		//hp -> shivs
+		AddCard(new ExtendedMagazines());//draw
+		AddCard(new LockOn());			//concentrate +str
+		AddCard(new SmokeBomb());		//weaken, -precision
+		AddCard(new Concentrate());		//concentrated, no draw
+		AddCard(new Defibrilator());	//self-damage, regen
+		AddCard(new CriticalDecision());//draw, crit synergy
+		AddCard(new AcidBottle());		//corrosion
+		AddCard(new TheLaw());			//remove str/vuln/weak	
+		AddCard(new SkinSkill());		//block, upgrade
+		AddCard(new Foresight());		//block, headbutt
+		AddCard(new SaveUp());			//->NextTurn
+		AddCard(new FlareGun());		//vuln, unplayable
+		AddCard(new ElectricBlood());	//+e, self-damage
+		AddCard(new Kevlar());			//block, armor
+		AddCard(new Hideout());			//block, crit synergy
+		AddCard(new Ignite());			//burn for hit
+		AddCard(new NuclearPower());	//X, energy maipulation
+		AddCard(new AntiFlame());		//block, burn
+		AddCard(new Insulation());		//block, burn -> burning
+		AddCard(new MetallicBlood());	//self-damage, metallicize
+		AddCard(new FirstAidKit());		//heal lost hp
+		AddCard(new HandClaws());		//hp -> shivs
 		
 		// 	Powers (8)
-		BaseMod.addCard(new Tracers());			//+precision
-		BaseMod.addCard(new Guilt());			//+e, -str
-		BaseMod.addCard(new ExplosivesExpert());//draw for grenade
-		BaseMod.addCard(new FragileBlood());	//spiky!
-		BaseMod.addCard(new Aggression());		//vuln -> +str
-		BaseMod.addCard(new SilverBlood());		//regen for hit
-		BaseMod.addCard(new FlammableFumes());	//burn++
-		BaseMod.addCard(new CounterStrike());	//dmg for -
-		BaseMod.addCard(new Firepower());		//burning -> burning
+		AddCard(new Tracers());			//+precision
+		AddCard(new Guilt());			//+e, -str
+		AddCard(new ExplosivesExpert());//draw for grenade
+		AddCard(new FragileBlood());	//spiky!
+		AddCard(new Aggression());		//vuln -> +str
+		AddCard(new SilverBlood());		//regen for hit
+		AddCard(new FlammableFumes());	//burn++
+		AddCard(new CounterStrike());	//dmg for -
+		AddCard(new Firepower());		//burning -> burning
 		
 		
 		// RARE (18)
 		//	Attacks (4)
-		BaseMod.addCard(new VoidGrenade());		//aoe, grenade succ
-		BaseMod.addCard(new ClusterGrenade());	//X, aoe
-		BaseMod.addCard(new Minigun());			//multi-hit, infinite
-		BaseMod.addCard(new RocketLauncher());	//one big hit, burning
+		AddCard(new VoidGrenade());		//aoe, grenade succ
+		AddCard(new ClusterGrenade());	//X, aoe
+		AddCard(new Minigun());			//multi-hit, infinite
+		AddCard(new RocketLauncher());	//one big hit, burning
 		
 		//	Skills (7)
-		BaseMod.addCard(new AmmoBox());			//draw, infinite
-		BaseMod.addCard(new BatteryAcid());		//+3e
-		BaseMod.addCard(new StealthMode());		//intangible, -str
-		BaseMod.addCard(new LuckyMode());		//weak, +precision
-		BaseMod.addCard(new AutomaticMode());	//+2e, -str
-		BaseMod.addCard(new Gasoline());		//multiply burning
-		BaseMod.addCard(new Firewall());		//burn, block next turn
+		AddCard(new AmmoBox());			//draw, infinite
+		AddCard(new BatteryAcid());		//+3e
+		AddCard(new StealthMode());		//intangible, -str
+		AddCard(new LuckyMode());		//weak, +precision
+		AddCard(new AutomaticMode());	//+2e, -str
+		AddCard(new Gasoline());		//multiply burning
+		AddCard(new Firewall());		//burn, block next turn
 		
 		//	Powers (7)
-		BaseMod.addCard(new EyeForAnEye());		//self-damage
-		BaseMod.addCard(new BlastShields());	//+block for grenade
-		BaseMod.addCard(new BlackPowder());		//grenade for exh
-		BaseMod.addCard(new FriendlyFire());	//block for burning
-		BaseMod.addCard(new Veteran());			//-str, +str
-		BaseMod.addCard(new GhostForm());		//all cards ethereal
-		BaseMod.addCard(new Perfection());		//double crit
+		AddCard(new EyeForAnEye());		//self-damage
+		AddCard(new BlastShields());	//+block for grenade
+		AddCard(new BlackPowder());		//grenade for exh
+		AddCard(new FriendlyFire());	//block for burning
+		AddCard(new Veteran());			//-str, +str
+		AddCard(new GhostForm());		//all cards ethereal
+		AddCard(new Perfection());		//double crit
 		
+		PasteCards();
+		
+	}
+	
+	public void AddCard(AbstractCard c) {
+		BaseMod.addCard(c);
+		latest_id++;
+		database_export += 
+		"("+
+		latest_id+
+		",'"+
+		c.cardID+
+		"',"+ 
+		(c.color == CardColor.COLORLESS?"0,1":"1,0")+
+		",0,'"+
+		c.rarity.toString()+
+		"','"+
+		c.type.toString()+
+		"','"+
+		c.cost+
+		"','"+
+		"DESCRIPTION"+		
+		"',NULL,'0000-00-00 00:00:00',0,0,0,0,'0000-00-00 00:00:00',0,0,0,0,0,0,'0000-00-00 00:00:00',0,0,0,0,0,0,0,0,0,'0000-00-00 00:00:00',0,0,0,0,0,0,'','',''),";
+	}
+	
+	public void PasteCards() {
+		logger.info(database_export.substring(0, database_export.length()-1) + ";");
 	}
 
 	@Override

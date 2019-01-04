@@ -38,6 +38,7 @@ marksman\powers\EnergizedBlackPower.class
 marksman\powers\BlackPowderPower.class
 marksman\cards\ElectricGrenade.class
 marksman\powers\BlastShieldsPower.class
+marksman\patches\MarksmanMetrics$RunPatch.class
 marksman\cards\FriendlyFire.class
 marksman\cards\StunGrenade.class
 marksman\powers\VeteranPower.class
@@ -48,6 +49,9 @@ marksman\cards\LuckyMode.class
 marksman\cards\ExpectAnything.class
 marksman\cards\AutomaticMode.class
 marksman\cards\Tracers.class
+marksman\patches\TalkBubblePatches$ShieldBubble.class
+marksman\patches\TalkBubblePatches$SpearBubble.class
+marksman\patches\MarksmanMetrics$SendPostPatch.class
 marksman\cards\Revolver.class
 marksman\cards\Painkillers.class
 marksman\cards\BlackPowder.class
@@ -70,12 +74,14 @@ marksman\cards\GrenadeLauncher.class
 marksman\powers\TracersPower.class
 marksman\actions\PlayCardFromHandAction.class
 marksman\powers\SilverBloodPower.class
+marksman\patches\MarksmanMetrics$shouldUploadMetricData.class
 marksman\cards\HeavyShotgun.class
 marksman\powers\PrecisionPower.class
 marksman\cards\SawBlade.class
 marksman\cards\SilverBlood.class
 marksman\cards\Hideout.class
 marksman\cards\Bayonet.class
+marksman\patches\TalkBubblePatches.class
 marksman\cards\Assasinate.class
 marksman\cards\Calculated.class
 marksman\cards\EyeForAnEye.class
@@ -103,6 +109,7 @@ marksman\cards\FragileBlood.class
 marksman\cards\CritCard.class
 marksman\cards\TheLaw.class
 marksman\patches\AbstractCardEnum.class
+marksman\patches\TalkBubblePatches$HeartBubble.class
 marksman\cards\ExtendedMagazines.class
 marksman\cards\PumpShotgun.class
 marksman\powers\PerfectionPower.class
@@ -123,6 +130,7 @@ marksman\powers\CounterStrikePower.class
 marksman\cards\ElectricBlood.class
 marksman\relics\TrustyMagazine.class
 marksman\cards\TacticalShotgun.class
+marksman\patches\MarksmanMetrics.class
 marksman\relics\RustyHelmet.class
 marksman\relics\ScaleOfInjustice.class
 marksman\cards\SkinSkill.class
