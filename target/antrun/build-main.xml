@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <project name="maven-antrun-" default="main"  >
 <target name="main">
-  <copy file="target/TheMarksman.jar" tofile="../_ModTheSpire/mods/TheMarksman.jar"/>
+  <copy file="target/TheMarksman.jar" tofile="E:/Steam/steamapps/common/SlayTheSpire/mods/TheMarksman.jar"/>
+  <copy file="target/TheMarksman.jar" tofile="E:/Steam/steamapps/common/SlayTheSpire/mymod/content/TheMarksman.jar"/>
 </target>
 </project>

@@ -23,7 +23,6 @@ import com.megacrit.cardcrawl.vfx.combat.RoomTintEffect;
 
 import basemod.abstracts.CustomCard;
 import marksman.MarksmanMod;
-import marksman.actions.DisplayStunAction;
 import marksman.patches.AbstractCardEnum;
 
 public class StunGrenade extends CustomCard{
@@ -40,7 +39,7 @@ public class StunGrenade extends CustomCard{
 
 	public StunGrenade() {
 		super(ID, NAME, MarksmanMod.CARD_IMG_PATH + ID + ".png", COST, DESCRIPTION,
-        		AbstractCard.CardType.ATTACK, AbstractCardEnum.BLACK,
+        		AbstractCard.CardType.SKILL, AbstractCardEnum.BLACK,
         		AbstractCard.CardRarity.BASIC, AbstractCard.CardTarget.ALL_ENEMY);
 		this.baseMagicNumber = this.magicNumber = MAGIC;
 		this.exhaust = true;
@@ -68,7 +67,7 @@ public class StunGrenade extends CustomCard{
 		AbstractDungeon.actionManager.addToTop(new DamageAllEnemiesAction(p, DamageInfo.createDamageMatrix(this.damage, true), damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
 		for (final AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p, new StunMonsterPower(mo, 1), 1));
-			AbstractDungeon.actionManager.addToBottom(new DisplayStunAction(mo));
+			//AbstractDungeon.actionManager.addToBottom(new DisplayStunAction(mo));
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p, new WeakPower(mo, this.magicNumber, false), this.magicNumber));
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p, new VulnerablePower(mo, this.magicNumber, false), this.magicNumber));
 	    }	
