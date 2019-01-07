@@ -2,12 +2,12 @@ package marksman.powers;
 
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.badlogic.gdx.graphics.Texture;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.core.*;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import marksman.MarksmanMod;
+import marksman.actions.ApplyBurningAction;
 
 public class FirepowerPower extends AbstractPower
 {
@@ -42,7 +42,7 @@ public class FirepowerPower extends AbstractPower
 	    	int amt = power.amount * this.amount;
 	    	
 	    	for (final AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
-	    		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, owner,new BurningPower(mo, amt), amt));
+	    		AbstractDungeon.actionManager.addToBottom(new ApplyBurningAction(mo, owner, amt));
 	    	}
 		}
     }   

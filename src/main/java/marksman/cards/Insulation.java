@@ -17,6 +17,7 @@ import com.megacrit.cardcrawl.vfx.combat.FlameBarrierEffect;
 
 import basemod.abstracts.CustomCard;
 import marksman.MarksmanMod;
+import marksman.actions.ApplyBurningAction;
 import marksman.patches.AbstractCardEnum;
 import marksman.powers.BurningPower;
 
@@ -81,7 +82,7 @@ public class Insulation extends CustomCard{
 			AbstractDungeon.actionManager.addToTop(new ExhaustSpecificCardAction(c, AbstractDungeon.player.discardPile));
         	tmp.removeTopCard();
 			for (final AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
-				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p, new BurningPower(mo, this.magicNumber), this.magicNumber, true));
+				AbstractDungeon.actionManager.addToBottom(new ApplyBurningAction(mo, p, this.magicNumber));
 			}
 		}
 		

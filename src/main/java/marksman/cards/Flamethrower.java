@@ -1,6 +1,5 @@
 package marksman.cards;
 
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -13,8 +12,8 @@ import com.megacrit.cardcrawl.vfx.combat.FlameParticleEffect;
 
 import basemod.abstracts.CustomCard;
 import marksman.MarksmanMod;
+import marksman.actions.ApplyBurningAction;
 import marksman.patches.AbstractCardEnum;
-import marksman.powers.BurningPower;
 
 public class Flamethrower extends CustomCard{
 	public static final String ID = "Flamethrower";
@@ -62,8 +61,8 @@ public class Flamethrower extends CustomCard{
 	         p.getRelic("Chemical X").flash();
 	    }
 		for (int i = 0; i < effect; i++) {
-			for (final AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
-				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p, new BurningPower(mo, this.magicNumber), this.magicNumber, true));
+			for (final AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {				
+				AbstractDungeon.actionManager.addToBottom(new ApplyBurningAction(mo, p, this.magicNumber));
 				
 		    }		
 		}

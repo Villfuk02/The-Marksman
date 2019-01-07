@@ -13,8 +13,8 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.random.Random;
 
 import marksman.MarksmanMod;
+import marksman.actions.ApplyBurningAction;
 import marksman.patches.AbstractCardEnum;
-import marksman.powers.BurningPower;
 import marksman.powers.CritsThisTurn;
 
 public class RocketLauncher extends CritCard{
@@ -65,7 +65,7 @@ public class RocketLauncher extends CritCard{
 		}
 		AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, dmg, damageTypeForTurn),AbstractGameAction.AttackEffect.FIRE));
 		for (final AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
-			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p, new BurningPower(mo, this.magicNumber), this.magicNumber));		    
+			AbstractDungeon.actionManager.addToBottom(new ApplyBurningAction(mo, p, this.magicNumber));		    
 		}				
 	}
 }

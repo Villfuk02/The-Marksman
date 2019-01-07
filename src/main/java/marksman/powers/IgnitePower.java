@@ -5,12 +5,12 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 
 
 import com.badlogic.gdx.graphics.Texture;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.*;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import marksman.MarksmanMod;
+import marksman.actions.ApplyBurningAction;
 
 public class IgnitePower extends AbstractPower
 {
@@ -39,7 +39,7 @@ public class IgnitePower extends AbstractPower
     public void onAttack(final DamageInfo info, final int damageAmount, final AbstractCreature target) {
         if (target != null && target != this.owner && info.type == DamageInfo.DamageType.NORMAL) {
             this.flash();
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(target, this.owner, new BurningPower(target, this.amount), this.amount, true));
+            AbstractDungeon.actionManager.addToBottom(new ApplyBurningAction(target, owner, amount));
         }
     }
     

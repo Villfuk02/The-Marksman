@@ -5,11 +5,11 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 
 
 import com.badlogic.gdx.graphics.Texture;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.core.*;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import marksman.MarksmanMod;
+import marksman.actions.ApplyBurningAction;
 
 public class FlammableFumesPower extends AbstractPower
 {
@@ -40,12 +40,12 @@ public class FlammableFumesPower extends AbstractPower
             this.flash();
             for (final AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
                 if (!m.isDead && !m.isDying && m.hasPower(BurningPower.POWER_ID)) {
-                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, this.owner, new BurningPower(m, this.amount), this.amount));
+                	AbstractDungeon.actionManager.addToBottom(new ApplyBurningAction(m, owner, amount));
                 }
             }
         }
         if (owner.hasPower(BurningPower.POWER_ID)) {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, this.owner, new BurningPower(owner, this.amount), this.amount));
+        	AbstractDungeon.actionManager.addToBottom(new ApplyBurningAction(owner, owner, amount));
         }
     }
 }

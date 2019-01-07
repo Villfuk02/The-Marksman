@@ -170,6 +170,7 @@ public class MarksmanMod implements PostExhaustSubscriber,
 		BaseMod.addRelic(new LighterOrb(), RelicType.BLUE);
 		BaseMod.addRelic(new PoisonLighter(), RelicType.GREEN);
 		BaseMod.addRelic(new HellfireLighter(), RelicType.RED);
+		BaseMod.addRelicToCustomPool(new RustyLighter(), AbstractCardEnum.BLACK);
 	}
 	
 	@Override
@@ -301,7 +302,7 @@ public class MarksmanMod implements PostExhaustSubscriber,
 		AddCard(new GhostForm());		//all cards ethereal
 		AddCard(new Perfection());		//double crit
 		
-		PasteCards();
+		//PasteCards();
 		
 	}
 	
@@ -316,13 +317,13 @@ public class MarksmanMod implements PostExhaustSubscriber,
 		"',"+ 
 		(c.color == CardColor.COLORLESS?"0,1":"1,0")+
 		",0,'"+
-		c.rarity.toString()+
+		c.rarity.toString().toLowerCase()+
 		"','"+
-		c.type.toString()+
+		c.type.toString().toLowerCase()+
 		"','"+
 		c.cost+
 		"','"+
-		"DESCRIPTION"+		
+		"desc"+		
 		"',NULL,'0000-00-00 00:00:00',0,0,0,0,'0000-00-00 00:00:00',0,0,0,0,0,0,'0000-00-00 00:00:00',0,0,0,0,0,0,0,0,0,'0000-00-00 00:00:00',0,0,0,0,0,0,'','',''),";
 	}
 	
@@ -333,7 +334,7 @@ public class MarksmanMod implements PostExhaustSubscriber,
 	@Override
 	public void receiveEditKeywords() {		
 		BaseMod.addKeyword(new String[]{"crit", "critical", "crits"}, "Chance of single hit dealing #yTRIPLE Damage.");
-		BaseMod.addKeyword(new String[]{"burning"}, "#yBurning creatures take damage at the end of their turn. Each turn, #yBurning is decreased by the amount #yBlocked. Also lowers the #rTransient's damage.");
+		BaseMod.addKeyword(new String[]{"burning"}, "#yBurning creatures take damage at the start of their turn. Can be #yBlocked. Decreases by the amount #yBlocked.");
 		BaseMod.addKeyword(new String[]{"corrosion"}, "At the end of turn, removes all Block and decreases Corrosion by #b1.");
 		BaseMod.addKeyword(new String[]{"silent damage", "silent"}, "This damage is NOT considered as #yAttack damage. That means it is not affected by #yStrength, #yWeakness or #yVulnerable. NL It also doesn't trigger #yThorns, #yCurl #yUp, etc.");
 		BaseMod.addKeyword(new String[]{"concentrated"}, "Doubles #yCrit chance for one turn.");
@@ -357,6 +358,9 @@ public class MarksmanMod implements PostExhaustSubscriber,
             }
         	if (r instanceof  RustyHelmet) {
                 ((RustyHelmet)r).onApplyPower(p, target, source);
+            }
+        	if (r instanceof  RustyLighter) {
+                ((RustyLighter)r).onApplyPower(p, target, source);
             }
         }
     }

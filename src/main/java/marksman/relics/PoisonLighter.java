@@ -2,7 +2,6 @@ package marksman.relics;
 
 
 import com.badlogic.gdx.graphics.Texture;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -12,7 +11,7 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 import basemod.abstracts.CustomRelic;
 import marksman.MarksmanMod;
-import marksman.powers.BurningPower;
+import marksman.actions.ApplyBurningAction;
 
 public class PoisonLighter extends CustomRelic {
 	public static final String ID = "PoisonLighter";
@@ -36,7 +35,7 @@ public class PoisonLighter extends CustomRelic {
 		if(target != null && power.ID == PoisonPower.POWER_ID && source == AbstractDungeon.player) {
 	    	flash();	    	
 	    	for (final AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
-				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, AbstractDungeon.player, new BurningPower(mo, 1), 1));
+	    		AbstractDungeon.actionManager.addToBottom(new ApplyBurningAction(mo, AbstractDungeon.player, 1));
 		    }
 		}
 	}

@@ -6,18 +6,17 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.powers.StrengthPower;
-import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 import basemod.abstracts.CustomRelic;
 import marksman.MarksmanMod;
 import marksman.actions.ApplyBurningAction;
+import marksman.powers.CritsThisTurn;
 
-public class HellfireLighter extends CustomRelic {
-	public static final String ID = "HellfireLighter";
+public class RustyLighter extends CustomRelic {
+	public static final String ID = "RustyLighter";
 	
-	public HellfireLighter() {
+	public RustyLighter() {
 		super(ID, new Texture(MarksmanMod.RELIC_IMG_PATH + ID + ".png"),
 				RelicTier.RARE, LandingSound.CLINK); 
 	}
@@ -29,17 +28,11 @@ public class HellfireLighter extends CustomRelic {
 	
 	@Override
 	public AbstractRelic makeCopy() {
-		return new HellfireLighter();
+		return new RustyLighter();
 	}
 	
 	public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
-		if(target != null && power.ID == VulnerablePower.POWER_ID && source == AbstractDungeon.player) {
-	    	flash();	    	
-	    	for (final AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
-	    		AbstractDungeon.actionManager.addToBottom(new ApplyBurningAction(mo, AbstractDungeon.player, 1));
-		    }
-		}
-		if(power.ID == StrengthPower.POWER_ID && target == AbstractDungeon.player && power.amount > 0) {
+		if(power.ID == CritsThisTurn.POWER_ID && target == AbstractDungeon.player) {
 	    	flash();	    	
 	    	for (final AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
 	    		AbstractDungeon.actionManager.addToBottom(new ApplyBurningAction(mo, AbstractDungeon.player, 1));

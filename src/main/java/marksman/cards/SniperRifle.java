@@ -61,7 +61,7 @@ public class SniperRifle extends CritCard{
 			if(rand.random(100)  < this.crit) {
 				dmg *= 3;
 				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new CritsThisTurn(p, 1), 1));
-				AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(this.makeCopy(), 1, true, false));
+				AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(this.makeStatEquivalentCritCopy(), 1, true, false));
 			}
 			AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, dmg, damageTypeForTurn),AbstractGameAction.AttackEffect.BLUNT_LIGHT));
 		}		

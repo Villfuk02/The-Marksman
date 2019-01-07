@@ -2,7 +2,6 @@ package marksman.relics;
 
 
 import com.badlogic.gdx.graphics.Texture;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
@@ -10,6 +9,7 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 import basemod.abstracts.CustomRelic;
 import marksman.MarksmanMod;
+import marksman.actions.ApplyBurningAction;
 import marksman.patches.TheMarksmanEnum;
 import marksman.powers.BurningPower;
 
@@ -47,7 +47,7 @@ public class InfiniteLighter extends CustomRelic {
 	public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
 		if(target != null && power.ID == BurningPower.POWER_ID && source == AbstractDungeon.player) {
 	    	flash();	    	
-	    	AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(target, null, new BurningPower(target, 1), 1));
+	    	AbstractDungeon.actionManager.addToBottom(new ApplyBurningAction(target, null, 1));
 		}
 	}
 	

@@ -55,6 +55,13 @@
       "Whenever you apply #yVulnerable or gain #yStrength, apply #b1 #yBurning to ALL enemies."
     ]
   },
+  "RustyLighter": {
+    "NAME": "Rusty Lighter",
+    "FLAVOR": "How is it still functional?",
+    "DESCRIPTIONS": [
+      "Whenever you deal a #yCritical #yHit, apply #b1 #yBurning to ALL enemies."
+    ]
+  },
   "RustyHelmet": {
     "NAME": "Rusty Helmet",
     "FLAVOR": "It brings back memories, but how did it get here?",

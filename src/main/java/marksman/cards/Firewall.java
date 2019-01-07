@@ -14,8 +14,8 @@ import com.megacrit.cardcrawl.vfx.combat.FlameBarrierEffect;
 
 import basemod.abstracts.CustomCard;
 import marksman.MarksmanMod;
+import marksman.actions.ApplyBurningAction;
 import marksman.patches.AbstractCardEnum;
-import marksman.powers.BurningPower;
 
 public class Firewall extends CustomCard{
 	public static final String ID = "Firewall";
@@ -55,7 +55,7 @@ public class Firewall extends CustomCard{
 	@Override
 	public void use(AbstractPlayer p, AbstractMonster m) {		
 		AbstractDungeon.actionManager.addToBottom(new VFXAction(new FlameBarrierEffect(p.hb.cY, p.hb.cX), 0.25f));		
-		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new BurningPower(p, this.magicNumber), this.magicNumber));
+		AbstractDungeon.actionManager.addToBottom(new ApplyBurningAction(p, p, this.magicNumber));
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new NextTurnBlockPower(p, this.block), this.block));  
 	}
 }

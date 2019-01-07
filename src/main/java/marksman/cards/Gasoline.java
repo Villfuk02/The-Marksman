@@ -1,7 +1,6 @@
 package marksman.cards;
 
 
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -11,8 +10,8 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
 import marksman.MarksmanMod;
+import marksman.actions.ApplyBurningAction;
 import marksman.patches.AbstractCardEnum;
-import marksman.powers.BurningPower;
 
 public class Gasoline extends CustomCard{
 	public static final String ID = "Gasoline";
@@ -54,13 +53,13 @@ public class Gasoline extends CustomCard{
 		for (int i = 0; i < this.magicNumber; i++) {
 			if(p.hasPower("BurningPower")) {
 				int pamt = p.getPower("BurningPower").amount;
-				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new BurningPower(p, pamt), pamt, true));
+				AbstractDungeon.actionManager.addToBottom(new ApplyBurningAction(p, p, pamt));
 			}
 			for (final AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {	
 				if(!mo.hasPower("BurningPower"))
 					continue;
 				int amt = mo.getPower("BurningPower").amount;
-				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p, new BurningPower(mo, amt), amt, true));
+				AbstractDungeon.actionManager.addToBottom(new ApplyBurningAction(mo, p, amt));
 			}
 		}
 	}

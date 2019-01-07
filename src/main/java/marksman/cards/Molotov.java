@@ -2,7 +2,6 @@ package marksman.cards;
 
 
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -14,8 +13,8 @@ import com.megacrit.cardcrawl.vfx.combat.PotionBounceEffect;
 
 import basemod.abstracts.CustomCard;
 import marksman.MarksmanMod;
+import marksman.actions.ApplyBurningAction;
 import marksman.patches.AbstractCardEnum;
-import marksman.powers.BurningPower;
 
 public class Molotov extends CustomCard{
 	public static final String ID = "Molotov";
@@ -50,6 +49,6 @@ public class Molotov extends CustomCard{
 	public void use(AbstractPlayer p, AbstractMonster m) {		
 		AbstractDungeon.actionManager.addToBottom(new VFXAction(new PotionBounceEffect(p.hb.cX, p.dialogY, m.hb.cX, m.hb.cY), 0.25f));
 		AbstractDungeon.actionManager.addToBottom(new VFXAction(new ExplosionSmallEffect(m.hb.cX, m.hb.cY)));
-		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new BurningPower(m, this.magicNumber), this.magicNumber));
+		AbstractDungeon.actionManager.addToBottom(new ApplyBurningAction(m, p, this.magicNumber));
 	}
 }

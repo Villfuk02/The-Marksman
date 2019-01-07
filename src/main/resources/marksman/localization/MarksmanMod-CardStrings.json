@@ -246,8 +246,8 @@
 	},
 	"FirstAidKit": {
 		"NAME": "First Aid Kit",
-		"DESCRIPTION": "Heal ALL HP lost this turn. NL Shuffle 2 Painkillers into your draw pile. NL Draw 1 card.",
-		"UPGRADE_DESCRIPTION": "Heal ALL HP lost this turn. NL Shuffle 2 Upgraded Painkillers into your draw pile. NL Draw 1 card.",
+		"DESCRIPTION": "Heal ALL HP lost since the start of your turn. NL Shuffle 2 Painkillers into your draw pile. Draw 1 card.",
+		"UPGRADE_DESCRIPTION": "Heal ALL HP lost since the start of your turn. NL Shuffle 2 Upgraded Painkillers into your draw pile. Draw 1 card.",
 		"EXTENDED_DESCRIPTION": [
 			" NL (Heals ",
 			" HP.)"
@@ -383,7 +383,7 @@
 	},
 	"Painkillers": {
 		"NAME": "Painkillers",
-		"DESCRIPTION": "Heal !M! % of HP lost this turn. NL Exhaust.",
+		"DESCRIPTION": "Heal !M! % of HP lost since the start of your turn. NL Exhaust.",
 		"EXTENDED_DESCRIPTION": [
 			" NL (Heals ",
 			" HP.)"
