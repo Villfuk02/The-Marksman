@@ -57,7 +57,6 @@ public class AmmoBox extends CustomCard{
 	@Override
 	public void use(AbstractPlayer p, AbstractMonster m) {		
 		AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, this.magicNumber));  
-		this.updateCost(1);
-		p.gainEnergy(1);
+		this.modifyCostForTurn(1);
 	}
 }

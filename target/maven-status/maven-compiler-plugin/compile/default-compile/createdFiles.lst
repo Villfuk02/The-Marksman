@@ -117,6 +117,7 @@ marksman\powers\PerfectionPower.class
 marksman\cards\Insulation.class
 marksman\cards\SmokeBomb.class
 marksman\relics\InfiniteLighter.class
+marksman\cards\GasMask.class
 marksman\powers\ConcentratedPower.class
 marksman\cards\SaveUp.class
 marksman\cards\MetallicBlood.class

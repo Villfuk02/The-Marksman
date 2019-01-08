@@ -29,7 +29,7 @@ public class ElectricBlood extends CustomCard{
 	public static final String UP_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 	private static final int COST = 0;
 	private static final int DMG = 1;
-	private static final int SELF = 8;
+	private static final int SELF = 10;
 
 	public ElectricBlood() {
 		super(ID, NAME, MarksmanMod.CARD_IMG_PATH + ID + ".png", COST, DESCRIPTION,
@@ -58,7 +58,7 @@ public class ElectricBlood extends CustomCard{
         AbstractDungeon.actionManager.addToBottom(new SFXAction("LIGHTNING"));
 		AbstractDungeon.actionManager.addToBottom(new VFXAction(new LightningEffect(p.hb.cX, p.hb.cY)));
 		AbstractDungeon.actionManager.addToBottom(new DamageAction(p,new DamageInfo(p, SELF, DamageType.HP_LOSS)));
-		AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(upgraded?2:1));
+		AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(upgraded?3:2));
 		for (final AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
 			if(mo.currentHealth > 0)
 				AbstractDungeon.actionManager.addToBottom(new VFXAction(new LightningEffect(mo.hb.cX, mo.hb.cY)));

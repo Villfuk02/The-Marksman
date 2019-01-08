@@ -18,16 +18,15 @@ public class CriticalDecision extends CustomCard{
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-	private static final int COST = 1;
-	private static final int MAGIC = 3;
-	private static final int MAGIC_UP = 2;
+	private static final int COST = 0;
+	private static final int MAGIC = 2;
+	private static final int MAGIC_UP = 1;
 
 	public CriticalDecision() {
 		super(ID, NAME, MarksmanMod.CARD_IMG_PATH + ID + ".png", COST, DESCRIPTION,
         		AbstractCard.CardType.SKILL, AbstractCardEnum.BLACK,
         		AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF);
 		this.baseMagicNumber = this.magicNumber = MAGIC;
-		this.isEthereal = true;
 	}
 
 	@Override

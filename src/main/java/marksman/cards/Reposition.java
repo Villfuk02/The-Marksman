@@ -22,9 +22,9 @@ public class Reposition extends CustomCard{
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-	private static final int COST = 1;	
-	private static final int COST_UP = 0;	
-	//private static final int MAGIC_UP = -1;
+	private static final int COST = 0;	
+	private static final int MAGIC = 2;		
+	private static final int MAGIC_UP = 1;
 	
 	Random rand = new Random();
 	
@@ -32,7 +32,8 @@ public class Reposition extends CustomCard{
 	public Reposition() {
 		super(ID, NAME, MarksmanMod.CARD_IMG_PATH + ID + ".png", COST, DESCRIPTION,
         		AbstractCard.CardType.SKILL, AbstractCardEnum.BLACK,
-        		AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.SELF);		
+        		AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.SELF);
+		this.baseMagicNumber = this.magicNumber = MAGIC;
 	}
 
 	@Override
@@ -51,13 +52,13 @@ public class Reposition extends CustomCard{
 	public void upgrade() {
 		if (!this.upgraded) {
 			upgradeName();
-			this.upgradeBaseCost(COST_UP);
+			this.upgradeMagicNumber(MAGIC_UP);
 		}
 	}
 
 	@Override
 	public void use(AbstractPlayer p, AbstractMonster m) {
-		AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, 2));
+		AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, this.magicNumber));
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p,p,new StrengthPower(p,-1), -1));
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p,p,new GainStrengthPower(p,1), 1));
 	}

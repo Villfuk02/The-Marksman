@@ -2,7 +2,6 @@ package marksman.cards;
 
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -22,16 +21,13 @@ public class HeightAdvantage extends CustomCard{
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 	private static final int COST = 1;
-	private static final int BLOCK = 4;
-	private static final int BLOCK_UP = 2;
-	private static final int MAGIC = 5;
-	private static final int MAGIC_UP = 5;
+	private static final int MAGIC = 10;
+	private static final int MAGIC_UP = 10;
 
 	public HeightAdvantage() {
 		super(ID, NAME, MarksmanMod.CARD_IMG_PATH + ID + ".png", COST, DESCRIPTION,
         		AbstractCard.CardType.SKILL, AbstractCardEnum.BLACK,
         		AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.ALL);
-		this.baseBlock = BLOCK;
 		this.baseMagicNumber = this.magicNumber = MAGIC;
 	}
 
@@ -43,9 +39,7 @@ public class HeightAdvantage extends CustomCard{
 	@Override
 	public void upgrade() {
 		if(!upgraded) {
-			upgradeName();
-			
-			this.upgradeBlock(BLOCK_UP);
+			upgradeName();			
 			this.upgradeMagicNumber(MAGIC_UP);
 			
 		}
@@ -53,7 +47,6 @@ public class HeightAdvantage extends CustomCard{
 
 	@Override
 	public void use(AbstractPlayer p, AbstractMonster m) {		
-		AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p,p,new PrecisionPower(p, this.magicNumber), this.magicNumber));
 		for (final AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
 			if(mo.getPower("Vulnerable") == null) {

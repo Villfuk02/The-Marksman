@@ -23,7 +23,7 @@ public class RocketLauncher extends CritCard{
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 	private static final int COST = 4;	
-	private static final int DMG = 30;
+	private static final int DMG = 27;
 	private static final int DMG_UP = 6;
 	private static final int BURNING = 4;
 	private static final int BURNING_UP = 3;

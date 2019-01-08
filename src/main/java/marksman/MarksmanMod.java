@@ -264,6 +264,7 @@ public class MarksmanMod implements PostExhaustSubscriber,
 		AddCard(new MetallicBlood());	//self-damage, metallicize
 		AddCard(new FirstAidKit());		//heal lost hp
 		AddCard(new HandClaws());		//hp -> shivs
+		AddCard(new GasMask());			//artifact
 		
 		// 	Powers (8)
 		AddCard(new Tracers());			//+precision

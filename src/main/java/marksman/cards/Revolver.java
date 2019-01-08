@@ -36,7 +36,7 @@ public class Revolver extends CritCard{
         		AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.ENEMY);
 		this.baseDamage = DMG;
 		this.baseMagicNumber = this.magicNumber = CRIT;
-		this.baseCrit = 40;
+		this.baseCrit = 30;
 	}
 
 	@Override

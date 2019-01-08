@@ -78,11 +78,11 @@
 	},
 	"HeightAdvantage": {
 		"NAME": "Height Advantage",
-		"DESCRIPTION": "Gain !B! Block. NL Gain !M! Precision. NL Expose ALL enemies."
+		"DESCRIPTION": "Gain !M! Precision. NL Expose ALL enemies."
 	},
 	"ExtendedMagazines": {
 		"NAME": "Extended Magazines",
-		"DESCRIPTION": "Draw !M! cards. NL If you have at most 1 Skill in your hand, Gain [R]."
+		"DESCRIPTION": "If you have at most 1 Skill in your hand, Gain [R]. NL Draw !M! cards."
 	},
 	"Revolver": {
 		"NAME": "Revolver",
@@ -167,7 +167,7 @@
 	},
 	"CriticalDecision": {
 		"NAME": "Critical Decision",
-		"DESCRIPTION": "Ethereal. NL Draw !M! cards for every Critical hit you've dealt this turn."
+		"DESCRIPTION": "Draw !M! cards for every Critical hit you've dealt this turn."
 	},
 	"GammaRay": {
 		"NAME": "Gamma Ray",
@@ -196,8 +196,8 @@
 	},
 	"Bayonet": {
 		"NAME": "Bayonet",
-		"DESCRIPTION": "Expose yourself. NL Deal !D! damage for every Critical hit this turn. NL Exhaust.",
-		"UPGRADE_DESCRIPTION": "Expose yourself. NL Deal !D! damage for every Critical hit this turn."
+		"DESCRIPTION": "Expose yourself. NL Deal !D! damage for every Critical hit you've dealt this turn. NL Exhaust.",
+		"UPGRADE_DESCRIPTION": "Expose yourself. NL Deal !D! damage for every Critical hit you've dealt this turn."
 	},
 	"Flamethrower": {
 		"NAME": "Flamethrower",
@@ -259,8 +259,8 @@
 	},
 	"ElectricBlood": {
 		"NAME": "Electric Blood",
-		"DESCRIPTION": "Gain [R] . NL Lose 10 HP. NL Deal !D! damage to ALL enemies.",
-		"UPGRADE_DESCRIPTION": "Gain [R] [R] . NL Lose 10 HP. NL Deal !D! damage to ALL enemies."
+		"DESCRIPTION": "Gain [R] [R] . NL Lose 10 HP. NL Deal !D! damage to ALL enemies.",
+		"UPGRADE_DESCRIPTION": "Gain [R] [R] [R] . NL Lose 10 HP. NL Deal !D! damage to ALL enemies."
 	},
 	"SilverBullet": {
 		"NAME": "Silver Bullet",
@@ -301,7 +301,7 @@
 	},
 	"Hideout": {
 		"NAME": "Hideout",
-		"DESCRIPTION": "Gain !B! Block for every Critical hit you've dealt this turn. NL Next turn draw 1 card less."
+		"DESCRIPTION": "Gain !B! Block for every Critical hit you've dealt this turn."
 	},
 	"Ignite": {
 		"NAME": "Ignite",
@@ -317,7 +317,7 @@
 	},
 	"SilverBlood": {
 		"NAME": "Silver Blood",
-		"DESCRIPTION": "ALL enemies gain !M! Strength. Every time you lose HP, gain 1 Regen."
+		"DESCRIPTION": "Every time you lose HP, gain 1 Regen."
 	},
 	"Perfection": {
 		"NAME": "Perfect Form",
@@ -400,6 +400,10 @@
 	},
 	"Reposition": {
 		"NAME": "Reposition",
-		"DESCRIPTION": "Draw 2 cards. NL Lose 1 Strength for this turn."
+		"DESCRIPTION": "Draw !M! cards. NL Lose 1 Strength for this turn."
+	},
+	"GasMask": {
+		"NAME": "Gas Mask",
+		"DESCRIPTION": "Gain 1 Artifact. NL Gain !B! Block. NL This card costs 1 more energy for this combat."
 	}
 }

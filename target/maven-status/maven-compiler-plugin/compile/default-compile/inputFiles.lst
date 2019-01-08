@@ -70,7 +70,6 @@ C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\marksman\cards\Cou
 C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\marksman\patches\AbstractCardEnum.java
 C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\marksman\cards\Grenade.java
 C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\marksman\cards\Painkillers.java
-C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\marksman\actions\DisplayStunAction.java
 C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\marksman\patches\AscensionPatch.java
 C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\marksman\powers\IgnitePower.java
 C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\marksman\cards\ExtendedMagazines.java
@@ -99,6 +98,7 @@ C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\marksman\cards\Cam
 C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\marksman\powers\GhostFormPower.java
 C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\marksman\cards\Minigun.java
 C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\marksman\cards\TacticalShotgun.java
+C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\marksman\relics\RustyLighter.java
 C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\marksman\powers\FriendlyFirePower.java
 C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\marksman\cards\Kevlar.java
 C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\marksman\cards\StunGrenade.java
@@ -123,9 +123,11 @@ C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\marksman\relics\Po
 C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\marksman\patches\CritVariable.java
 C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\marksman\cards\LuckyMode.java
 C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\marksman\relics\RustyHelmet.java
+C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\marksman\cards\GasMask.java
 C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\marksman\cards\Insulation.java
 C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\marksman\cards\Hideout.java
 C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\marksman\relics\RustyMagazine.java
+C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\marksman\actions\ApplyBurningAction.java
 C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\marksman\cards\AmmoBox.java
 C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\marksman\cards\EyeForAnEye.java
 C:\Users\Villfuk\Documents\my_mods\the_marksman\src\main\java\marksman\cards\BurstFire.java
