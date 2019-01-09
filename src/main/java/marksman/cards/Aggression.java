@@ -23,7 +23,6 @@ public class Aggression extends CustomCard{
 	private static final int MAGIC = 2;
 	private static final int MAGIC_UP = 1;
 	
-	Random rand = new Random();
 	
 
 	public Aggression() {

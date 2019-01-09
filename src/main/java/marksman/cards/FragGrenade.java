@@ -32,8 +32,6 @@ public class FragGrenade extends CustomCard{
 	private static final int AMOUNT = 7;
 	private static final int AMOUNT_UP = 3;
 	
-	Random rand = new Random();
-	
 
 	public FragGrenade() {
 		super(ID, NAME, MarksmanMod.CARD_IMG_PATH + ID + ".png", COST, DESCRIPTION,

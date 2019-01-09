@@ -31,8 +31,6 @@ public class Assasinate extends CustomCard{
 	private static final int MAGIC = 5;
 	//private static final int MAGIC_UP = -1;
 	
-	Random rand = new Random();
-	
 
 	public Assasinate() {
 		super(ID, NAME, MarksmanMod.CARD_IMG_PATH + ID + ".png", COST, DESCRIPTION,

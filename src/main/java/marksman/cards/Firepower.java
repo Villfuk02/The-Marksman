@@ -23,8 +23,6 @@ public class Firepower extends CustomCard{
 	private static final int UP_COST = 1;
 	private static final int MAGIC = 1;
 	
-	Random rand = new Random();
-	
 
 	public Firepower() {
 		super(ID, NAME, MarksmanMod.CARD_IMG_PATH + ID + ".png", COST, DESCRIPTION,

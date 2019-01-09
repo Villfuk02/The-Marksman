@@ -27,8 +27,6 @@ public class GoldenBullet extends CritCard{
 	private static final int DMG_UP = 4;
 	private static final int CRIT = 10;
 	
-	Random rand = new Random();
-	
 
 	public GoldenBullet() {
 		super(ID, NAME, MarksmanMod.CARD_IMG_PATH + ID + ".png", COST, DESCRIPTION,
@@ -59,7 +57,7 @@ public class GoldenBullet extends CritCard{
 		AbstractDungeon.actionManager.addToBottom(new ChangeGoldAction(-8, m));
 		
 		int dmg = this.damage;
-		if(rand.random(100)  < this.crit) {
+		if(AbstractDungeon.cardRandomRng.random(99)  < this.crit) {
 			dmg *= 3;
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new CritsThisTurn(p, 1), 1));
 			AbstractDungeon.actionManager.addToBottom(new ChangeGoldAction(40, m));

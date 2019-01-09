@@ -22,8 +22,6 @@ public class BlackPowder extends CustomCard{
 	private static final int COST = 2;
 	private static final int COST_UP = 1;
 	
-	Random rand = new Random();
-	
 
 	public BlackPowder() {
 		super(ID, NAME, MarksmanMod.CARD_IMG_PATH + ID + ".png", COST, DESCRIPTION,

@@ -28,8 +28,6 @@ public class Grenade extends CustomCard{
 	private static final int DMG = 10;
 	private static final int DMG_UP = 3;
 	
-	Random rand = new Random();
-	
 
 	public Grenade() {
 		super(ID, NAME, MarksmanMod.CARD_IMG_PATH + ID + ".png", COST, DESCRIPTION,

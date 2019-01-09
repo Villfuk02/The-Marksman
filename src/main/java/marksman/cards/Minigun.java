@@ -25,9 +25,6 @@ public class Minigun extends CritCard{
 	private static final int AMT = 11;
 	private static final int AMT_UP = 4;
 	
-	Random rand = new Random();
-	
-
 	public Minigun() {
 		super(ID, NAME, MarksmanMod.CARD_IMG_PATH + ID + ".png", COST, DESCRIPTION,
         		AbstractCard.CardType.ATTACK, AbstractCardEnum.BLACK,

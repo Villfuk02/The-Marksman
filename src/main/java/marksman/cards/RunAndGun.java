@@ -28,8 +28,6 @@ public class RunAndGun extends CritCard{
 	private static final int DRAW = 2;
 	//private static final int DRAW_UP = 5;
 	
-	Random rand = new Random();
-	
 
 	public RunAndGun() {
 		super(ID, NAME, MarksmanMod.CARD_IMG_PATH + ID + ".png", COST, DESCRIPTION,
@@ -60,7 +58,7 @@ public class RunAndGun extends CritCard{
 	public void use(AbstractPlayer p, AbstractMonster m) {
 		if (m != null) {
 			int dmg = this.damage;
-			if(rand.random(100)  < this.crit) {
+			if(AbstractDungeon.cardRandomRng.random(99)  < this.crit) {
 				dmg *= 3;
 				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new CritsThisTurn(p, 1), 1));
 			}

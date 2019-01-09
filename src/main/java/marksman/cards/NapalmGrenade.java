@@ -31,8 +31,6 @@ public class NapalmGrenade extends CustomCard{
 	private static final int BURNING = 2;
 	private static final int BURNING_UP = 2;
 	
-	Random rand = new Random();
-	
 
 	public NapalmGrenade() {
 		super(ID, NAME, MarksmanMod.CARD_IMG_PATH + ID + ".png", COST, DESCRIPTION,

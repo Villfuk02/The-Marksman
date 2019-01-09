@@ -12,7 +12,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
-import com.megacrit.cardcrawl.random.Random;
 
 import marksman.MarksmanMod;
 import marksman.patches.AbstractCardEnum;
@@ -24,12 +23,10 @@ public class Bow extends CritCard{
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 	private static final int COST = 1;	
-	private static final int DMG = 6;
+	private static final int DMG = 8;
 	private static final int DMG_UP = 2;
 	private static final int MAGIC = 25;
 	private static final int MAGIC_UP = 10;
-	
-	Random rand = new Random();
 	
 
 	public Bow() {
@@ -66,7 +63,7 @@ public class Bow extends CritCard{
 	public void use(AbstractPlayer p, AbstractMonster m) {
 		if (m != null) {
 			int dmg = this.baseDamage;
-			if(rand.random(100)  < this.crit) {
+			if(AbstractDungeon.cardRandomRng.random(99)  < this.crit) {
 				dmg *= 3;
 				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new CritsThisTurn(p, 1), 1));
 			}	

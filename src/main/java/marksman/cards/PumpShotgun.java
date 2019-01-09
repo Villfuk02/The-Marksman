@@ -28,8 +28,6 @@ public class PumpShotgun extends CritCard{
 	private static final int AMT = 2;
 	private static final int AMT_UP = 1;
 	
-	Random rand = new Random();
-	
 
 	public PumpShotgun() {
 		super(ID, NAME, MarksmanMod.CARD_IMG_PATH + ID + ".png", COST, DESCRIPTION,

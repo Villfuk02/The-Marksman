@@ -23,8 +23,6 @@ public class SilverBlood extends CustomCard{
 	private static final int COST = 4;
 	private static final int UP = 3;
 	
-	Random rand = new Random();
-	
 
 	public SilverBlood() {
 		super(ID, NAME, MarksmanMod.CARD_IMG_PATH + ID + ".png", COST, DESCRIPTION,

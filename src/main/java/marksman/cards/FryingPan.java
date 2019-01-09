@@ -27,8 +27,6 @@ public class FryingPan extends CustomCard{
 	private static final int BLOCK = 7;
 	private static final int BLOCK_UP = 2;
 	
-	Random rand = new Random();
-	
 
 	public FryingPan() {
 		super(ID, NAME, MarksmanMod.CARD_IMG_PATH + ID + ".png", COST, DESCRIPTION,

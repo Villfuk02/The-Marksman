@@ -36,8 +36,6 @@ public class VoidGrenade extends CustomCard{
 	private static final int DMG_UP = 3;
 	private static final int HP_LOSS = 5;
 	
-	Random rand = new Random();
-	
 
 	public VoidGrenade() {
 		super(ID, NAME, MarksmanMod.CARD_IMG_PATH + ID + ".png", COST, DESCRIPTION,

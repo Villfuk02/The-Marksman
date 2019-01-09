@@ -26,8 +26,6 @@ public class FlareGun extends CustomCard{
 	private static final int DRAW = 1;
 	private static final int UP = 2;
 	
-	Random rand = new Random();
-	
 
 	public FlareGun() {
 		super(ID, NAME, MarksmanMod.CARD_IMG_PATH + ID + ".png", COST, DESCRIPTION,

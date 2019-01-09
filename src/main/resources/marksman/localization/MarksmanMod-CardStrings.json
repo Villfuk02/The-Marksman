@@ -255,7 +255,7 @@
 	},
 	"FragileBlood": {
 		"NAME": "Fragile Blood",
-		"DESCRIPTION": "Gain !M! Regen. NL Apply !M! Thorns to ALL enemies."
+		"DESCRIPTION": "Gain !M! Intangible. NL Apply !M! Thorns to ALL enemies."
 	},
 	"ElectricBlood": {
 		"NAME": "Electric Blood",
@@ -305,7 +305,7 @@
 	},
 	"Ignite": {
 		"NAME": "Ignite",
-		"DESCRIPTION": "This turn, whenever you hit an enemy with an Attack, apply 2 Burning."
+		"DESCRIPTION": "This turn, whenever deal unblocked Attack damage, apply 2 Burning."
 	},
 	"CombatTrousers": {
 		"NAME": "Combat Trousers",

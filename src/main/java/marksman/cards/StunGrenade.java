@@ -34,8 +34,6 @@ public class StunGrenade extends CustomCard{
 	private static final int MAGIC = 2;
 	private static final int MAGIC_UP = 1;
 	
-	Random rand = new Random();
-	
 
 	public StunGrenade() {
 		super(ID, NAME, MarksmanMod.CARD_IMG_PATH + ID + ".png", COST, DESCRIPTION,

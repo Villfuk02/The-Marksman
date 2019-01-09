@@ -29,8 +29,6 @@ public class GammaRay extends CritCard{
 	private static final int DMG_UP = 1;
 	private static final int CRIT = 20;
 	
-	Random rand = new Random();
-	
 
 	public GammaRay() {
 		super(ID, NAME, MarksmanMod.CARD_IMG_PATH + ID + ".png", COST, DESCRIPTION,
@@ -60,7 +58,7 @@ public class GammaRay extends CritCard{
 			int dmg = this.damage;
 			for	(int i = 0; i < 2; i++) {
 				AbstractDungeon.actionManager.addToBottom(new VFXAction(new SmallLaserEffect(p.dialogX, p.dialogY, m.hb.cX, m.hb.cY)));
-				if(rand.random(100)  < this.crit) {
+				if(AbstractDungeon.cardRandomRng.random(99)  < this.crit) {
 					dmg *= 3;
 					AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new CritsThisTurn(p, 1), 1));
 					if(dmg == this.damage * 9)

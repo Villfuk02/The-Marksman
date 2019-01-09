@@ -27,8 +27,6 @@ public class TacticalShotgun extends CritCard{
 	private static final int CRIT = 20;
 	private static final int CRIT_UP = 10;
 	
-	Random rand = new Random();
-	
 
 	public TacticalShotgun() {
 		super(ID, NAME, MarksmanMod.CARD_IMG_PATH + ID + ".png", COST, DESCRIPTION,

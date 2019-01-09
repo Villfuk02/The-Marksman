@@ -25,8 +25,6 @@ public class Ignite extends CustomCard{
 	private static final int COST = 1;
 	private static final int COST_UP = 0;
 	
-	Random rand = new Random();
-	
 
 	public Ignite() {
 		super(ID, NAME, MarksmanMod.CARD_IMG_PATH + ID + ".png", COST, DESCRIPTION,

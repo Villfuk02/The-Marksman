@@ -27,8 +27,6 @@ public class SawBlade extends CustomCard{
 	private static final int COST = 0;
 	private static final int DMG = 4;
 	
-	Random rand = new Random();
-	
 
 	public SawBlade() {
 		super(ID, NAME, MarksmanMod.CARD_IMG_PATH + ID + ".png", COST, DESCRIPTION,

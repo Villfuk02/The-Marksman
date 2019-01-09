@@ -30,8 +30,6 @@ public class Crossbow extends CritCard{
 	private static final int MAGIC = 2;
 	private static final int MAGIC_UP = 1;
 	
-	Random rand = new Random();
-	
 
 	public Crossbow() {
 		super(ID, NAME, MarksmanMod.CARD_IMG_PATH + ID + ".png", COST, DESCRIPTION,
@@ -70,14 +68,14 @@ public class Crossbow extends CritCard{
 	public void use(AbstractPlayer p, AbstractMonster m) {
 		if (m != null) {
 			int dmg = this.baseDamage;
-			if(rand.random(100)  < this.crit) {
+			if(AbstractDungeon.cardRandomRng.random(99)  < this.crit) {
 				dmg *= 3;
 				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new CritsThisTurn(p, 1), 1));
 			}	
 			AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, dmg, DamageType.THORNS),AbstractGameAction.AttackEffect.BLUNT_LIGHT));			
 			
 			dmg = this.baseDamage;
-			if(rand.random(100)  < this.crit) {
+			if(AbstractDungeon.cardRandomRng.random(99)  < this.crit) {
 				dmg *= 3;
 				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new CritsThisTurn(p, 1), 1));
 			}	

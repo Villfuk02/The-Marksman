@@ -29,8 +29,6 @@ public class HandCannon extends CustomCard{
 	private static final int LOSS = 6;
 	private static final int LOSS_UP = 2;
 	
-	Random rand = new Random();
-	
 
 	public HandCannon() {
 		super(ID, NAME, MarksmanMod.CARD_IMG_PATH + ID + ".png", COST, DESCRIPTION,

@@ -24,8 +24,6 @@ public class Flamethrower extends CustomCard{
 	private static final int BURNING = 3;
 	private static final int BURNING_UP = 1;
 	
-	Random rand = new Random();
-	
 
 	public Flamethrower() {
 		super(ID, NAME, MarksmanMod.CARD_IMG_PATH + ID + ".png", COST, DESCRIPTION,

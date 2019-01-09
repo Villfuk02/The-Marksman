@@ -28,8 +28,6 @@ public class Chainsaw extends CustomCard{
 	private static final int COST = 0;
 	private static final int DMG = 6;
 	
-	Random rand = new Random();
-	
 
 	public Chainsaw() {
 		super(ID, NAME, MarksmanMod.CARD_IMG_PATH + ID + ".png", COST, DESCRIPTION,

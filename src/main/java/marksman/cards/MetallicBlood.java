@@ -27,8 +27,6 @@ public class MetallicBlood extends CustomCard{
 	private static final int MAGIC_UP = 2;
 	private static final int DMG = 6;
 	
-	Random rand = new Random();
-	
 
 	public MetallicBlood() {
 		super(ID, NAME, MarksmanMod.CARD_IMG_PATH + ID + ".png", COST, DESCRIPTION,

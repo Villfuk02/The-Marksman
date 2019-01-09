@@ -27,8 +27,6 @@ public class Revolver extends CritCard{
 	private static final int CRIT = 5;
 	private static final int CRIT_UP = 2;
 	
-	Random rand = new Random();
-	
 
 	public Revolver() {
 		super(ID, NAME, MarksmanMod.CARD_IMG_PATH + ID + ".png", COST, DESCRIPTION,
@@ -59,7 +57,7 @@ public class Revolver extends CritCard{
 	public void use(AbstractPlayer p, AbstractMonster m) {
 		if (m != null) {
 			int dmg = this.damage;
-			if(rand.random(100)  < this.crit) {
+			if(AbstractDungeon.cardRandomRng.random(99)  < this.crit) {
 				dmg *= this.magicNumber;
 				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new CritsThisTurn(p, 1), 1));
 			}	

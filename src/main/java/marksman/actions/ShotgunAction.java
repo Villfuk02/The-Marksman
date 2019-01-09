@@ -23,7 +23,6 @@ public class ShotgunAction extends AbstractGameAction
     private int crit;
     private int action;
     
-    Random rand = new Random();
     
     public ShotgunAction(final AbstractCreature target, final DamageInfo info, final int numTimes, final int crit, final int action) {
         this.info = info;
@@ -54,7 +53,7 @@ public class ShotgunAction extends AbstractGameAction
             
             DamageInfo tempInfo = new DamageInfo(AbstractDungeon.player, info.base, info.type);
             
-			if(rand.random(100)  < this.crit) {
+			if(AbstractDungeon.cardRandomRng.random(99)  < this.crit) {
 				tempInfo = new DamageInfo(AbstractDungeon.player, info.base*3, info.type);
 				AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player, new CritsThisTurn(AbstractDungeon.player, 1), 1));
 				switch (action) {

@@ -29,8 +29,6 @@ public class CorrosiveGrenade extends CustomCard{
 	private static final int CORROSION = 2;
 	private static final int CORROSION_UP = 1;
 	
-	Random rand = new Random();
-	
 
 	public CorrosiveGrenade() {
 		super(ID, NAME, MarksmanMod.CARD_IMG_PATH + ID + ".png", COST, DESCRIPTION,

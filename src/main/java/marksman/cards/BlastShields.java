@@ -23,9 +23,6 @@ public class BlastShields extends CustomCard{
 	private static final int MAGIC = 6;
 	private static final int MAGIC_UP = 2;
 	
-	Random rand = new Random();
-	
-
 	public BlastShields() {
 		super(ID, NAME, MarksmanMod.CARD_IMG_PATH + ID + ".png", COST, DESCRIPTION,
         		AbstractCard.CardType.POWER, AbstractCardEnum.BLACK,

@@ -24,8 +24,6 @@ public class EyeForAnEye extends CustomCard{
 	private static final int MAGIC = 1;
 	private static final int MAGIC_UP = 1;
 	
-	Random rand = new Random();
-	
 
 	public EyeForAnEye() {
 		super(ID, NAME, MarksmanMod.CARD_IMG_PATH + ID + ".png", COST, DESCRIPTION,

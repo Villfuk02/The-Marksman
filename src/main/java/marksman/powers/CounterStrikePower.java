@@ -38,10 +38,10 @@ public class CounterStrikePower extends AbstractPower
     
     @Override
     public void onApplyPower(final AbstractPower power, final AbstractCreature target, final AbstractCreature source) {
-    	if(target == AbstractDungeon.player && power.ID == StrengthPower.POWER_ID && power.amount < 0) {
+    	if(target == owner && power.ID == StrengthPower.POWER_ID && power.amount < 0) {
 	    	this.flash();    	
-	    	AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(AbstractDungeon.player, DamageInfo.createDamageMatrix(this.amount, true), DamageType.THORNS, AbstractGameAction.AttackEffect.SLASH_VERTICAL));
-	    	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(target, this.owner, new DexterityPower(target, 1), 1));
+	    	AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(owner, DamageInfo.createDamageMatrix(amount, true), DamageType.THORNS, AbstractGameAction.AttackEffect.SLASH_VERTICAL));
+	    	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(target, owner, new DexterityPower(target, 1), 1));
 		}
     }   
 }

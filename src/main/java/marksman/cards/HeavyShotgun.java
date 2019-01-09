@@ -26,8 +26,6 @@ public class HeavyShotgun extends CritCard{
 	private static final int CRIT = 40;
 	//private static final int CRIT_UP = 15;
 	
-	Random rand = new Random();
-	
 
 	public HeavyShotgun() {
 		super(ID, NAME, MarksmanMod.CARD_IMG_PATH + ID + ".png", COST, DESCRIPTION,

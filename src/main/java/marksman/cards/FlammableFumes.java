@@ -23,8 +23,6 @@ public class FlammableFumes extends CustomCard{
 	private static final int MAGIC = 4;
 	private static final int MAGIC_UP = 2;
 	
-	Random rand = new Random();
-	
 
 	public FlammableFumes() {
 		super(ID, NAME, MarksmanMod.CARD_IMG_PATH + ID + ".png", COST, DESCRIPTION,

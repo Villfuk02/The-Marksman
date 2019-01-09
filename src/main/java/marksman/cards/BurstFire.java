@@ -28,8 +28,6 @@ public class BurstFire extends CritCard{
 	private static final int AMT = 3;
 	private static final int AMT_UP = 1;
 	
-	Random rand = new Random();
-	
 
 	public BurstFire() {
 		super(ID, NAME, MarksmanMod.CARD_IMG_PATH + ID + ".png", COST, DESCRIPTION,
@@ -59,7 +57,7 @@ public class BurstFire extends CritCard{
 		if (m != null) {			
 			for	(int i = 0; i < this.magicNumber; i++) {
 				int dmg = this.damage;
-				if(rand.random(100)  < this.crit) {
+				if(AbstractDungeon.cardRandomRng.random(99)  < this.crit) {
 					dmg *= 3;
 					AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new CritsThisTurn(p, 1), 1));
 					AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new PrecisionPower(p, -10), -10));	

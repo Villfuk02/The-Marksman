@@ -25,8 +25,6 @@ public class SkinSkill extends CustomCard{
 	private static final int BLOCK = 10;
 	private static final int BLOCK_UP = 4;	
 	
-	Random rand = new Random();
-	
 
 	public SkinSkill() {
 		super(ID, NAME, MarksmanMod.CARD_IMG_PATH + ID + ".png", COST, DESCRIPTION,

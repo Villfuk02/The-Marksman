@@ -30,8 +30,6 @@ public class ClusterGrenade extends CustomCard{
 	private static final int DMG = 4;
 	private static final int DMG_UP = 2;
 	
-	Random rand = new Random();
-	
 
 	public ClusterGrenade() {
 		super(ID, NAME, MarksmanMod.CARD_IMG_PATH + ID + ".png", COST, DESCRIPTION,

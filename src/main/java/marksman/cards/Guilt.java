@@ -23,8 +23,6 @@ public class Guilt extends CustomCard{
 	private static final int COST = 2;
 	private static final int MAGIC = 2;
 	
-	Random rand = new Random();
-	
 
 	public Guilt() {
 		super(ID, NAME, MarksmanMod.CARD_IMG_PATH + ID + ".png", COST, DESCRIPTION,

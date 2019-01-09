@@ -31,8 +31,6 @@ public class Insulation extends CustomCard{
 	private static final int MAGIC = 3;
 	private static final int MAGIC_UP = 1;	
 	
-	Random rand = new Random();
-	
 
 	public Insulation() {
 		super(ID, NAME, MarksmanMod.CARD_IMG_PATH + ID + ".png", COST, DESCRIPTION,

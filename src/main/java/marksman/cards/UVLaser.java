@@ -29,8 +29,6 @@ public class UVLaser extends CustomCard{
 	private static final int DMG = 7;
 	private static final int DMG_UP = 2;
 	
-	Random rand = new Random();
-	
 
 	public UVLaser() {
 		super(ID, NAME, MarksmanMod.CARD_IMG_PATH + ID + ".png", COST, DESCRIPTION,

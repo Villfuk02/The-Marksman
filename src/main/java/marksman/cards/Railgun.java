@@ -27,8 +27,6 @@ public class Railgun extends CritCard{
 	private static final int MAGIC = 15;
 	private static final int MAGIC_UP = 10;
 	
-	Random rand = new Random();
-	
 
 	public Railgun() {
 		super(ID, NAME, MarksmanMod.CARD_IMG_PATH + ID + ".png", COST, DESCRIPTION,
@@ -67,7 +65,7 @@ public class Railgun extends CritCard{
 		    }
 			for (int i = 0; i < effect; i++) {
 				int dmg = this.damage;
-				if(rand.random(100)  < this.crit*this.energyOnUse) {
+				if(AbstractDungeon.cardRandomRng.random(99)  < this.crit*this.energyOnUse) {
 					dmg *= 3;
 					AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new CritsThisTurn(p, 1), 1));
 				}

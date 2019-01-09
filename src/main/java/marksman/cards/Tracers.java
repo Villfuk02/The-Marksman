@@ -23,8 +23,6 @@ public class Tracers extends CustomCard{
 	private static final int MAGIC = 10;
 	private static final int MAGIC_UP = 5;
 	
-	Random rand = new Random();
-	
 
 	public Tracers() {
 		super(ID, NAME, MarksmanMod.CARD_IMG_PATH + ID + ".png", COST, DESCRIPTION,
