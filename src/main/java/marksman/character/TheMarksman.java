@@ -71,7 +71,7 @@ public class TheMarksman extends CustomPlayer{
 	public CharSelectInfo getLoadout() {
 		MarksmanMod.talk = 0;
 		return new CharSelectInfo(NAME, "After his entire family was consumed by the spire's corrupton, NL all he has left is his Rusty Handgun. He wants to avenge his family.",
-				90, 40, 0, 99, 6,
+				90, 60, 0, 99, 6,
 			this, getStartingRelics(), getStartingDeck(), false);
 	}
 
@@ -102,7 +102,7 @@ public class TheMarksman extends CustomPlayer{
 
 	@Override
 	public int getAscensionMaxHPLoss() {
-		return 2;
+		return 3;
 	}
 
 	@Override
