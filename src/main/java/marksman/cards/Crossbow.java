@@ -13,8 +13,6 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.ArtifactPower;
 import com.megacrit.cardcrawl.powers.FocusPower;
-import com.megacrit.cardcrawl.random.Random;
-
 import marksman.MarksmanMod;
 import marksman.patches.AbstractCardEnum;
 import marksman.powers.CritsThisTurn;

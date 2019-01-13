@@ -18,7 +18,7 @@ public class GrenadeLauncher extends CustomCard{
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-	private static final int COST = 1;
+	private static final int COST = 3;
 	private static final int MAGIC = 2;
 	private static final int MAGIC_UP = 1;
 
@@ -51,35 +51,38 @@ public class GrenadeLauncher extends CustomCard{
 	}
 
 	@Override
-	public void use(AbstractPlayer p, AbstractMonster m) {		
+	public void use(AbstractPlayer p, AbstractMonster m) {	
 		
-		AbstractCard g;
-		for (int i = 0; i < this.magicNumber; i++) {
-			for (final AbstractCard c : AbstractDungeon.player.drawPile.group) {
-	            if (c.name.contains(" Grenade")) {
-	            	g = c;
-	            	AbstractDungeon.player.drawPile.removeCard(g);
-	            	AbstractDungeon.player.drawPile.addToTop(g);
-	            	AbstractDungeon.actionManager.addToBottom(new PlayTopCardAction(m, true));
-	            	return;
-	            }
-	        }	
-			for (final AbstractCard c : AbstractDungeon.player.discardPile.group) {
-	            if (c.name.contains(" Grenade")) {
-	            	g = c;
-	            	AbstractDungeon.player.discardPile.removeCard(g);
-	            	AbstractDungeon.player.drawPile.addToTop(g);
-	            	AbstractDungeon.actionManager.addToBottom(new PlayTopCardAction(m, true));
-	            	return;
-	            }
-	        }	
-			for (final AbstractCard c : AbstractDungeon.player.hand.group) {
-	            if (c.name.contains(" Grenade")) {
-	            	AbstractDungeon.actionManager.addToBottom(new PlayCardFromHandAction(m, c));
-	            	return;
-	            }
+		int amt = this.magicNumber;
+		
+		AbstractCard g;		
+		for (final AbstractCard c : AbstractDungeon.player.drawPile.group) {
+			if (c.name.contains(" Grenade")) {
+	            g = c;
+	            AbstractDungeon.player.drawPile.removeCard(g);
+	            AbstractDungeon.player.drawPile.addToTop(g);
+	            AbstractDungeon.actionManager.addToBottom(new PlayTopCardAction(m, false));
+	            amt--;
+	            if(amt <= 0) return;
 	        }
-		}		
+	    }	
+		for (final AbstractCard c : AbstractDungeon.player.discardPile.group) {
+	       if (c.name.contains(" Grenade")) {
+	            g = c;
+	            AbstractDungeon.player.discardPile.removeCard(g);
+	            AbstractDungeon.player.drawPile.addToTop(g);
+	            AbstractDungeon.actionManager.addToBottom(new PlayTopCardAction(m, false));
+	            amt--;
+	            if(amt <= 0) return;
+	       }
+	    }	
+		for (final AbstractCard c : AbstractDungeon.player.hand.group) {
+			if (c.name.contains(" Grenade")) {
+	            AbstractDungeon.actionManager.addToBottom(new PlayCardFromHandAction(m, c));
+	            amt--;
+	            if(amt <= 0) return;
+			}
+		}			
     }			
 }
 

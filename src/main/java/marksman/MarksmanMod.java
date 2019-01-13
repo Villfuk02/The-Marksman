@@ -278,7 +278,7 @@ public class MarksmanMod implements PostExhaustSubscriber,
 		AddCard(new Firepower());		//burning -> burning
 		
 		
-		// RARE (18)
+		// RARE (17)
 		//	Attacks (4)
 		AddCard(new VoidGrenade());		//aoe, grenade succ
 		AddCard(new ClusterGrenade());	//X, aoe
@@ -294,12 +294,11 @@ public class MarksmanMod implements PostExhaustSubscriber,
 		AddCard(new Gasoline());		//multiply burning
 		AddCard(new Firewall());		//burn, block next turn
 		
-		//	Powers (7)
+		//	Powers (6)
 		AddCard(new EyeForAnEye());		//self-damage
 		AddCard(new BlastShields());	//+block for grenade
 		AddCard(new BlackPowder());		//grenade for exh
 		AddCard(new FriendlyFire());	//block for burning
-		AddCard(new Veteran());			//-str, +str
 		AddCard(new GhostForm());		//all cards ethereal
 		AddCard(new Perfection());		//double crit
 		

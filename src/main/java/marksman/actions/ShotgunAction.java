@@ -9,7 +9,6 @@ import com.megacrit.cardcrawl.core.*;
 import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.powers.GainStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
-import com.megacrit.cardcrawl.random.Random;
 import com.megacrit.cardcrawl.vfx.combat.*;
 
 import marksman.powers.CritsThisTurn;

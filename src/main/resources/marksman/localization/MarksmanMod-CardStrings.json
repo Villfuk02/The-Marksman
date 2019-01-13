@@ -188,7 +188,7 @@
 	},
 	"GrenadeLauncher": {
 		"NAME": "Grenade Launcher",
-		"DESCRIPTION": "Use and Exhaust up to !M! Grenades from your draw pile, discard pile or hand (in this order)."
+		"DESCRIPTION": "Use !M! Grenades from your draw pile, discard pile or hand (in this order)."
 	},
 	"AcidBottle": {
 		"NAME": "Acid Bottle",
@@ -282,10 +282,6 @@
 	"FriendlyFire": {
 		"NAME": "Friendly Fire",
 		"DESCRIPTION": "For every Burning damage you deal, gain that much Block."
-	},
-	"Veteran": {
-		"NAME": "Veteran",
-		"DESCRIPTION": "Innate. NL Lose !M! Strength. NL Every turn, gain 2 Strength. Whenever is your draw pile empty, lose the Strength you gained."
 	},
 	"Aggression": {
 		"NAME": "Aggression",
