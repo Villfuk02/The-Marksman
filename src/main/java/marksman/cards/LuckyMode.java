@@ -47,6 +47,7 @@ public class LuckyMode extends CustomCard{
 	
 	@Override
 	public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+		this.cantUseMessage = "This can only be played first.";
 		if(AbstractDungeon.actionManager.cardsPlayedThisTurn.size() > 0) {
 			return false;
 		}

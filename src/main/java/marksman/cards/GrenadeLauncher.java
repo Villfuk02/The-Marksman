@@ -55,34 +55,51 @@ public class GrenadeLauncher extends CustomCard{
 		
 		int amt = this.magicNumber;
 		
-		AbstractCard g;		
-		for (final AbstractCard c : AbstractDungeon.player.drawPile.group) {
-			if (c.name.contains(" Grenade")) {
-	            g = c;
-	            AbstractDungeon.player.drawPile.removeCard(g);
+		AbstractCard g = null;		
+		for(int i = 0; i < amt; i++) {
+			for (final AbstractCard c : AbstractDungeon.player.drawPile.group) {
+				if (c.name.contains(" Grenade")) {
+		            g = c;
+		            break;
+		            
+		        }				
+		    }	
+			if(g != null) {
+				AbstractDungeon.player.drawPile.removeCard(g);
 	            AbstractDungeon.player.drawPile.addToTop(g);
 	            AbstractDungeon.actionManager.addToBottom(new PlayTopCardAction(m, false));
-	            amt--;
-	            if(amt <= 0) return;
-	        }
-	    }	
-		for (final AbstractCard c : AbstractDungeon.player.discardPile.group) {
-	       if (c.name.contains(" Grenade")) {
-	            g = c;
-	            AbstractDungeon.player.discardPile.removeCard(g);
-	            AbstractDungeon.player.drawPile.addToTop(g);
-	            AbstractDungeon.actionManager.addToBottom(new PlayTopCardAction(m, false));
-	            amt--;
-	            if(amt <= 0) return;
-	       }
-	    }	
-		for (final AbstractCard c : AbstractDungeon.player.hand.group) {
-			if (c.name.contains(" Grenade")) {
-	            AbstractDungeon.actionManager.addToBottom(new PlayCardFromHandAction(m, c));
 	            amt--;
 	            if(amt <= 0) return;
 			}
-		}			
+		}
+		
+		g = null;
+		for(int i = 0; i < amt; i++) {
+			for (final AbstractCard c : AbstractDungeon.player.discardPile.group) {
+		       if (c.name.contains(" Grenade")) {
+		            g = c;
+		            break;
+		       }
+		       if(g != null) {
+		            AbstractDungeon.player.discardPile.removeCard(g);
+		            AbstractDungeon.player.drawPile.addToTop(g);
+		            AbstractDungeon.actionManager.addToBottom(new PlayTopCardAction(m, false));
+		            amt--;
+		            if(amt <= 0) return;
+		       }
+		    }	
+		}
+		
+		for(int i = 0; i < amt; i++) {
+			for (final AbstractCard c : AbstractDungeon.player.hand.group) {
+				if (c.name.contains(" Grenade")) {
+		            AbstractDungeon.actionManager.addToBottom(new PlayCardFromHandAction(m, c));
+		            amt--;
+		            if(amt <= 0) return;
+		            break;
+				}
+			}
+		}
     }			
 }
 
